@@ -1,0 +1,268 @@
+@charset "UTF-8";
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; overflow: hidden; font-family: 'Pretendard', sans-serif; }
+
+    .bg-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(../images/intro/purple.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 1;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .intro {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .side {
+      position: absolute;
+      padding: 1rem 2rem;
+      background: transparent;
+      color: #fff;
+      font-size: 3.5rem;
+      font-weight: bold;
+      z-index: 5;
+      cursor: pointer;
+      text-align: center;
+      transition: color 0.3s ease;
+    }
+
+    .side.left {
+      top: 130px;
+      left: 130px;
+    }
+
+    .side.right {
+      bottom: 130px;
+      right: 130px;
+    }
+
+    .side.active-black {
+      color: black;
+    }
+
+    .logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      pointer-events: auto;
+      cursor: pointer;
+    }
+
+    .logo img {
+      width: 800px;
+      display: block;
+    }
+
+    .pupil {
+      width: 25px;
+      height: 100px;
+      background: #101112;
+      border-radius: 50%;
+      position: absolute;
+      z-index: 9999;
+      pointer-events: none;
+      transition: transform 0.25s ease-out;
+    }
+
+    .pupil.left {
+      top: calc(32% - 15px);
+      left: calc(53.5% - 140px);
+    }
+
+    .pupil.right {
+      top: calc(32% - 15px);
+      left: calc(46.5% + 120px);
+    }
+
+    .circle {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, #ffee00, #ffaa00);
+      border-radius: 50%;
+      box-shadow: 0 0 80px 30px rgba(255, 221, 0, 0.4);
+      clip-path: circle(50% at 50% 50%);
+      opacity: 0;
+      pointer-events: none;
+      transform-origin: center center;
+      z-index: 2;
+    }
+
+    @keyframes expand-left-top {
+      0% {
+        opacity: 1;
+        left: 0;
+        top: 0;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      100% {
+        opacity: 1;
+        left: 0;
+        top: 0;
+        transform: translate(-50%, -50%) scale(23);
+      }
+    }
+
+    @keyframes expand-right-bottom {
+      0% {
+        opacity: 1;
+        right: 0;
+        bottom: 0;
+        transform: translate(50%, 50%) scale(1);
+      }
+      100% {
+        opacity: 1;
+        right: 0;
+        bottom: 0;
+        transform: translate(50%, 50%) scale(23);
+      }
+    }
+
+    .circle.show-left {
+      animation: expand-left-top 0.7s forwards;
+      opacity: 1;
+    }
+
+    .circle.show-right {
+      animation: expand-right-bottom 0.7s forwards;
+      opacity: 1;
+    }
+
+    .glow {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,105,180,0.2), transparent);
+      filter: blur(80px);
+      animation: float 6s infinite ease-in-out alternate;
+      z-index: 1;
+    }
+
+    .glow.one { top: 10%; left: 20%; }
+    .glow.two { top: 70%; left: 60%; animation-delay: 2s; }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      40% { transform: translateY(200px); }
+      100% { transform: translateY(-30px); }
+    }
+
+    @keyframes sparkleFlicker {
+      0%, 100% {
+        opacity: 0.3;
+        filter: brightness(1);
+      }
+      50% {
+        opacity: 0.6;
+        filter: brightness(1.8);
+      }
+    }
+
+    .bg-sparkle {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url(../images/intro/con01_06.png);
+      background-size: cover;
+      background-position: center;
+      pointer-events: none;
+      z-index: 0;
+      animation: sparkleFlicker 2s ease-in-out infinite;
+      mix-blend-mode: screen;
+    }
+
+    /* 말풍선 스타일 */
+    .speech-bubble {
+      position: absolute;
+      top: 0%;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 300px;
+      padding: 15px 20px;
+      background: rgba(255, 255, 255, 0.85);
+      color: #333;
+      font-weight: 600;
+      font-size: 1.5rem;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+      z-index: 20;
+    }
+
+    .speech-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 15px;
+      border-style: solid;
+      border-color: rgba(255,255,255,0.85) transparent transparent transparent;
+    }
+
+    /* 말풍선 보이기 */
+    .speech-bubble.show {
+      opacity: 1;
+      pointer-events: auto;
+      animation: none;
+    }
+
+    @keyframes bubble-flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    @media (max-width: 768px) {
+      .logo img { width: 80vw; }
+      .side {
+        font-size: 2rem;
+        padding: 1rem;
+      }
+      .side.left {
+        top: 5%;
+        left: 5%;
+      }
+      .side.right {
+        bottom: 5%;
+        right: 5%;
+      }
+      .pupil.left {
+        left: calc(50% - 80px);
+        top: calc(30% - 10px);
+      }
+      .pupil.right {
+        left: calc(50% + 40px);
+        top: calc(30% - 10px);
+      }
+      .pupil {
+        width: 15px;
+        height: 60px;
+      }
+      .glow {
+        width: 200px;
+        height: 200px;
+        filter: blur(40px);
+      }
+      .speech-bubble {
+        max-width: 200px;
+        font-size: 1.2rem;
+      }
+    }

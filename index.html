@@ -3,191 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>moonWall intro</title>
+  <link rel="stylesheet" href="../css/intro.css">
+  <title>intro - 말하는 고양이</title>
   <style>
-    /* 기존 스타일 생략 */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; overflow: hidden; font-family: 'Pretendard', sans-serif; }
-    a{text-decoration: none; color: #fff;}
-
-    .bg-image {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #000;
-      background-image: url(images/index/900443_OAK40B0.jpg);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      opacity: 1;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    .intro {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    .side {
-      position: absolute;
-      padding: 1rem 2rem;
-      background: transparent;
-      color: #fff;
-      font-size: 3.5rem;
-      font-weight: bold;
-      z-index: 5;
-      cursor: pointer;
-      text-align: center;
-      transition: color 0.3s ease;
-    }
-
-    .side.left {
-      top: 130px;
-      left: 130px;
-    }
-
-    .side.right {
-      bottom: 130px;
-      right: 130px;
-    }
-
-    .side .active-black a{
-      color: black;
-    }
-
-    .logo {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 10;
-      pointer-events: auto;
-      cursor: pointer;
-    }
-
-    .logo img {
-      width: 500px;
-      display: block;
-    }
-
-
-    .circle {
-      position: absolute;
-      width: 120px;
-      height: 120px;
-      background: radial-gradient(circle, #ffee00, #ffaa00);
-      border-radius: 50%;
-      box-shadow: 0 0 80px 30px rgba(255, 221, 0, 0.4);
-      clip-path: circle(50% at 50% 50%);
-      opacity: 0;
-      pointer-events: none;
-      transform-origin: center center;
-      z-index: 2;
-    }
-
-    @keyframes expand-left-top {
-      0% {
-        opacity: 1;
-        left: 0;
-        top: 0;
-        transform: translate(-50%, -50%) scale(1);
-      }
-      100% {
-        opacity: 1;
-        left: 0;
-        top: 0;
-        transform: translate(-50%, -50%) scale(23);
-      }
-    }
-
-    @keyframes expand-right-bottom {
-      0% {
-        opacity: 1;
-        right: 0;
-        bottom: 0;
-        transform: translate(50%, 50%) scale(1);
-      }
-      100% {
-        opacity: 1;
-        right: 0;
-        bottom: 0;
-        transform: translate(50%, 50%) scale(23);
-      }
-    }
-
-    .circle.show-left {
-      animation: expand-left-top 0.7s forwards;
-      opacity: 1;
-    }
-
-    .circle.show-right {
-      animation: expand-right-bottom 0.7s forwards;
-      opacity: 1;
-    }
-
-
-    .bg-sparkle {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url(con01_06.png);
-      background-size: cover;
-      background-position: center;
-      pointer-events: none;
-      z-index: 0;
-      animation: sparkleFlicker 2s ease-in-out infinite;
-      mix-blend-mode: screen;
-    }
-
-
-
-    @keyframes bubble-flicker {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
-    }
-
-    @media (max-width: 768px) {
-
-      .logo img { width: 80vw; }
-      .side {
-        font-size: 2rem;
-        padding: 1rem;
-      }
-      .side.left {
-        top: 5%;
-        left: 5%;
-      }
-      .side.right {
-        bottom: 5%;
-        right: 5%;
-      }
-      .pupil.left {
-        left: calc(50% - 80px);
-        top: calc(30% - 10px);
-      }
-      .pupil.right {
-        left: calc(50% + 40px);
-        top: calc(30% - 10px);
-      }
-      .pupil {
-        width: 15px;
-        height: 60px;
-      }
+    @media (max-width: 1600px) {
+      .logo img,
+      .pupil,
+      .speech-bubble,
       .glow {
-        width: 200px;
-        height: 200px;
-        filter: blur(40px);
-      }
-      .speech-bubble {
-        max-width: 200px;
-        font-size: 1.2rem;
+        display: none !important;
       }
     }
   </style>
@@ -202,15 +26,15 @@
     <div class="circle" id="circle"></div>
 
     <div class="logo" id="logo">
-      <img src="images/main/logo05_ko.png" alt="intro black cat" />
+      <img src="images/intro/introblackcat.png" alt="intro black cat" />
+      <div class="speech-bubble" id="speech-bubble"></div>
     </div>
 
-    <div class="side left" id="left-side">
-      <a href="html/main.html">BRAND<br>브랜드</a>
-    </div>
-    <div class="side right" id="right-side">
-      <a href="html/login.html">LOGIN<br>로그인</a>
-    </div>
+    <div class="pupil left" id="pupil-left"></div>
+    <div class="pupil right" id="pupil-right"></div>
+
+    <div class="side left" id="left-side">BRAND<br>브랜드</div>
+    <div class="side right" id="right-side">LOGIN<br>로그인</div>
   </div>
 
   <script>
@@ -280,11 +104,15 @@
       isCircleExpanded = false;
       currentSide = null;
 
-      pupilLeft.style.transform = 'translate(0, 0) scaleX(1) scaleY(1)';
-      pupilRight.style.transform = 'translate(0, 0) scaleX(1) scaleY(1)';
+      if (window.innerWidth >= 1600) {
+        pupilLeft.style.transform = 'translate(0, 0) scaleX(1) scaleY(1)';
+        pupilRight.style.transform = 'translate(0, 0) scaleX(1) scaleY(1)';
+      }
     });
 
     document.addEventListener('mousemove', (e) => {
+      if (window.innerWidth < 1600) return;
+
       const dx = e.clientX - window.innerWidth / 2;
       const dy = e.clientY - window.innerHeight / 2;
       const angle = Math.atan2(dy, dx);
@@ -312,22 +140,47 @@
       pupilRight.style.transform = 'translate(0, 0) scaleX(1) scaleY(1)';
     });
 
-    // 떠다니기 애니메이션
-    let floatAmplitude = 15; // 최대 위아래 이동 거리(px)
-    let floatSpeed = 0.0025;  // 떠다니기 속도
+    let floatAmplitude = 15;
+    let floatSpeed = 0.0025;
     let startTime = Date.now();
 
     function floatingAnimation() {
+      if (window.innerWidth < 1600) return requestAnimationFrame(floatingAnimation);
+
       const elapsed = Date.now() - startTime;
       const floatY = Math.sin(elapsed * floatSpeed) * floatAmplitude;
 
       logo.style.transform = `translate(-50%, calc(-50% + ${floatY}px))`;
-      pupilLeft.style.transform = pupilLeft.style.transform.replace(/translateY\([^)]+\)/, '') + ` translateY(${floatY}px)`;
-      pupilRight.style.transform = pupilRight.style.transform.replace(/translateY\([^)]+\)/, '') + ` translateY(${floatY}px)`;
-
       requestAnimationFrame(floatingAnimation);
     }
     floatingAnimation();
+
+    const messages = [
+      "냐옹! 나는 루나다냥 ↀωↀ",
+      "여기서 기다리고 있다냥~!  오늘도 행복하게 하루를　시작하라냥~",
+      "마우스를 움직여보라냥!",
+      "브랜드/로그인 확인하라냥.",
+      "날 클릭하라냥."
+    ];
+    let msgIndex = 0;
+
+    function showSpeechBubble() {
+      if (window.innerWidth < 1600) return;
+      speechBubble.textContent = messages[msgIndex];
+      speechBubble.classList.add('show');
+      msgIndex = (msgIndex + 1) % messages.length;
+    }
+
+    function hideSpeechBubble() {
+      speechBubble.classList.remove('show');
+    }
+
+    setInterval(() => {
+      showSpeechBubble();
+      setTimeout(() => {
+        hideSpeechBubble();
+      }, 2500);
+    }, 4000);
   </script>
 </body>
 </html>

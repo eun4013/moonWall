@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>월담고양점 오시는 길</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="../css/location.css">
+ 
+
+  <!-- 카카오 지도 API -->
+  <script type="text/javascript"
+    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=df8282fd7cd4a99dcf3b3615f8fe9d1e&libraries=services"></script>
+</head>
+
+<body>
+
+
+
+
+    <div id="header">
+      <div class="bkBg">
+        <a href="../html/main.html"><img src="../images/main/logo01_ko_cc.png" alt="logo"></a>
+        <ul class="gnb">
+        <li>
+          <a href="#">Brand</a>
+          <ul class="sub">
+            <li><a href="#">브랜드 BI</a></li>
+            <li><a href="#">브랜드스토리</a></li>
+            <li><a href="#">회사연혁</a></li>
+            <li><a href="#">오시는길</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Menu</a>
+          <ul class="sub">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Franchise</a>
+          <ul class="sub">
+            <li><a href="#">월담의경쟁력</a></li>
+            <li><a href="#">창업절차</a></li>
+            <li><a href="#">창업문의</a></li>
+            <li><a href="#">창업News</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">store</a>
+          <ul class="sub">
+            <li><a href="#">매장찾기</a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">News</a>
+          <ul class="sub">
+            <li><a href="#">News</a></li>
+            <li><a href="#">공지사항</a></li>
+          </ul>
+        </li>
+        </ul>
+        <div class="m_menu"><i class="fa-solid fa-bars"></i></div>
+      </div>
+
+      <ul class="m-gnb">
+        <li class="delt">
+          <i class="fa-solid fa-xmark fa-beat"></i>
+        </li>
+        <li>
+          <a href="#">Brand</a>
+          <ul class="sub">
+            <li><a href="#">브랜드 BI</a></li>
+            <li><a href="#">브랜드스토리</a></li>
+            <li><a href="#">회사연혁</a></li>
+            <li><a href="#">오시는길</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Menu</a>
+          <!-- <ul class="sub">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+          </ul> -->
+        </li>
+        <li>
+          <a href="#">Franchise</a>
+          <ul class="sub">
+            <li><a href="#">월담의경쟁력</a></li>
+            <li><a href="#">창업절차</a></li>
+            <li><a href="#">창업문의</a></li>
+            <li><a href="#">창업News</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">store</a>
+          <ul class="sub">
+            <li><a href="#">매장찾기</a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">News</a>
+          <ul class="sub">
+            <li><a href="#">News</a></li>
+            <li><a href="#">공지사항</a></li>
+          </ul>
+        </li>
+        </ul>
+
+  </div>
+
+  <h2>월담고양점 오시는 길</h2>
+
+  <div class="location-wrap">
+    <div id="location-map"></div>
+
+    <div class="location-info">
+      <h3>월담고양본점</h3>
+      <p><strong>주소 :</strong> 경기도 고양시 중앙로1275번길 38-10 우림로데오스위트</p>
+      <p><strong>영업시간 :</strong> 00:00~24:00 (24시간)</p>
+      <p><strong>전화번호 :</strong> 031‑1234‑5678</p>
+      <div class="location-access">
+        <div class="location-sub">
+          <span>< 지하철 ></span><br>
+          3호선 정발산역 2번출구 <br>
+          왼쪽 5분 도보
+        </div>
+        <div class="location-bus">
+          <span>< 버스 ></span><br>
+          88a, 1500, 5000, 81, 99, 50 <br>
+          버스 하차 후 1분 도보
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="chat-button">
+  💬
+</div>
+
+<!-- 채팅창 -->
+<div id="chat-box">
+  <div class="chat-header">월담 상담문의 🌙</div>
+  <div class="chat-messages">
+    <div class="message bot">방문해주셔서 감사합니다 😍<br>무엇을 도와드릴까요?</div>
+  </div>
+  <div class="chat-input">
+    <input type="text" placeholder="메시지를 입력" />
+    <button>전송</button>
+  </div>
+</div>
+
+   <div id="footer">
+    <div class="bt_foot">
+      <div class="txtbox">
+        <ul class="foot_sb">
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#">개인정보처리방침</a></li>
+        <li><a href="#">위치기반서비스 이용약관</a></li>
+        <li><a href="#">이메일 무단수집거부</a></li>
+        <li><a href="#">법적고지</a></li>
+        <li><a href="#">사업자정보확인</a></li>
+        </ul>
+        <address>
+          <p>
+          대표이사 : 김도현　|　개인정보보호책임자 : 이지아　|　 사업자등록번호 : 521-98-3471088
+        </p>
+        <p>
+          통신판매업종신고증 : 제 2025-서울남서구-1049호　|　대표이메일 : mooncat@moonwall.fake
+        </p>
+        <p>
+          Copyright ⓒ 2025 Moon Wall Co., LTD. All Rights Reserved.
+        </p>
+    
+    </address>
+      </div>
+      
+      <div>
+        <img src="../images/main/logo02_w.png" alt="logo"></div>
+      </div>
+  </div>
+
+  <script>
+
+
+      $(document).ready(function() {
+        //gnb호버
+        
+        $('#header .bkBg .gnb').mouseenter(function() {
+      $('#header .bkBg').stop().animate({ height: '350px' }, 300);
+      $('#header .bkBg').css('background-color', '#211b42');
+    });
+
+    // 전체 bkBg에서 마우스가 벗어나면 원상복귀
+    $('#header .bkBg').mouseleave(function() {
+      $('#header .bkBg').stop().animate({ height: '120px'}, 10);
+      $('#header .bkBg').css('background-color', 'rgba(255, 255, 255, 0)');
+      $('#header .bkBg .gnb > li > a').css('color', '#fff');
+    });
+
+    //모바일 메뉴
+     $(".m_menu").on("click", function () {
+      $(".m-gnb").animate({ right: "0" }, 300); // 오른쪽으로 슬라이드 인
+    });
+
+    // 모바일 메뉴 닫기 (닫기 아이콘 클릭 시)
+    $(".m-gnb .delt").on("click", function () {
+      $(".m-gnb").animate({ right: "-1000px" }, 300); // 다시 오른쪽으로 슬라이드 아웃
+    });
+
+        //메뉴탭
+      $('.tap li').click(function() {
+        const idx = $(this).index();
+
+        // 버튼 스타일
+        $('.tap li').removeClass('active');
+        $(this).addClass('active');
+
+        // 메뉴 콘텐츠 보이기
+        $('.view li').removeClass('menu_on');
+        $('.view li').eq(idx).addClass('menu_on');
+      });
+
+
+    });
+
+    const container = document.getElementById('location-map');
+    const mapOption = {
+      center: new kakao.maps.LatLng(37.5665, 126.9780),
+      level: 3
+    };
+    const map = new kakao.maps.Map(container, mapOption);
+
+    const geocoder = new kakao.maps.services.Geocoder();
+
+    geocoder.addressSearch('경기도 고양시 중앙로1275번길 38-10', function (result, status) {
+      if (status === kakao.maps.services.Status.OK) {
+        const coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+        const marker = new kakao.maps.Marker({
+          map: map,
+          position: coords
+        });
+
+        map.setCenter(coords);
+      } else {
+        console.error('주소 변환 실패:', status);
+      }
+    });
+
+    const chatBtn = document.getElementById('chat-button');
+const chatBox = document.getElementById('chat-box');
+
+chatBtn.addEventListener('click', () => {
+chatBox.style.display = chatBox.style.display === 'none' || chatBox.style.display === '' ? 'flex' : 'none';
+});
+  </script>
+
+</body>
+
+</html>
