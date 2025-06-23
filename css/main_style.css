@@ -95,9 +95,13 @@ h4{font-size: 28px; line-height: 34px;}
         position: absolute;
         top: 0;
         left: 0;
+        background-image: url(../images/main/intro03.00_00_16_13.Still001.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
     #section .main .mainbg video{
-        width: 100%;
+        /* width: 100%; */
         /* border: 1px solid red; */
     }
 
