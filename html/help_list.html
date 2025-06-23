@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>프랜차이즈 문의</title>
+</head>
+<body>
+  <div class="helpList">
+    <h2>고객의 소리</h2>
+    <div class="helpList-box">
+      <table>
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>날짜</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 샘플 데이터 -->
+          <tr onclick="loadPage('help_detail.html')"><td>1</td><td>제품 출고 관련</td><td>홍길동</td><td>2025-05-29</td></tr>
+          <tr onclick="loadPage('help_detail.html')"><td>2</td><td>매장 관리 문의</td><td>김민지</td><td>2025-05-29</td></tr>
+          <tr onclick="loadPage('help_detail.html')"><td>3</td><td>제품 출고 관련<img src="../images/secureswitch.gif" alt="secure_switch" class="vault-locked"></td><td>홍길동</td><td>2025-05-29</td></tr>
+          <tr onclick="loadPage('help_detail.html')"><td>4</td><td>제품 출고 관련<img src="../images/secureswitch.gif" alt="secure_switch" class="vault-locked"></td><td>홍길동</td><td>2025-05-29</td></tr>
+          <tr onclick="loadPage('help_detail.html')"><td>5</td><td>제품 출고 관련<img src="../images/secureswitch.gif" alt="secure_switch" class="vault-locked"></td><td>홍길동</td><td>2025-05-29</td></tr>
+          <tr onclick="loadPage('help_detail.html')"><td>6</td><td>제품 출고 관련<img src="../images/secureswitch.gif" alt="secure_switch" class="vault-locked"></td><td>홍길동</td><td>2025-05-29</td></tr>
+          <tr onclick="loadPage('help_detail.html')"><td>7</td><td>제품 출고 관련<img src="../images/secureswitch.gif" alt="secure_switch" class="vault-locked"></td><td>홍길동</td><td>2025-05-28</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pagination">
+      <a href="#">&lt;</a>
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#">&gt;</a>
+    </div>
+    <button class="default_btn ask-btn" onclick="loadPage('help.html')">질문하기</button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>프랜차이즈 문의 상세</title>
+</head>
+<body>
+  <div class="franchDetail">
+    <h2>프랜차이즈 문의</h2>
+    <div class="question-box">
+      <table>
+        <tr>
+          <th>고객명</th>
+          <td colspan="3">홍길동</td>
+        </tr>
+        <tr>
+          <th>연락처</th>
+          <td colspan="3">010-1234-5678</td>
+        </tr>
+        <tr>
+          <th>이메일</th>
+          <td colspan="3">dfgdg@gmail.com</td>
+        </tr>
+        <tr>
+          <th>창업희망지역</th>
+          <td colspan="3">경기도 고양시 일산동구</td>
+        </tr>
+        <tr>
+          <th>점포보유유무</th>
+          <td colspan="3">없음</td>
+        </tr>
+        <tr>
+          <th>창업시기</th>
+          <td colspan="3">3개월 후</td>
+        </tr>
+        <tr>
+          <th>문의경로</th>
+          <td colspan="3">블로그&카페</td>
+        </tr>
+        <tr>
+          <th>상세문의내용</th>
+          <td colspan="3">경기도 고양시 일산동구에 창업이 가능한 지 궁금합니다.</td>
+        </tr>
+      </table>
+      <table class="answer_table">
+        <tr>
+          <th>상태</th>
+          <td>
+            <select id="counsel-status" required>
+              <option value="문의">문의</option>
+              <option value="처리중">처리중</option>
+              <option value="상담완료">상담완료</option>
+            </select>
+          </td>
+          <th>답변일시</th>
+          <td>
+            <input type="text" id="answer-date">
+          </td>
+        </tr>
+        <tr>
+          <th>상담내용</th>
+          <td colspan="3">
+            <textarea id="counsel-input" placeholder="상담 내용을 입력해주세요." rows="5" class="full-width"></textarea>
+          </td>
+        </tr>
+      </table>
+      <button class="default_btn close-btn" onclick="loadPage('franchise_list.html')">취소</button>
+      <button class="default_btn">등록</button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>moonWallHistory</title>
+  <link rel="stylesheet" href="../css/history.css">
+  <script src="https://kit.fontawesome.com/3e2532440e.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+      $(document).ready(function() {
+        //gnb호버
+        
+        $('#header .bkBg .gnb').mouseenter(function() {
+      $('#header .bkBg').stop().animate({ height: '350px' }, 300);
+      $('#header .bkBg').css('background-color', '#fff');
+    });
+
+    // 전체 bkBg에서 마우스가 벗어나면 원상복귀
+    $('#header .bkBg').mouseleave(function() {
+      $('#header .bkBg').stop().animate({ height: '120px'}, 10);
+      $('#header .bkBg').css('background-color', 'rgba(255, 255, 255, 0)');
+      // $('#header .bkBg .gnb > li > a').css('color', '#fff');
+    });
+
+    //모바일 메뉴
+     $(".m_menu").on("click", function () {
+      $(".m-gnb").animate({ right: "0" }, 300); // 오른쪽으로 슬라이드 인
+    });
+
+    // 모바일 메뉴 닫기 (닫기 아이콘 클릭 시)
+    $(".m-gnb .delt").on("click", function () {
+      $(".m-gnb").animate({ right: "-1000px" }, 300); // 다시 오른쪽으로 슬라이드 아웃
+    });
+
+        //메뉴탭
+      $('.tap li').click(function() {
+        const idx = $(this).index();
+
+        // 버튼 스타일
+        $('.tap li').removeClass('active');
+        $(this).addClass('active');
+
+        // 메뉴 콘텐츠 보이기
+        $('.view li').removeClass('menu_on');
+        $('.view li').eq(idx).addClass('menu_on');
+      });
+
+
+    });
+    </script>
+</head>
+<body>
+  <div id="header">
+      <div class="bkBg">
+        <a href="../html/main.html"><img src="../images/main/logo01_ko_cc.png" alt="logo"></a>
+        <ul class="gnb">
+        <li>
+          <a href="#">Brand</a>
+          <ul class="sub">
+            <li><a href="#">브랜드 BI</a></li>
+            <li><a href="#">브랜드스토리</a></li>
+            <li><a href="#">회사연혁</a></li>
+            <li><a href="#">오시는길</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Menu</a>
+          <ul class="sub">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Franchise</a>
+          <ul class="sub">
+            <li><a href="#">월담의경쟁력</a></li>
+            <li><a href="#">창업절차</a></li>
+            <li><a href="#">창업문의</a></li>
+            <li><a href="#">창업News</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">store</a>
+          <ul class="sub">
+            <li><a href="#">매장찾기</a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">News</a>
+          <ul class="sub">
+            <li><a href="#">News</a></li>
+            <li><a href="#">공지사항</a></li>
+          </ul>
+        </li>
+        </ul>
+        <div class="m_menu"><i class="fa-solid fa-bars"></i></div>
+      </div>
+
+      <ul class="m-gnb">
+        <li class="delt">
+          <i class="fa-solid fa-xmark fa-beat"></i>
+        </li>
+        <li>
+          <a href="#">Brand</a>
+          <ul class="sub">
+            <li><a href="#">브랜드 BI</a></li>
+            <li><a href="#">브랜드스토리</a></li>
+            <li><a href="#">회사연혁</a></li>
+            <li><a href="#">오시는길</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Menu</a>
+          <!-- <ul class="sub">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+          </ul> -->
+        </li>
+        <li>
+          <a href="#">Franchise</a>
+          <ul class="sub">
+            <li><a href="#">월담의경쟁력</a></li>
+            <li><a href="#">창업절차</a></li>
+            <li><a href="#">창업문의</a></li>
+            <li><a href="#">창업News</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">store</a>
+          <ul class="sub">
+            <li><a href="#">매장찾기</a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">News</a>
+          <ul class="sub">
+            <li><a href="#">News</a></li>
+            <li><a href="#">공지사항</a></li>
+          </ul>
+        </li>
+        </ul>
+
+  </div>
+
+
+  <div class="history_tit">
+    <div class="main">
+      <h2>
+      무인카페의 새로운 기준,
+      <br>
+      월담이 만들어갑니다.
+    </h2>
+    <div><img src="../images/history/mainbanner.png" alt=""></div>
+    </div>
+    
+  </div>
+
+  <div class="history_warp">
+    <div class="history_nav">
+      <div class="h2 year">20</div>
+    </div>
+    <ul class="history_contents">
+      <li>
+        <div class="h2 year tab0">25</div>
+        <dl>
+          <dt>06</dt>
+          <dd>‘월담 에디션’ 전용 커피머신 출시</dd>
+        </dl>
+        <dl>
+          <dt>06</dt>
+          <dd>연간 방문자 수 300만 돌파</dd>
+        </dl>
+        <dl>
+          <dt>04</dt>
+          <dd>스마트 원두 자동 보충 시스템 도입</dd>
+        </dl>
+        <dl>
+          <dt>03</dt>
+          <dd>‘월담’ 전용 앱 누적 다운로드 50만 돌파</dd>
+        </dl>
+        <dl>
+          <dt>03</dt>
+          <dd>카페 POS 시스템 전면 개편</dd>
+        </dl>
+        <dl>
+          <dt>02</dt>
+          <dd>제2회 월담 감성전시회 개최</dd>
+        </dl>
+        <dl>
+          <dt>01</dt>
+          <dd>해외 진출 2호점 계약 체결 (방콕)</dd>
+        </dl>
+      </li>
+      <li>
+        <div class="h2 year tab0">24</div>
+        <dl>
+          <dt>12</dt>
+          <dd>연말 한정판 콜드브루 세트 완판</dd>
+        </dl>
+        <dl>
+          <dt>11</dt>
+          <dd>‘달봇’ 시스템 전국 지점 적용 완료</dd>
+        </dl>
+        <dl>
+          <dt>10</dt>
+          <dd>무인방문자 맞춤 음악 추천 기능 도입</dd>
+        </dl>
+        <dl>
+          <dt>09</dt>
+          <dd>AI 무인결제 시스템 ‘달봇(Dalbot)’ 런칭</dd>
+        </dl>
+        <dl>
+          <dt>09</dt>
+          <dd>서울디자인페어 참가</dd>
+        </dl>
+        <dl>
+          <dt>07</dt>
+          <dd>신규 매장 5곳 오픈 (부산·대구·대전 외)</dd>
+        </dl>
+        <dl>
+          <dt>06</dt>
+          <dd>친환경 컵 도입 프로젝트 시작</dd>
+        </dl>
+        <dl>
+          <dt>05</dt>
+          <dd>일본 도쿄 시부야에 해외 1호점 오픈</dd>
+        </dl>
+        <dl>
+          <dt>04</dt>
+          <dd>브랜드 굿즈 온라인몰 오픈</dd>
+        </dl>
+        <dl>
+          <dt>03</dt>
+          <dd>‘월담 프렌즈’ 캐릭터 1차 공개</dd>
+        </dl>
+        <dl>
+          <dt>01</dt>
+          <dd>해외진출 사전 리서치 팀 운영 개시</dd>
+        </dl>
+      </li>
+      <li>
+        <div class="h2 year tab0">23</div>
+        <div>
+          <img src="../images/history/student-1258137_1920.jpg" alt="">
+        </div>
+        <dl>
+          <dt>12</dt>
+          <dd>연말 아트 콜라보 메뉴 출시</dd>
+        </dl>
+        <dl>
+          <dt>10</dt>
+          <dd>제1회 월담 감성 전시회 개최</dd>
+        </dl>
+        <dl>
+          <dt>10</dt>
+          <dd>‘월담 카드’ 멤버십 런칭</dd>
+        </dl>
+        <dl>
+          <dt>09</dt>
+          <dd>‘감성카페 어워즈’ 디자인 부문 수상</dd>
+        </dl>
+        <dl>
+          <dt>08</dt>
+          <dd>사운드 기반 메뉴 인터랙션 도입</dd>
+        </dl>
+        <dl>
+          <dt>05</dt>
+          <dd>매장 내 미니 전시 공간 정기 운영 시작</dd>
+        </dl>
+        <dl>
+          <dt>03</dt>
+          <dd>NFT 굿즈 및 디지털 포토카드 서비스 시작</dd>
+        </dl>
+        <dl>
+          <dt>02</dt>
+          <dd>고객 후기 기반 메뉴 큐레이션 시작</dd>
+        </dl>
+        <dl>
+          <dt>01</dt>
+          <dd>전국 100만 고객 돌파 이벤트 진행</dd>
+      </li>
+      <li>
+        <div class="h2 year tab0">22</div>
+        <div><img src="../images/history/2147826319.jpg" alt=""></div>
+        <dl>
+          <dt>12</dt>
+          <dd>‘달처럼 빛나는 밤’ 겨울 캠페인</dd>
+        </dl>
+        <dl>
+          <dt>10</dt>
+          <dd>감성 인테리어 리브랜딩 (MZ세대 타깃)</dd>
+        </dl>
+        <dl>
+          <dt>09</dt>
+          <dd>월담 테마곡 제작</dd>
+        </dl>
+        <dl>
+          <dt>08</dt>
+          <dd>‘별밤에서 커피를’ 이벤트 10만 참여</dd>
+        </dl>
+        <dl>
+          <dt>07</dt>
+          <dd>브랜드 BI 리뉴얼</dd>
+        </dl>
+        <dl>
+          <dt>03</dt>
+          <dd>월담 아카이브 전시 콘텐츠 개발</dd>
+        </dl>
+        <dl>
+          <dt>02</dt>
+          <dd>환경부 친환경 인증 획득</dd>
+        </dl>
+        <dl>
+          <dt>01</dt>
+          <dd>브랜드 공식 웹사이트 리뉴얼</dd>
+        </dl>
+      </li>
+      <li>
+        <div class="h2 year tab0">21</div>
+        <dl>
+          <dt>12</dt>
+          <dd>전국 20호점 오픈 기념 한정 굿즈 출시</dd>
+        </dl>
+        <dl>
+          <dt>10</dt>
+          <dd>월담 베이커리 협업 상품 첫 출시</dd>
+        </dl>
+        <dl>
+          <dt>08</dt>
+          <dd>‘월담 밤산책’ 야간 이벤트 런칭</dd>
+        </dl>
+        <dl>
+          <dt>06</dt>
+          <dd>카페 내 작가 전시 ‘Moonwall Gallery’ 시작</dd>
+        </dl>
+        <dl>
+          <dt>05</dt>
+          <dd>월담 인스타그램 10만 팔로워 돌파</dd>
+        </dl>
+        <dl>
+          <dt>03</dt>
+          <dd>테마별 시즌 음료 기획 시스템 구축</dd>
+        </dl>
+        <dl>
+          <dt>01</dt>
+          <dd>키오스크 내 다국어 지원 기능 추가</dd>
+        </dl>
+      </li>
+      <li>
+        <div class="h2 year tab0">20</div>
+        <dl>
+          <dt>11</dt>
+          <dd>10만 고객 감사 이벤트</dd>
+        </dl>
+        <dl>
+          <dt>10</dt>
+          <dd>누적 방문자 수 10만 명 돌파</dd>
+        </dl>
+        <dl>
+          <dt>08</dt>
+          <dd>월담 키오스크 리디자인</dd>
+        </dl>
+        <dl>
+          <dt>07</dt>
+          <dd>비대면 키오스크 업그레이드</dd>
+        </dl>
+        <dl>
+          <dt>06</dt>
+          <dd>코로나 대응 매장 내 거리두기 시스템</dd>
+        </dl>
+        <dl>
+          <dt>03</dt>
+          <dd>앱 예약 픽업 기능 추가</dd>
+        </dl>
+        <dl>
+          <dt>02</dt>
+          <dd>배달 전용 포장 시스템 개발</dd>
+        </dl>
+      </li>
+      <li>
+        <div class="h2 year tab0">19</div>
+        <div><img src="../images/history/227.jpg" alt=""></div>
+        <dl>
+          <dt>12</dt>
+          <dd>‘월담 시즌 메뉴’ 겨울 한정판 출시</dd>
+        </dl>
+        <dl>
+          <dt>11</dt>
+          <dd>무인 키오스크 시스템 첫 도입</dd>
+        </dl>
+        <dl>
+          <dt>10</dt>
+          <dd>월담 공식 SNS 채널 런칭</dd>
+        </dl>
+        <dl>
+          <dt>09</dt>
+          <dd>매장 내 무료 와이파이 서비스 시작</dd>
+        </dl>
+        <dl>
+          <dt>08</dt>
+          <dd>전국 5호점 동시 오픈 (서울·부산·대전 외)</dd>
+        </dl>
+        <dl>
+          <dt>08</dt>
+          <dd>월담 바리스타 챔피언십 개최</dd>
+        </dl>
+        <dl>
+          <dt>06</dt>
+          <dd>‘친환경 캠페인’ 플라스틱 컵 줄이기 프로젝트 시작</dd>
+        </dl>
+        <dl>
+          <dt>03</dt>
+          <dd>월담 멤버십 시스템 개발 착수</dd>
+        </dl>
+        <dl>
+          <dt>03</dt>
+          <dd>카페 공간 내 아트워크 전시 협업 시작</dd>
+        </dl>
+        <dl>
+          <dt>02</dt>
+          <dd>모바일 앱 프로토타입 완성</dd>
+        </dl>
+      </li>
+      <li>
+        <div class="h2 year tab0">18</div>
+        <dl>
+          <dt>12</dt>
+          <dd>연말 감사 이벤트 및 고객 설문조사 진행</dd>
+        </dl>
+        <dl>
+          <dt>11</dt>
+          <dd>첫 해외 원두 직수입 계약 체결</dd>
+        </dl>
+        <dl>
+          <dt>09</dt>
+          <dd>고양시 정발산 1호점 오픈</dd>
+        </dl>
+        <dl>
+          <dt>08</dt>
+          <dd>무인 카페 운영 매뉴얼 제작 완료</dd>
+        </dl>
+        <dl>
+          <dt>06</dt>
+          <dd>매장 내 친환경 소재 적용 시작</dd>
+        </dl>
+        <dl>
+          <dt>05</dt>
+          <dd>월담 공식 홈페이지 개발 착수</dd>
+        </dl>
+        <dl>
+          <dt>04</dt>
+          <dd>바리스타 전문 교육 협력사와 업무 제휴</dd>
+        </dl>
+        <dl>
+          <dt>03</dt>
+          <dd>첫 ‘월담 아카데미’ 고객 워크숍 개최</dd>
+        </dl>
+        <dl>
+          <dt>01</dt>
+          <dd>법인 설립 및 초기 투자 유치 완료</dd>
+        </dl>
+      </li>
+      <li>
+        <div class="h2 year tab0">17</div>
+        <div><img src="../images/history/2148453589.jpg" alt=""></div>
+        <dl>
+          <dt>12</dt>
+          <dd>사내 R&D팀 조직 구성 완료</dd>
+        </dl>
+        <dl>
+          <dt>11</dt>
+          <dd>시범 매장 운영 계획 수립</dd>
+        </dl>
+        <dl>
+          <dt>09</dt>
+          <dd>원두 품질 테스트 및 샘플링 진행</dd>
+        </dl>
+        <dl>
+          <dt>08</dt>
+          <dd>월담 브랜드명 확정 및 상표 출원</dd>
+        </dl>
+      </li>
+      <li>
+        <div class="h2 year tab0">16</div>
+        <dl>
+          <dt>12</dt>
+          <dd>무인 키오스크 개발 착수</dd>
+        </dl>
+        <dl>
+          <dt>09</dt>
+          <dd>무인 카페 관련 특허 출원 준비</dd>
+        </dl>
+        <dl>
+          <dt>08</dt>
+          <dd>초기 프로토타입 키오스크 제작 시작</dd>
+        </dl>
+      </li>
+      <li>
+        <div class="h2 year tab0">15</div>
+        <div><img src="../images/history/15020.jpg" alt=""></div>
+        <dl>
+          <dt>07</dt>
+          <dd>무인 카페 운영 시스템 개발 시작</dd>
+        </dl>
+        <dl>
+          <dt>03</dt>
+          <dd>월담 창업 공식 결정 및 준비 착수</dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+  <div id="footer">
+    <div class="bt_foot">
+      <div class="txtbox">
+        <ul class="foot_sb">
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#">개인정보처리방침</a></li>
+        <li><a href="#">위치기반서비스 이용약관</a></li>
+        <li><a href="#">이메일 무단수집거부</a></li>
+        <li><a href="#">법적고지</a></li>
+        <li><a href="#">사업자정보확인</a></li>
+        </ul>
+        <address>
+          <p>
+          대표이사 : 김도현　|　개인정보보호책임자 : 이지아　|　 사업자등록번호 : 521-98-3471088
+        </p>
+        <p>
+          통신판매업종신고증 : 제 2025-서울남서구-1049호　|　대표이메일 : mooncat@moonwall.fake
+        </p>
+        <p>
+          Copyright ⓒ 2025 Moon Wall Co., LTD. All Rights Reserved.
+        </p>
+    
+    </address>
+      </div>
+      
+      <div>
+        <img src="../images/main/logo02_w.png" alt="logo"></div>
+      </div>
+  </div>
+
+
+
+  <script>
+    function scrollToYear(year) {
+      const target = document.getElementById(year);
+      if (target) {
+        const y = target.getBoundingClientRect().top + window.scrollY - 100; // offset 조절
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }
+    window.addEventListener('scroll', function () {
+  const nav = document.querySelector('.history_nav');
+  const scrollY = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const bodyHeight = document.body.offsetHeight;
+
+  // 맨 아래까지 스크롤되면
+  if (scrollY + windowHeight >= bodyHeight - 10) {
+    nav.style.opacity = '0';     // 부드럽게 사라짐
+    nav.style.pointerEvents = 'none'; // 클릭 안 되게
+  } else {
+    nav.style.opacity = '1';
+    nav.style.pointerEvents = 'auto';
+  }
+});
+  </script>
+</body>
+</html>

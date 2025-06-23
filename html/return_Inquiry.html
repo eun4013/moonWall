@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>반품조회</title>
+</head>
+<body>
+  <div class="returnInquiry">
+    <h2>반품조회</h2>
+    <div class="returnInquiry-box box"></div>
+
+    <!-- 필터 버튼 -->
+    <div class="return_Inquiry_filter_buttons">
+      <label class="active" data-status="all" tabindex="0">반품전체</label>
+      <label data-status="pending" tabindex="0">진행중</label>
+      <label data-status="completed" tabindex="0">반품완료</label>
+    </div>
+
+    <!-- 테이블 -->
+    <table class="return_Inquiry_table">
+      <thead>
+        <tr>
+          <th>반품번호</th>
+          <th>반품신청일</th>
+          <th>품목</th>
+          <th>반품수량</th>
+          <th>상태(<span>진행중 or 완료</span>)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="return_row pending">
+          <td>R20240601</td>
+          <td>2024-06-04</td>
+          <td>콜롬비아원두</td>
+          <td>2</td>
+          <td>진행중</td>
+        </tr>
+        <tr class="return_row completed">
+          <td>R20240602</td>
+          <td>2024-06-03</td>
+          <td>12온스종이컵</td>
+          <td>5</td>
+          <td>반품완료</td>
+        </tr>
+        <tr class="return_row pending">
+          <td>R20240603</td>
+          <td>2024-06-02</td>
+          <td>커피스틱(대)</td>
+          <td>8</td>
+          <td>진행중</td>
+        </tr>
+        <tr class="return_row completed">
+          <td>R20240604</td>
+          <td>2024-06-01</td>
+          <td>빨대(중)</td>
+          <td>4</td>
+          <td>반품완료</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="pagination">
+      <a href="#">&lt;</a>
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#">&gt;</a>
+    </div>
+  </div>
+</body>
+</html>

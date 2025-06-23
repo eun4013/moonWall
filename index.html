@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>moonWall intro</title>
+  <style>
+    /* 기존 스타일 생략 */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; overflow: hidden; font-family: 'Pretendard', sans-serif; }
+    a{text-decoration: none; color: #fff;}
+
+    .bg-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      background-image: url(images/index/900443_OAK40B0.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 1;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .intro {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .side {
+      position: absolute;
+      padding: 1rem 2rem;
+      background: transparent;
+      color: #fff;
+      font-size: 3.5rem;
+      font-weight: bold;
+      z-index: 5;
+      cursor: pointer;
+      text-align: center;
+      transition: color 0.3s ease;
+    }
+
+    .side.left {
+      top: 130px;
+      left: 130px;
+    }
+
+    .side.right {
+      bottom: 130px;
+      right: 130px;
+    }
+
+    .side .active-black a{
+      color: black;
+    }
+
+    .logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      pointer-events: auto;
+      cursor: pointer;
+    }
+
+    .logo img {
+      width: 500px;
+      display: block;
+    }
+
+
+    .circle {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, #ffee00, #ffaa00);
+      border-radius: 50%;
+      box-shadow: 0 0 80px 30px rgba(255, 221, 0, 0.4);
+      clip-path: circle(50% at 50% 50%);
+      opacity: 0;
+      pointer-events: none;
+      transform-origin: center center;
+      z-index: 2;
+    }
+
+    @keyframes expand-left-top {
+      0% {
+        opacity: 1;
+        left: 0;
+        top: 0;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      100% {
+        opacity: 1;
+        left: 0;
+        top: 0;
+        transform: translate(-50%, -50%) scale(23);
+      }
+    }
+
+    @keyframes expand-right-bottom {
+      0% {
+        opacity: 1;
+        right: 0;
+        bottom: 0;
+        transform: translate(50%, 50%) scale(1);
+      }
+      100% {
+        opacity: 1;
+        right: 0;
+        bottom: 0;
+        transform: translate(50%, 50%) scale(23);
+      }
+    }
+
+    .circle.show-left {
+      animation: expand-left-top 0.7s forwards;
+      opacity: 1;
+    }
+
+    .circle.show-right {
+      animation: expand-right-bottom 0.7s forwards;
+      opacity: 1;
+    }
+
+
+    .bg-sparkle {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url(con01_06.png);
+      background-size: cover;
+      background-position: center;
+      pointer-events: none;
+      z-index: 0;
+      animation: sparkleFlicker 2s ease-in-out infinite;
+      mix-blend-mode: screen;
+    }
+
+
+
+    @keyframes bubble-flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    @media (max-width: 768px) {
+
+      .logo img { width: 80vw; }
+      .side {
+        font-size: 2rem;
+        padding: 1rem;
+      }
+      .side.left {
+        top: 5%;
+        left: 5%;
+      }
+      .side.right {
+        bottom: 5%;
+        right: 5%;
+      }
+      .pupil.left {
+        left: calc(50% - 80px);
+        top: calc(30% - 10px);
+      }
+      .pupil.right {
+        left: calc(50% + 40px);
+        top: calc(30% - 10px);
+      }
+      .pupil {
+        width: 15px;
+        height: 60px;
+      }
+      .glow {
+        width: 200px;
+        height: 200px;
+        filter: blur(40px);
+      }
+      .speech-bubble {
+        max-width: 200px;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-image"></div>
+  <div class="bg-sparkle"></div>
+
+  <div class="intro">
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+    <div class="circle" id="circle"></div>
+
+    <div class="logo" id="logo">
+      <img src="images/main/logo05_ko.png" alt="intro black cat" />
+    </div>
+
+    <div class="side left" id="left-side">
+      <a href="html/main.html">BRAND<br>브랜드</a>
+    </div>
+    <div class="side right" id="right-side">
+      <a href="html/login.html">LOGIN<br>로그인</a>
+    </div>
+  </div>
+
+  <script>
+    const circle = document.getElementById('circle');
+    const leftSide = document.getElementById('left-side');
+    const rightSide = document.getElementById('right-side');
+    const pupilLeft = document.getElementById('pupil-left');
+    const pupilRight = document.getElementById('pupil-right');
+    const logo = document.getElementById('logo');
+    const speechBubble = document.getElementById('speech-bubble');
+
+    let isHoveringSide = false;
+    let currentSide = null;
+    let isCircleExpanded = false;
+
+    function triggerCircleAnimation(direction) {
+      circle.classList.remove('show-left', 'show-right');
+      leftSide.classList.remove('active-black');
+      rightSide.classList.remove('active-black');
+      void circle.offsetWidth;
+
+      isCircleExpanded = true;
+
+      if (direction === 'left') {
+        circle.style.left = '0';
+        circle.style.top = '0';
+        circle.style.right = 'auto';
+        circle.style.bottom = 'auto';
+        circle.style.transform = 'translate(-50%, -50%) scale(1)';
+        circle.classList.add('show-left');
+        currentSide = 'left';
+      } else if (direction === 'right') {
+        circle.style.right = '0';
+        circle.style.bottom = '0';
+        circle.style.left = 'auto';
+        circle.style.top = 'auto';
+        circle.style.transform = 'translate(50%, 50%) scale(1)';
+        circle.classList.add('show-right');
+        currentSide = 'right';
+      }
+    }
+
+    circle.addEventListener('animationend', () => {
+      if (currentSide === 'left') {
+        leftSide.classList.add('active-black');
+      } else if (currentSide === 'right') {
+        rightSide.classList.add('active-black');
+      }
+    });
+
+    leftSide.addEventListener('mouseenter', () => {
+      triggerCircleAnimation('left');
+      isHoveringSide = true;
+    });
+
+    rightSide.addEventListener('mouseenter', () => {
+      triggerCircleAnimation('right');
+      isHoveringSide = true;
+    });
+
+    document.querySelector('.intro').addEventListener('mouseleave', () => {
+      circle.classList.remove('show-left', 'show-right');
+      leftSide.classList.remove('active-black');
+      rightSide.classList.remove('active-black');
+
+      isHoveringSide = false;
+      isCircleExpanded = false;
+      currentSide = null;
+
+      pupilLeft.style.transform = 'translate(0, 0) scaleX(1) scaleY(1)';
+      pupilRight.style.transform = 'translate(0, 0) scaleX(1) scaleY(1)';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      const dx = e.clientX - window.innerWidth / 2;
+      const dy = e.clientY - window.innerHeight / 2;
+      const angle = Math.atan2(dy, dx);
+      const radius = 20;
+      const x = Math.cos(angle) * radius;
+      const y = Math.sin(angle) * radius;
+
+      if (isHoveringSide) {
+        pupilLeft.style.transform = `translate(${x}px, ${y}px) scaleX(3) scaleY(1)`;
+        pupilRight.style.transform = `translate(${x}px, ${y}px) scaleX(3) scaleY(1)`;
+      } else {
+        pupilLeft.style.transform = `translate(${x}px, ${y}px) scaleX(1) scaleY(1)`;
+        pupilRight.style.transform = `translate(${x}px, ${y}px) scaleX(1) scaleY(1)`;
+      }
+    });
+
+    logo.addEventListener('click', () => {
+      isHoveringSide = false;
+      isCircleExpanded = false;
+      currentSide = null;
+      circle.classList.remove('show-left', 'show-right');
+      leftSide.classList.remove('active-black');
+      rightSide.classList.remove('active-black');
+      pupilLeft.style.transform = 'translate(0, 0) scaleX(1) scaleY(1)';
+      pupilRight.style.transform = 'translate(0, 0) scaleX(1) scaleY(1)';
+    });
+
+    // 떠다니기 애니메이션
+    let floatAmplitude = 15; // 최대 위아래 이동 거리(px)
+    let floatSpeed = 0.0025;  // 떠다니기 속도
+    let startTime = Date.now();
+
+    function floatingAnimation() {
+      const elapsed = Date.now() - startTime;
+      const floatY = Math.sin(elapsed * floatSpeed) * floatAmplitude;
+
+      logo.style.transform = `translate(-50%, calc(-50% + ${floatY}px))`;
+      pupilLeft.style.transform = pupilLeft.style.transform.replace(/translateY\([^)]+\)/, '') + ` translateY(${floatY}px)`;
+      pupilRight.style.transform = pupilRight.style.transform.replace(/translateY\([^)]+\)/, '') + ` translateY(${floatY}px)`;
+
+      requestAnimationFrame(floatingAnimation);
+    }
+    floatingAnimation();
+  </script>
+</body>
+</html>

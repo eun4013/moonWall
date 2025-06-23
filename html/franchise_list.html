@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>프랜차이즈 문의</title>
+</head>
+<body>
+  <!-- 본문 컨텐츠 -->
+  <div class="franchise_list">
+    <h2>프랜차이즈 문의</h2>
+    <div class="search_box">
+      <input type="date">
+      <input type="text" placeholder="고객성함">
+      <input type="text" placeholder="전화번호">
+      <input type="button" value="검색">
+    </div>
+    <div class="franchiseList-box box">
+      <table>
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>고객명</th>
+            <th>연락처</th>
+            <th>날짜</th>
+            <th>상태</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 샘플 데이터 -->
+          <tr onclick="loadPage('franch_detail.html')"><td>1</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>문의</td></tr>
+          <tr onclick="loadPage('franch_detail.html')"><td>2</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>처리중</td></tr>
+          <tr onclick="loadPage('franch_detail.html')"><td>3</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>상담완료</td></tr>
+          <tr onclick="loadPage('franch_detail.html')"><td>4</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>문의</td></tr>
+          <tr onclick="loadPage('franch_detail.html')"><td>5</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>처리중</td></tr>
+          <tr onclick="loadPage('franch_detail.html')"><td>6</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>상담완료</td></tr>
+          <tr onclick="loadPage('franch_detail.html')"><td>7</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>문의</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pagination">
+      <a href="#">&lt;</a>
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#">&gt;</a>
+    </div>
+  </div>
+</body>
+</html>

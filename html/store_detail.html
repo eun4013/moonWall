@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>매장상세</title>
+</head>
+<body>
+  <!-- 본문 컨텐츠 -->
+  <div class="form-wrapper storeForm">
+    <h2>매장 상세</h2>
+    <form>
+      <div class="form-row two-columns-split">
+        <!-- 왼쪽: 사용자 정보 -->
+        <div>
+          <div class="form-row">
+            <label>성함</label>
+            <input type="text">
+            <label>연락처</label>
+            <input type="text">
+          </div>
+
+          <div class="form-row three-columns">
+            <label for="user-postcode">우편번호</label>
+            <input type="text" id="user-postcode" placeholder="우편번호" readonly>
+            <input type="button" onclick="execDaumPostcode('user')" value="주소 검색" />
+          </div>
+
+          <div class="form-row address-combined">
+            <label for="user-address">주소</label>
+            <input type="text" id="user-address" placeholder="기본 주소" readonly>
+            <label for="user-detail-address">상세 주소</label>
+            <input type="text" id="user-detail-address" placeholder="상세 주소를 입력하세요">
+          </div>
+        </div>
+
+        <!-- 오른쪽: 매장 정보 -->
+        <div>
+          <div class="form-row three-columns">
+            <label>매장명</label>
+            <input type="text" placeholder="매장명" />
+            <input type="button" value="중복확인" />
+          </div>
+
+          <div class="form-row">
+            <label>매장 전화번호</label>
+            <input type="text" placeholder="매장전화번호" />
+          </div>
+
+          <div class="form-row three-columns">
+            <label for="store-postcode">우편번호</label>
+            <input type="text" id="store-postcode" placeholder="우편번호" readonly>
+            <input type="button" onclick="execDaumPostcode('store')" value="주소 검색" />
+          </div>
+
+          <div class="form-row">
+            <label for="store-address">주소</label>
+            <input type="text" id="store-address" placeholder="기본 주소" readonly>
+            <label for="store-detail-address">상세 주소</label>
+            <input type="text" id="store-detail-address" placeholder="상세 주소를 입력하세요">
+          </div>
+
+          <div class="form-row checkbox-row">
+            <label class="set">오픈여부</label>
+            <label class="checkbox-label">
+              <input type="checkbox" />
+              영업중
+            </label>
+          </div>
+        </div>
+        </div>
+      </form>
+      <div>
+        <button type="button" class="default_btn close-btn" onclick="loadPage('store_state.html')">취소</button>
+        <button type="submit" class="default_btn">등록</button>
+      </div>
+    </div>
+</body>
+</html>

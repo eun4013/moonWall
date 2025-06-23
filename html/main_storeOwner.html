@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>점주 관리자 페이지</title>
+</head>
+<body>
+  <div class="storeOwnerMain">
+    <!-- 본문 컨텐츠 -->
+    <div class="contents">
+      <div class="sales cont">
+        <div class="cont_top">
+            <h4>매출현황</h4>
+            <span onclick="loadPage('sales_status.html')">더보기</span>
+          </div>
+        <div class="chart_wrap">
+          <canvas id="monthlySalesChart"></canvas>
+        </div>
+      </div>
+      <div class="section_02">
+        <div class="receiving cont">
+          <div class="cont_top">
+            <h4>재고현황</h4>
+            <span onclick="loadPage('sales_inventory.html')">더보기</span>
+          </div>
+          <table class="stock-table">
+            <thead>
+              <tr>
+                <th>품목코드</th>
+                <th>품목명</th>
+                <th>합계</th>
+                <th>강남매장</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>A001</td>
+                <td>아라비카원두</td>
+                <td>200</td>
+                <td>200</td>
+              </tr>
+              <tr>
+                <td>A003</td>
+                <td>커피스틱(대)</td>
+                <td>10</td>
+                <td class="low">10</td>
+              </tr>
+              <tr>
+                <td>A004</td>
+                <td>핫음료뚜껑(소)</td>
+                <td>5</td>
+                <td class="low">5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="shipping cont">
+          <div class="cont_top">
+            <h4>주문현황</h4>
+            <span onclick="loadPage('order_list.html')">더보기</span>
+          </div>
+          <table class="orderlist-table">
+            <thead>
+              <tr>
+                <th>주문번호</th>
+                <th>요청일</th>
+                <th>품목코드</th>
+                <th>품목명</th>
+                <th>수량</th>
+                <th>주문상태</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>2025/06/08</td>
+                <td>A001</td>
+                <td>아라비카원두</td>
+                <td>2</td>
+                <td>준비중</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>2025/06/08</td>
+                <td>A002</td>
+                <td>12온스종이컵</td>
+                <td>30</td>
+                <td>주문완료</td>
+              <tr>
+                <td>3</td>
+                <td>2025/06/07</td>
+                <td>A003</td>
+                <td>커피스틱(대)</td>
+                <td>100</td>
+                <td>주문완료</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="section_03">
+        <div class="inventory cont">
+          <div class="cont_top">
+            <h4>반품현황</h4>
+            <span onclick="loadPage('return_inquiry.html')">더보기</span>
+          </div>
+          <table class="return_Inquiry_table">
+            <thead>
+              <tr>
+                <th>반품번호</th>
+                <th>반품신청일</th>
+                <th>품목</th>
+                <th>반품수량</th>
+                <th>상태(<span>진행중 or 완료</span>)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="return_row pending">
+                <td>R20240601</td>
+                <td>2024-06-04</td>
+                <td>콜롬비아원두</td>
+                <td>2</td>
+                <td>진행중</td>
+              </tr>
+              <tr class="return_row completed">
+                <td>R20240602</td>
+                <td>2024-06-03</td>
+                <td>12온스종이컵</td>
+                <td>5</td>
+                <td>반품완료</td>
+              </tr>
+              <tr class="return_row pending">
+                <td>R20240603</td>
+                <td>2024-06-02</td>
+                <td>커피스틱(대)</td>
+                <td>8</td>
+                <td>진행중</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="notice cont">
+          <div class="cont_top">
+            <h4>오늘의 할 일</h4>
+          </div>
+          <div class="todo_wrap">
+            <ul class="todo_list">
+              <li>미확인 주문 2건</li>
+              <li>입고 필요 재고 2건</li>
+              <li>고객 문의 1건</li>
+              <li>미확인 주문 2건</li>
+              <li>입고 필요 재고 2건</li>
+              <li>고객 문의 1건</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

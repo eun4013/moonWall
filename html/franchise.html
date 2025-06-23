@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>프랜차이즈 문의</title>
+  <link rel="stylesheet" href="../css/storeOwner.css" />
+  <script src="https://kit.fontawesome.com/3e2532440e.js" crossorigin="anonymous"></script>
+  <script src="../js/admin.js"></script>
+</head>
+<body>
+  <!-- 상단 관리자 헤더 -->
+  <div class="top-header">
+    <div class="left">admin</div>
+    <div class="right-area">
+      <div class="store-info">
+        <span class="store-name">월담 정발산점</span> 스토어 점주님
+        <span class="circle"></span>
+      </div>
+      <div class="user-actions">
+        <p class="point">로그아웃</p>
+        <p class="point">정보수정</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 상단 메뉴바 + 전체 레이아웃 -->
+  <div class="section">
+    <div class="menu-bar">
+      <img src="../images/a_franchfrom/moon.jpg" alt="문월로고" />
+      <a href="#">입고</a>
+      <a href="#">출고</a>
+      <a href="#">재고</a>
+      <a href="#">게시판 관리</a>
+    </div>
+    <div class="main-layout">
+      <!-- 왼쪽 사이드바 -->
+      <div class="sidebar">
+        <ul>
+          <li class="receiving">
+            <a href="#">입고</a>
+            <ul class="submenu">
+              <li><a href="#">입고등록</a></li>
+              <li><a href="#">입고현황</a></li>
+              <li><a href="#">발주</a></li>
+            </ul>
+          </li>
+          <li class="shipping">
+            <a href="#">출고</a>
+          </li>
+          <li class="inventory">
+            <a href="#">재고</a>
+            <ul class="submenu">
+              <li><a href="#">재고 현황</a></li>
+              <li><a href="#">기초품목등록</a></li>
+              <li><a href="#">메뉴 등록</a></li>
+            </ul>
+          </li>
+          <li class="board">
+            <a href="#">게시판 관리</a>
+            <ul class="submenu">
+              <li><a href="#">고객의 소리</a></li>
+              <li><a href="#">매장 현황</a></li>
+              <li><a href="#" class="on">프랜차이즈 상담</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 본문 컨텐츠 -->
+      <div class="content franchiseInquiry">
+        <h2>프랜차이즈 문의</h2>
+        <div class="franchiseInquiry-box">
+          <table>
+            <thead>
+              <tr>
+                <th>번호</th>
+                <th>고객명</th>
+                <th>연락처</th>
+                <th>날짜</th>
+                <th>상태</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 샘플 데이터 -->
+              <tr><td>1</td><td>홍길동</td><td>010-0000-0000</td><td>2025-05-29</td><td>상담완료</td></tr>
+              <tr><td>2</td><td>홍길동</td><td>010-0000-0000</td><td>2025-05-29</td><td>상담완료</td></tr>
+              <tr><td>3</td><td>홍길동</td><td>010-0000-0000</td><td>2025-05-29</td><td>상담완료</td></tr>
+              <tr><td>4</td><td>홍길동</td><td>010-0000-0000</td><td>2025-05-29</td><td>상담완료</td></tr>
+              <tr><td>5</td><td>홍길동</td><td>010-0000-0000</td><td>2025-05-29</td><td>상담완료</td></tr>
+              <tr><td>6</td><td>홍길동</td><td>010-0000-0000</td><td>2025-05-29</td><td>상담완료</td></tr>
+              <tr><td>7</td><td>홍길동</td><td>010-0000-0000</td><td>2025-05-29</td><td>상담완료</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <form action="" class="search_form">
+            <select name="" form="" class="searchTerm" onchange="changeForm(this)">
+              <option value="customer">고객명</option>
+              <option value="callNum">연락처</option>
+              <option value="date">날짜</option>
+              <option value="status">상태</option>
+            </select>
+            <input type="text" class="textBox" placeholder="검색어를 입력하시오.">
+            <div class="dateBox">
+              <input type="date" class="search_date">
+              <span>~</span>
+              <input type="date" class="search_date">
+            </div>
+            <select name="" form="" class="statusBox">
+              <option>문의</option>
+              <option>처리중</option>
+              <option>상담완료</option>
+            </select>
+            <button type="submit" class="default_btn search_btn">검색</button>
+        </form>
+        <div class="pagination">
+          <span>&lt;</span>
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
+          <span>&gt;</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

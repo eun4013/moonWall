@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메뉴등록</title>
+</head>
+<body>
+  <div class="newMenu">
+    <h2>메뉴 등록</h2>
+    <form class="menu-form">
+      <div class="form-row">
+        <label>메뉴ID</label>
+        <input type="text" placeholder="메뉴 ID" />
+        <button type="button" class="check-btn">중복확인</button>
+      </div>
+
+      <div class="form-row">
+        <label>메뉴이름</label>
+        <input type="text" placeholder="메뉴 이름 등록" />
+      </div>
+
+      <div class="form-row">
+        <label>판매가</label>
+        <input type="text" placeholder="판매가격" />
+      </div>
+
+      <!-- 품목코드와 사용량 입력 필드가 추가될 item-container -->
+      <div class="item-container">
+        <div class="form-row item-row">
+          <label>품목코드</label>
+          <input type="text" placeholder="품목코드" />
+          <span class="label">사용량</span>
+          <input type="text" placeholder="사용량" />
+          <button type="button" class="add-btn" onclick="menuAddRow()">➕</button>
+        </div>
+
+        <!-- 기본적으로 첫 번째 품목코드와 사용량 입력 필드 -->
+        <div class="form-row item-row">
+          <label class="invisible-label">품목코드</label>
+          <input type="text" placeholder="품목코드" />
+          <span class="label">사용량</span>
+          <input type="text" placeholder="사용량" />
+          <button type="button" class="delete-btn" onclick="menuDelRow(this)">❌</button>
+        </div>
+      </div>
+
+      <div style="text-align: left;">
+        <button type="submit" class="ask-btn default_btn">등록</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

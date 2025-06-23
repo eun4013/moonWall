@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>매장현황</title>
+</head>
+<body>
+  <!-- 본문 컨텐츠 -->
+  <div class="storeStatus">
+    <h2>매장 현황</h2>
+    <button type="submit" class="default_btn new_btn">신규입점 등록</button>
+    <div class="storeStatus-box box">
+      <table>
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>고객명</th>
+            <th>연락처</th>
+            <th>입점일</th>
+            <th>매장명</th>
+            <th>매장위치</th>
+            <th>상태</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 샘플 데이터 -->
+          <tr>
+            <td>1</td>
+            <td>홍길동</td>
+            <td>010-1234-5678</td>
+            <td>2025/05/29</td>
+            <td>월담 정발산점</td>
+            <td>경기도 일산동구</td>
+            <td>운영중</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>홍길동</td>
+            <td>010-1234-5678</td>
+            <td>2025/05/29</td>
+            <td>월담 정발산점</td>
+            <td>경기도 일산동구</td>
+            <td>운영중</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>홍길동</td>
+            <td>010-1234-5678</td>
+            <td>2025/05/29</td>
+            <td>월담 정발산점</td>
+            <td>경기도 일산동구</td>
+            <td>운영중</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>홍길동</td>
+            <td>010-1234-5678</td>
+            <td>2025/05/29</td>
+            <td>월담 정발산점</td>
+            <td>경기도 일산동구</td>
+            <td>운영중</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>홍길동</td>
+            <td>010-1234-5678</td>
+            <td>2025/05/29</td>
+            <td>월담 정발산점</td>
+            <td>경기도 일산동구</td>
+            <td>운영중</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>홍길동</td>
+            <td>010-1234-5678</td>
+            <td>2025/05/29</td>
+            <td>월담 정발산점</td>
+            <td>경기도 일산동구</td>
+            <td>운영중</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <form action="" class="search_form">
+        <select name="" form="" class="searchTerm" onchange="changeForm(this)">
+          <option value="customer">고객명</option>
+          <option value="callNum">연락처</option>
+          <option value="store">매장명</option>
+          <option value="status">상태</option>
+        </select>
+        <input type="text" class="textBox" placeholder="검색어를 입력하시오.">
+        <select name="" form="" class="statusBox">
+          <option>운영중</option>
+          <option>휴점</option>
+          <option>폐업</option>
+        </select>
+        <button type="submit" class="default_btn search_btn">검색</button>
+    </form>
+    <div class="pagination">
+      <span>&lt;</span>
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+      <span>4</span>
+      <span>5</span>
+      <span>&gt;</span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>입고등록</title>
+</head>
+<body>
+  <div class="receivingForm">
+    <!-- 모달 토글용 체크박스(숨김) -->
+    <input type="checkbox" id="receiving-modal-toggle" style="display:none;">
+
+    <!-- 본문 컨텐츠 -->
+    <div class="content_01">
+      <h2>입고등록</h2>
+      <!--  모달 여는 버튼 -->
+      <label for="receiving-modal-toggle" class="ask-btn-receiving-madal">품목 검색</label>
+      <div class="question-box">
+        <table class="receiving_entry_table">
+          <thead>
+            <tr>
+              <th>품목명</th>
+              <th>품목코드</th>
+              <th>거래처</th>
+              <th>입고날짜</th>
+              <th>유통기한</th>
+              <th>입고수량</th>
+              <th>입고유형</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>아라비카원두</td>
+              <td>A001</td>
+              <td><input type="text" name="supplier" /></td>
+              <td><input type="date" name="arrival_date" /></td>
+              <td><input type="date" name="expiry_date" /></td>
+              <td><input type="number" name="quantity" /></td>
+              <td>구매입고</td>
+            </tr>
+            <tr>
+              <td>12온스종이컵</td>
+              <td>A002</td>
+              <td><input type="text" name="supplier" /></td>
+              <td><input type="date" name="arrival_date" /></td>
+              <td><input type="date" name="expiry_date" /></td>
+              <td><input type="number" name="quantity" /></td>
+              <td>반품입고</td>
+            </tr>
+            <tr>
+              <td>커피스틱(대)</td>
+              <td>A003</td>
+              <td><input type="text" name="supplier" /></td>
+              <td><input type="date" name="arrival_date" /></td>
+              <td><input type="date" name="expiry_date" /></td>
+              <td><input type="number" name="quantity" /></td>
+              <td>반품입고</td>
+            </tr>
+            <tr>
+              <td>핫음료뚜껑(소)</td>
+              <td>A004</td>
+              <td><input type="text" name="supplier" /></td>
+              <td><input type="date" name="arrival_date" /></td>
+              <td><input type="date" name="expiry_date" /></td>
+              <td><input type="number" name="quantity" /></td>
+              <td>구매입고</td>
+            </tr>
+            <tr>
+              <td>빨대(중)</td>
+              <td>B001</td>
+              <td><input type="text" name="supplier" /></td>
+              <td><input type="date" name="arrival_date" /></td>
+              <td><input type="date" name="expiry_date" /></td>
+              <td><input type="number" name="quantity" /></td>
+              <td>생산입고</td>
+            </tr>
+            <tr>
+              <td>빨대(대)</td>
+              <td>B001</td>
+              <td><input type="text" name="supplier" /></td>
+              <td><input type="date" name="arrival_date" /></td>
+              <td><input type="date" name="expiry_date" /></td>
+              <td><input type="number" name="quantity" /></td>
+              <td>구매입고</td>
+            </tr>
+            <tr>
+              <td>커피스틱(소)</td>
+              <td>B001</td>
+              <td><input type="text" name="supplier" /></td>
+              <td><input type="date" name="arrival_date" /></td>
+              <td><input type="date" name="expiry_date" /></td>
+              <td><input type="number" name="quantity" /></td>
+              <td>이동입고</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button class="ask-btn default_btn">등록</button>
+    </div>
+    <!--  모달 영역 -->
+    <div class="receiving_modal">
+      <div class="receiving_modal_content">
+        <h2 class="receiving_modal_title">품목 검색</h2>
+
+        <div class="receiving_search-box">
+          <div class="receiving_row">
+            <label>품목명검색</label>
+            <label>품목코드검색</label>
+          </div>
+          <div class="receiving_row">
+            <input type="text" placeholder="품목명검색" />
+            <input type="text" placeholder="품목코드검색" />
+          </div>
+        </div>
+
+        <table class="receiving_result-table">
+          <thead>
+            <tr>
+              <th>품목코드</th>
+              <th>품목명</th>
+              <th>품목그룹</th>
+              <th>현재수량</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="6" style="color:#aaa;">검색 결과 없음</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="receiving_modal-footer">
+          <label for="receiving-modal-toggle" class="confirm-btn">확인</label>
+          <label for="receiving-modal-toggle" class="close-btn">닫기</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

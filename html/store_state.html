@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>매장현황</title>
+</head>
+<body>
+  <div>
+    <h2>매장 현황</h2>
+    <div class="search_box">
+      <input type="text" placeholder="매장명">
+      <select name="" id="">
+        <option value="">운영중</option>
+        <option value="">휴점</option>
+        <option value="">폐업</option>
+      </select>
+      <input type="text" placeholder="점주성함">
+      <input type="text" placeholder="전화번호">
+      <input type="text" placeholder="매장위치">
+      <input type="button" value="검색">
+
+      <button class="default_btn" onclick="loadPage('store_form.html')">신규입점 등록</button>
+    </div>
+    <div class="question-box">
+      <table>
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>점주명</th>
+            <th>연락처</th>
+            <th>입점일</th>
+            <th>매장명</th>
+            <th>매장위치</th>
+            <th>상태</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 샘플 데이터 -->
+          <tr onclick="loadPage('store_detail.html')"><td>1</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>더조은점</td><td>중앙로1275번길 38-10 우림로데오스위트 2층 201호</td><td>운영중</td></tr>
+          <tr onclick="loadPage('store_detail.html')"><td>2</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>더조은점</td><td>중앙로1275번길 38-10 우림로데오스위트 2층 201호</td><td>휴업</td></tr>
+          <tr onclick="loadPage('store_detail.html')"><td>3</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>더조은점</td><td>중앙로1275번길 38-10 우림로데오스위트 2층 201호</td><td>폐업</td></tr>
+          <tr onclick="loadPage('store_detail.html')"><td>4</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>더조은점</td><td>중앙로1275번길 38-10 우림로데오스위트 2층 201호</td><td>운영중</td></tr>
+          <tr onclick="loadPage('store_detail.html')"><td>5</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>더조은점</td><td>중앙로1275번길 38-10 우림로데오스위트 2층 201호</td><td>휴업</td></tr>
+          <tr onclick="loadPage('store_detail.html')"><td>6</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>더조은점</td><td>중앙로1275번길 38-10 우림로데오스위트 2층 201호</td><td>운영중</td></tr>
+          <tr onclick="loadPage('store_detail.html')"><td>7</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>더조은점</td><td>중앙로1275번길 38-10 우림로데오스위트 2층 201호</td><td>운영중</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pagination">
+      <a href="#">&lt;</a>
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#">&gt;</a>
+    </div>
+  </div>
+</body>
+</html>

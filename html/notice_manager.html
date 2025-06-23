@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>고객센터</title>
+  <link rel="stylesheet" href="../css/notice_manager_style.css" />
+  <script src="https://kit.fontawesome.com/3e2532440e.js" crossorigin="anonymous"></script>
+  <script src="../js/manager.js" defer></script>
+</head>
+<body>
+  <!-- 상단 관리자 헤더 -->
+  <div class="top-header">
+    <div class="left">admin</div>
+    <div class="right-area">
+      <div class="store-info">
+        <span class="store-name">월담</span> 본사 매니저님
+        <span class="circle"></span>
+      </div>
+      <div class="user-actions">
+        <p class="point">로그아웃</p>
+        <p class="point">정보수정</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 상단 메뉴바 + 전체 레이아웃 -->
+  <div class="section">
+    <div class="menu-bar">
+      <a href="../html/manager_page.html"><img src="../images/a_franchfrom/moon.jpg" alt="문월로고" /></a>
+      <a href="../html/notice_manager.html">게시판관리</a>
+      <a href="../html/receiving_ manager.html">입고</a>
+      <a href="../html/shipping_manager.html">출고</a>
+      <a href="../html/inventory_manager.html">재고</a>
+      <!-- <a href="#">고객센터</a> -->
+    </div>
+
+    <div class="main-layout">
+      <!-- 왼쪽 사이드바 -->
+      <div class="sidebar">
+        <ul>
+          <li class="sub1">
+            <a href="#">게시판 관리</a>
+            <ul class="submenu">
+              <li data-target="content_01">프렌차이즈 문의</li>
+              <li data-target="content_02">고객의소리</li>
+              <li data-target="content_03">매장현황</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- 본문 컨텐츠 -->
+      <div class="content_01" id="on">
+        <h2>프랜차이즈 문의</h2>
+
+        <div class="search_box">
+          <input type="date">
+          <input type="text" placeholder="고객성함">
+          <input type="text" placeholder="전화번호">
+          <input type="button" value="검색">
+        </div>
+        <div class="question-box">
+          <table>
+            <thead>
+              <tr>
+                <th>번호</th>
+                <th>고객명</th>
+                <th>연락처</th>
+                <th>날짜</th>
+                <th>상태</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 샘플 데이터 -->
+              <tr><td>1</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>문의</td></tr>
+              <tr><td>2</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>처리중</td></tr>
+              <tr><td>3</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>상담완료</td></tr>
+              <tr><td>4</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>문의</td></tr>
+              <tr><td>5</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>처리중</td></tr>
+              <tr><td>6</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>상담완료</td></tr>
+              <tr><td>7</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>문의</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination">
+          <span>&lt;</span>
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
+          <span>&gt;</span>
+        </div>
+        <button class="ask-btn">질문하기</button>
+      </div>
+      <div class="content_02">
+        <h2>고객의 소리</h2>
+        
+        <div class="question-box">
+          <table>
+            <thead>
+              <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>날짜</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 샘플 데이터 -->
+              <tr><td>1</td><td>제품 출고 관련</td><td>홍길동</td><td>2025-05-29</td></tr>
+              <tr><td>2</td><td>제품 출고 관련</td><td>홍길동</td><td>2025-05-29</td></tr>
+              <tr><td>3</td><td>제품 출고 관련</td><td>홍길동</td><td>2025-05-29</td></tr>
+              <tr><td>4</td><td>제품 출고 관련</td><td>홍길동</td><td>2025-05-29</td></tr>
+              <tr><td>5</td><td>제품 출고 관련</td><td>홍길동</td><td>2025-05-29</td></tr>
+              <tr><td>6</td><td>제품 출고 관련</td><td>홍길동</td><td>2025-05-29</td></tr>
+              <tr><td>7</td><td>제품 출고 관련</td><td>홍길동</td><td>2025-05-29</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination">
+          <span>&lt;</span>
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
+          <span>&gt;</span>
+        </div>
+        <!-- <button class="ask-btn">질문하기</button> -->
+      </div>
+      <div class="content_03">
+        <h2>매장 현황</h2>
+        
+        <div class="search_box">
+          <input type="text" placeholder="매장명">
+          <select name="" id="">
+            <option value="">운영중</option>
+            <option value="">휴점</option>
+            <option value="">폐업</option>
+          </select>
+          <input type="text" placeholder="점주성함">
+          <input type="text" placeholder="전화번호">
+          <input type="text" placeholder="매장위치">
+          <input type="button" value="검색">
+
+                  <button class="ask-btn">신규입점 등록</button>
+        </div>
+        <div class="question-box">
+          <table>
+            <thead>
+              <tr>
+                <th>번호</th>
+                <th>점주명</th>
+                <th>연락처</th>
+                <th>입점일</th>
+                <th>매장명</th>
+                <th>매장위치</th>
+                <th>상태</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 샘플 데이터 -->
+              <tr><td>1</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>더조은점</td><td>중앙로1275번길 38-10 우림로데오스위트 2층 201호</td><td>운영중</td></tr>
+              <tr><td>2</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>더조은점</td><td>중앙로1275번길 38-10 우림로데오스위트 2층 201호</td><td>휴업</td></tr>
+              <tr><td>3</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>더조은점</td><td>중앙로1275번길 38-10 우림로데오스위트 2층 201호</td><td>폐업</td></tr>
+              <tr><td>4</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>더조은점</td><td>중앙로1275번길 38-10 우림로데오스위트 2층 201호</td><td>운영중</td></tr>
+              <tr><td>5</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>더조은점</td><td>중앙로1275번길 38-10 우림로데오스위트 2층 201호</td><td>휴업</td></tr>
+              <tr><td>6</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>더조은점</td><td>중앙로1275번길 38-10 우림로데오스위트 2층 201호</td><td>운영중</td></tr>
+              <tr><td>7</td><td>홍길동</td><td>010-1234-5678</td><td>2025-05-29</td><td>더조은점</td><td>중앙로1275번길 38-10 우림로데오스위트 2층 201호</td><td>운영중</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination">
+          <span>&lt;</span>
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
+          <span>&gt;</span>
+        </div>
+        <button class="ask-btn">질문하기</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>본사 관리자 페이지</title>
+  <link rel="stylesheet" href="../css/headOffice.css" />
+  <!-- 카카오 주소 API -->
+  <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <!-- fontawesome -->
+  <script src="https://kit.fontawesome.com/3e2532440e.js" crossorigin="anonymous"></script>
+  <!-- chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- 상단 관리자 헤더 -->
+  <div class="top-header">
+    <div class="left">admin</div>
+    <div class="right-area">
+      <div class="store-info">
+        <span class="store-name">월담</span> 본사 매니저님
+        <span class="circle"></span>
+      </div>
+      <div class="user-actions">
+        <a href="#" class="point">로그아웃</a>
+        <a href="#" class="point">정보수정</a>
+      </div>
+    </div>
+  </div>
+  <!-- 상단 메뉴바 + 전체 레이아웃 -->
+  <div class="section">
+    <div class="menu-bar">
+      <img src="../images/moon.jpg" alt="문월로고" onclick="loadPage('main_headOffice.html')"/>
+      <a href="#" id="menu_receiving" onclick="changeMenu('receiving'); loadPage('receiving_status.html');">입고</a>
+      <a href="#" id="menu_shipping" onclick="changeMenu('shipping'); loadPage('shipping_form.html');">출고</a>
+      <a href="#" id="menu_inventory" onclick="changeMenu('inventory'); loadPage('inventory_status.html');">재고</a>
+      <a href="#" id="menu_board" onclick="changeMenu('board'); loadPage('franchise_list.html');">게시판관리</a>
+    </div>
+
+    <div class="main-layout">
+      <!-- 왼쪽 사이드바 -->
+      <div class="sidebar">
+        <ul>
+          <li class="sub_receiving">
+            <a href="#">입고</a>
+            <ul class="submenu">
+              <li><a href="#" onclick="loadPage('receiving_status.html')" class="submenu-item">입고현황</a></li>
+              <li><a href="#" onclick="loadPage('receiving_form.html')" class="submenu-item">입고등록</a></li>
+              <li><a href="#" onclick="loadPage('receiving_order.html')" class="submenu-item">발주</a></li>
+            </ul>
+          </li>
+          <li class="sub_inventory">
+            <a href="#">재고</a>
+            <ul class="submenu">
+              <li><a href="#" onclick="loadPage('inventory_status.html')" class="submenu-item">매장별 재고현황</a></li>
+              <li><a href="#" onclick="loadPage('inventory_salesStatus.html')" class="submenu-item">매장별 판매현황</a></li>
+              <li><a href="#" onclick="loadPage('inventory_productForm.html')" class="submenu-item">기초품목등록</a></li>
+              <li><a href="#" onclick="loadPage('inventory_menuForm.html')" class="submenu-item">메뉴등록</a></li>
+            </ul>
+          </li>
+          <li class="sub_shipping">
+            <a href="#">출고</a>
+            <ul class="submenu">
+              <li><a href="#" onclick="loadPage('shipping_form.html')" class="submenu-item">출고관리</a></li>
+            </ul>
+          </li>
+          <li class="sub_board">
+            <a href="#">게시판 관리</a>
+            <ul class="submenu">
+              <li><a href="#" onclick="loadPage('franchise_list.html')" class="submenu-item">프렌차이즈 문의</a></li>
+              <li><a href="#" onclick="loadPage('help_list.html')" class="submenu-item">고객의소리</a></li>
+              <li><a href="#" onclick="loadPage('store_state.html')" class="submenu-item">매장현황</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 본문 컨텐츠 불러오기 -->
+      <div data-include="main_headOffice.html" id="content-area" class="content"></div>
+      
+    </div>
+  </div>
+  <script src="../js/admin.js"></script>
+  <script src="../js/include.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>입고현황</title>
+</head>
+<body>          
+  <div class="receivingStatus">
+    <h2>입고현황</h2>
+    <!-- 필터 버튼 -->
+    <div class="receiving_status_filter_buttons">
+      <label class="active" data-status="all">주문전체</label>
+      <label data-status="pending">진행중</label>
+      <label data-status="completed">입고완료</label>
+      <label data-status="order_check">발주조회</label>
+      <label data-status="return_check">매장반품조회</label>
+    </div>
+    <!-- 주문전체 / 진행중 / 입고완료 테이블 -->
+    <table class="receiving_status_table receiving_status_table_group default-visible" data-group="receiving">
+      <thead>
+        <tr>
+          <th>입고유형</th>
+          <th>품목코드</th>
+          <th>품목</th>
+          <th>수량</th>
+          <th>상태</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="receiving_status_row_pending">
+          <td>입고</td>
+          <td>A001</td>
+          <td>콜롬비아원두</td>
+          <td>2</td>
+          <td>진행중</td>
+        </tr>
+        <tr class="receiving_status_row_completed">
+          <td>발주</td>
+          <td>A002</td>
+          <td>12온스종이컵</td>
+          <td>5</td>
+          <td>완료</td>
+        </tr>
+        <tr class="receiving_status_row_pending">
+          <td>반품</td>
+          <td>A003</td>
+          <td>커피스틱(대)</td>
+          <td>8</td>
+          <td>진행중</td>
+        </tr>
+        <tr class="receiving_status_row_completed">
+          <td>발주</td>
+          <td>B001</td>
+          <td>빨대(중)</td>
+          <td>200</td>
+          <td>진행중</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- 페이지네이션 -->
+    <div class="pagination">
+      <a href="#">&lt;</a>
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#">&gt;</a>
+    </div>
+  </div>
+</body>
+</html>

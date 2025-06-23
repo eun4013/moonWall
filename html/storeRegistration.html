@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>매장등록</title>
+  <link rel="stylesheet" href="../css/storeOwner.css" />
+  <script src="https://kit.fontawesome.com/3e2532440e.js" crossorigin="anonymous"></script>
+  <script src="../js/admin.js"></script>
+
+
+  <style>
+    /*매장등록 팝업*/
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+  /* border: 1px solid red; */
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 12px;
+  align-items: center;
+}
+.form-row.three-columns {
+  grid-template-columns: 150px 1fr 100px; /* 레이블 + 입력 + 버튼 */
+}
+
+.form-row input{
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+.form-row button{
+  width: 90%;
+}
+.line{
+  max-width: 800px;
+  width: 100%;
+  height: 1px;
+  background-color: #ededed;
+  margin: 10px 0;
+}
+/* 기본버튼 레이아웃 사용 */
+.default_btn {
+  background: #0400f5;
+  border: none;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  float: right;
+  margin: 20px 10px;
+}
+.default_btn:hover {
+  background: #030186;
+}
+  </style>
+
+  
+</head>
+<body>
+  <!-- 상단 관리자 헤더 -->
+  <div class="top-header">
+    <div class="left">admin</div>
+    <div class="right-area">
+      <div class="store-info">
+        <span class="store-name">월담</span> 본사 매니저님
+        <span class="circle"></span>
+      </div>
+      <div class="user-actions">
+        <a href="#" class="point">로그아웃</a>
+        <a href="#" class="point">정보수정</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 상단 메뉴바 + 전체 레이아웃 
+  현재 파일 이름이 변경될수있어 a 태그 링크들 수정예정입니다 -->
+  <div class="section">
+    <div class="menu-bar">
+      <a href="../html/managerPage.html"><img src="../images/a_franchfrom/moon.jpg" alt="문월로고" /></a>
+      <a href="../html/noticeManager.html">게시판관리</a>
+      <a href="../html/receivingManager.html">입고</a>
+      <a href="../html/shippingManager.html">출고</a>
+      <a href="../html/inventoryManager.html">재고</a>
+      <!-- <a href="#">고객센터</a> -->
+    </div>
+
+    <div class="main-layout">
+      <!-- 왼쪽 사이드바 -->
+      <!-- <div class="sidebar">
+        <ul>
+          <li class="sub1">
+            <a href="#">게시판 관리</a>
+            <ul class="submenu">
+              <li data-target="content_01">프렌차이즈 문의</li>
+              <li data-target="content_02">고객의소리</li>
+              <li data-target="content_03">매장현황</li>
+            </ul>
+          </li>
+        </ul>
+      </div> -->
+      
+      <!-- 본문 컨텐츠 -->
+      <div class="content">
+        <h2>매장등록</h2>
+        <form>
+          <div class="form-grid">
+            <div class="form-row three-columns">
+              <label>성함</label>
+              <input type="text" placeholder="성함" />
+              <button type="button">중복확인</button>
+            </div>
+
+            <div class="form-row">
+              <label>연락처</label>
+              <input type="text" placeholder="연락처" />
+            </div>
+
+            <div class="form-row three-columns">
+              <label for="postcode">우편번호</label>
+                <input type="text" id="postcode" placeholder="우편번호" readonly>
+                <button type="button" onclick="execDaumPostcode()">주소 검색</button>
+            </div>
+
+            <div class="form-row">
+              <label for="address">주소</label>
+              <input type="text" id="address" placeholder="기본 주소" readonly>
+              <label for="detailAddress">상세 주소</label>
+              <input type="text" id="detailAddress" placeholder="상세 주소를 입력하세요">
+            </div>
+
+            <div class="line"></div>
+
+            <div class="form-row three-columns">
+              <label>매장명</label>
+              <input type="text" placeholder="매장명" />
+              <button type="button">중복확인</button>
+            </div>
+
+            <div class="form-row">
+              <label>매장 전화번호</label>
+              <input type="text" placeholder="매장전화번호" />
+            </div>
+
+            <div class="form-row three-columns">
+              <label for="postcode">우편번호</label>
+                <input type="text" id="postcode" placeholder="우편번호" readonly>
+                <button type="button" onclick="execDaumPostcode()">주소 검색</button>
+            </div>
+
+            <div class="form-row">
+              <label for="address">주소</label>
+              <input type="text" id="address" placeholder="기본 주소" readonly>
+              <label for="detailAddress">상세 주소</label>
+              <input type="text" id="detailAddress" placeholder="상세 주소를 입력하세요">
+            </div>
+          </div>
+          <button type="submit" class="default_btn search_btn">매장등록</button>
+          <button type="submit" class="default_btn search_btn">취소</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  
+<!-- 카카오 주소 검색 API 스크립트 -->
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+  function execDaumPostcode() {
+    new daum.Postcode({
+      oncomplete: function(data) {
+        document.getElementById('postcode').value = data.zonecode; // 우편번호
+        document.getElementById('address').value = data.address;   // 주소
+        document.getElementById('detailAddress').focus();          // 상세주소 포커스
+      }
+    }).open();
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>본사 관리자 페이지</title>
+</head>
+<body>
+  <div class="headOfficeMain">
+    <!-- 본문 컨텐츠 -->
+    <div class="contents">
+      <div class="sales cont">
+        <div class="cont_top">
+            <h4>전체매출</h4>
+            <span onclick="loadPage('inventory_status.html')">더보기</span>
+          </div>
+        <div class="chart_wrap">
+          <canvas id="totalSalesChart"></canvas>
+        </div>
+      </div>
+      <div class="section_02">
+        <div class="receiving cont">
+          <div class="cont_top">
+            <h4>입고현황</h4>
+            <span onclick="loadPage('receiving_status.html')">더보기</span>
+          </div>
+            <table class="receiving_status_table receiving_status_table_group default-visible" data-group="receiving">
+            <thead>
+              <tr>
+                <th>입고유형</th>
+                <th>품목코드</th>
+                <th>품목</th>
+                <th>수량</th>
+                <th>상태</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="receiving_status_row_pending">
+                <td>입고</td>
+                <td>A001</td>
+                <td>콜롬비아원두</td>
+                <td>2</td>
+                <td>진행중</td>
+              </tr>
+              <tr class="receiving_status_row_completed">
+                <td>발주</td>
+                <td>A002</td>
+                <td>12온스종이컵</td>
+                <td>5</td>
+                <td>완료</td>
+              </tr>
+              <tr class="receiving_status_row_pending">
+                <td>반품</td>
+                <td>A003</td>
+                <td>커피스틱(대)</td>
+                <td>8</td>
+                <td>진행중</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="shipping cont">
+          <div class="cont_top">
+            <h4>출고현황</h4>
+            <span onclick="loadPage('shipping_form.html')">더보기</span>
+          </div>
+          <table class="shipment-table">
+          <thead>
+            <tr>
+              <th>매장명</th>
+              <th>요청일</th>
+              <th>품목코드</th>
+              <th>품목명/수량</th>
+              <th>출고일</th>
+              <th>출고상태</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <!-- 반복 행 -->
+            <tr>
+              <td>A</td>
+              <td>XXXX/XX/XX</td>
+              <td>A001</td>
+              <td>아라비카원두 2</td>
+              <td>XXXX/XX/XX</td>
+              <td>준비중</td>
+            </tr>
+            <tr>
+              <td>A</td>
+              <td>XXXX/XX/XX</td>
+              <td>A001</td>
+              <td>아라비카원두 2</td>
+              <td>XXXX/XX/XX</td>
+              <td>준비중</td>
+            </tr>
+            <tr>
+              <td>A</td>
+              <td>XXXX/XX/XX</td>
+              <td>A001</td>
+              <td>아라비카원두 2</td>
+              <td>XXXX/XX/XX</td>
+              <td>준비중</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      <div class="section_03">
+        <div class="inventory cont">
+          <div class="cont_top">
+            <h4>재고현황</h4>
+            <span>더보기</span>
+          </div>
+          <div class="notice_wrap">
+            <ul class="stock_notice">
+              <li>
+                <p>우유 [홍대점] : </p>
+                <p class="low">5</p>
+              </li>
+              <li>
+                <p>우유 [일산점] : </p>
+                <p class="low">10</p>
+              </li>
+              <li>
+                <p>계란 [고양점] : </p>
+                <p class="low">20</p>
+              </li>
+              <li>
+                <p>원두 [홍대점] : </p>
+                <p class="low">5</p>
+              </li>
+              <li>
+                <p>시럽 [일산점] : </p>
+                <p class="low">10</p>
+              </li>
+              <li>
+                <p>우유 [일산점] : </p>
+                <p class="low">10</p>
+              </li>
+              <li>
+                <p>계란 [강남점] : </p>
+                <p class="low">20</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="notice cont">
+          <div class="cont_top">
+            <h4>상담알림</h4>
+            <span>더보기</span>
+          </div>
+          <div class="notice_wrap">
+            <ul class="franchise_notice">
+              <li>
+                [<span>홍길동</span>]님 프랜차이즈 상담 문의글이 게시되었습니다.
+                <span class="date">2025-05-29</span>
+              </li>
+              <li>
+                [<span>고길동</span>]님 프랜차이즈 상담 문의글이 게시되었습니다.
+                <p class="date">2025-05-29</p>
+              </li>
+              <li>
+                [<span>김길동</span>]님 문의글이 게시되었습니다.
+                <p class="date">2025-05-29</p>
+              </li>
+              <li>
+                [<span>최길동</span>]님 문의글이 게시되었습니다.
+                <p class="date">2025-05-29</p>
+              </li>
+              <li>
+                [<span>최길동</span>]님 문의글이 게시되었습니다.
+                <p class="date">2025-05-29</p>
+              </li>
+              <li>
+                [<span>최길동</span>]님 문의글이 게시되었습니다.
+                <p class="date">2025-05-29</p>
+              </li>
+              <li>
+                [<span>최길동</span>]님 문의글이 게시되었습니다.
+                <p class="date">2025-05-29</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

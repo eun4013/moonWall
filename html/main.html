@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨MoonWall🐈🌛</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../css/main_style.css">
+    <!-- 폰트어썸 -->
+    <script src="https://kit.fontawesome.com/3e2532440e.js" crossorigin="anonymous"></script>
+    <!-- 제이쿼리 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <!-- 스와이퍼 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- 제이쿼리 -->
+    <script>
+      $(document).ready(function() {
+        //gnb호버
+        
+        $('#header .bkBg .gnb').mouseenter(function() {
+      $('#header .bkBg').stop().animate({ height: '350px' }, 300);
+      $('#header .bkBg').css('background-color', 'rgba(255, 255, 255,  0.95)');
+      $('#header .bkBg .gnb > li > a').css('color', '#000');
+    });
+
+    // 전체 bkBg에서 마우스가 벗어나면 원상복귀
+    $('#header .bkBg').mouseleave(function() {
+      $('#header .bkBg').stop().animate({ height: '120px'}, 10);
+      $('#header .bkBg').css('background-color', 'rgba(255, 255, 255, 0)');
+      $('#header .bkBg .gnb > li > a').css('color', '#fff');
+    });
+
+    //모바일 메뉴
+     $(".m_menu").on("click", function () {
+      $(".m-gnb").animate({ right: "0" }, 300); // 오른쪽으로 슬라이드 인
+    });
+
+    // 모바일 메뉴 닫기 (닫기 아이콘 클릭 시)
+    $(".m-gnb .delt").on("click", function () {
+      $(".m-gnb").animate({ right: "-1000px" }, 300); // 다시 오른쪽으로 슬라이드 아웃
+    });
+
+        //메뉴탭
+      $('.tap li').click(function() {
+        const idx = $(this).index();
+
+        // 버튼 스타일
+        $('.tap li').removeClass('active');
+        $(this).addClass('active');
+
+        // 메뉴 콘텐츠 보이기
+        $('.view li').removeClass('menu_on');
+        $('.view li').eq(idx).addClass('menu_on');
+      });
+
+
+    });
+    </script>
+</head>
+<body>
+    <div id="header">
+      <div class="bkBg">
+        <a href="../html/main.html"><img src="../images/main/logo01_ko_cc.png" alt="logo"></a>
+        <ul class="gnb">
+        <li>
+          <a href="#">Brand</a>
+          <ul class="sub">
+            <li><a href="#">브랜드 BI</a></li>
+            <li><a href="#">브랜드스토리</a></li>
+            <li><a href="#">회사연혁</a></li>
+            <li><a href="#">오시는길</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Menu</a>
+          <ul class="sub">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Franchise</a>
+          <ul class="sub">
+            <li><a href="#">월담의경쟁력</a></li>
+            <li><a href="#">창업절차</a></li>
+            <li><a href="#">창업문의</a></li>
+            <li><a href="#">창업News</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">store</a>
+          <ul class="sub">
+            <li><a href="#">매장찾기</a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">News</a>
+          <ul class="sub">
+            <li><a href="#">News</a></li>
+            <li><a href="#">공지사항</a></li>
+          </ul>
+        </li>
+        </ul>
+        <div class="m_menu"><i class="fa-solid fa-bars"></i></div>
+      </div>
+
+      <ul class="m-gnb">
+        <li class="delt">
+          <i class="fa-solid fa-xmark fa-beat"></i>
+        </li>
+        <li>
+          <a href="#">Brand</a>
+          <ul class="sub">
+            <li><a href="#">브랜드 BI</a></li>
+            <li><a href="#">브랜드스토리</a></li>
+            <li><a href="#">회사연혁</a></li>
+            <li><a href="#">오시는길</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Menu</a>
+          <!-- <ul class="sub">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+          </ul> -->
+        </li>
+        <li>
+          <a href="#">Franchise</a>
+          <ul class="sub">
+            <li><a href="#">월담의경쟁력</a></li>
+            <li><a href="#">창업절차</a></li>
+            <li><a href="#">창업문의</a></li>
+            <li><a href="#">창업News</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">store</a>
+          <ul class="sub">
+            <li><a href="#">매장찾기</a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">News</a>
+          <ul class="sub">
+            <li><a href="#">News</a></li>
+            <li><a href="#">공지사항</a></li>
+          </ul>
+        </li>
+        </ul>
+
+    </div>
+
+    <div id="section">
+
+      <div class="main">
+        <div class="mainbg">
+          <video src="../images/main/intro03.mp4" autoplay muted loop></video>
+        </div>
+      </div>
+      
+      <div class="adver">
+
+        <div class="adver_box_01">
+          <div class="adverText_box">
+            <h4><span>월담 커피가</span>맛있는 이유</h4>
+            <p>
+              카페 월담 스마트 커피머신의
+              <br>
+              남다른 커피추출 기술
+            </p>
+          </div>
+        </div>
+
+        <div class="adver_box_02">
+          <div class="adverText_box">
+            <h4><span>가까운 매장</span>찾기</h4>
+            <p>
+              근처에 있는
+              <br>
+              카페 월담을 찾아보세요!
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="advertext">
+          <div><img src="../images/main/logo05_ko.png" alt=""></div>
+          <div class="advertext02_box">
+            <p>따뜻한 커피 한 잔과 함께, 나만의 온전한 휴식을 즐겨보세요.</p>
+          <p>월담은 언제나 당신의 편안한 쉼표가 되어 드립니다.</p>
+          <p>바쁜 일상 속, 잠시 멈춰가는 여유를 찾아보세요.</p>
+        </div>
+          
+        </div>
+
+      <div class="menu">
+    <div class="pinkbg">
+        <h1>Menu</h1>
+        <ul class="tap">
+            <li class="active">Best Menu</li>
+            <li>Coffee</li>
+            <li>Tea & Ade</li>
+            <li>Dessert</li>
+        </ul>
+
+        <ul class="view">
+            <li class="menu_on">
+                <div class="swiper bestMenu_box">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide bestMenu_01" data-menu-name="아메리카노">
+                            <img src="../images/main/amricano.png" alt="아메리카노">
+                        </div>
+                        <div class="swiper-slide bestMenu_02" data-menu-name="달라떼">
+                            <img src="../images/main/moon-latte.png" alt="달라떼">
+                        </div>
+                        <div class="swiper-slide bestMenu_03" data-menu-name="카푸치노">
+                            <img src="../images/main/cappuccino.png" alt="카푸치노">
+                        </div>
+                        <div class="swiper-slide bestMenu_04" data-menu-name="그린티라떼">
+                            <img src="../images/main/greenTea_latte.png" alt="그린티라떼">
+                        </div>
+                        <div class="swiper-slide bestMenu_05" data-menu-name="블루베리에이드">
+                            <img src="../images/main/blueberry_ade.png" alt="블루베리에이드">
+                        </div>
+                        <div class="swiper-slide bestMenu_06" data-menu-name="블루레몬에이드">
+                            <img src="../images/main/blueRemon_ade.png" alt="블루레몬에이드">
+                        </div>
+                        <div class="swiper-slide bestMenu_07" data-menu-name="문크로플">
+                            <img src="../images/main/mooncroffle.png" alt="문크로플">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-navigation-and-name">
+                    <div class="swiper-button-prev best-prev"><i class="fa-solid fa-angle-left"></i></div>
+                    <div class="menu-name best-menu-name"></div>
+                    <div class="swiper-button-next best-next"><i class="fa-solid fa-angle-right"></i></div>
+                </div>
+            </li>
+
+            <li>
+                <div class="swiper coffeeMenu_box">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide coffee_01" data-menu-name="아메리카노">
+                            <img src="../images/main/amricano.png" alt="아메리카노">
+                        </div>
+                        <div class="swiper-slide coffee_02" data-menu-name="달라떼">
+                            <img src="../images/main/moon-latte.png" alt="달라떼">
+                        </div>
+                        <div class="swiper-slide coffee_03" data-menu-name="카푸치노">
+                            <img src="../images/main/cappuccino.png" alt="카푸치노">
+                        </div>
+                        <div class="swiper-slide coffee_04" data-menu-name="돌체 콜드 브루">
+                            <img src="../images/main/Dolce-Cold-Brew.png" alt="돌체콜드브루">
+                        </div>
+                        <div class="swiper-slide coffee_05" data-menu-name="헤이즐넛 라떼">
+                            <img src="../images/main/hazelnut-latte.png" alt="헤이즐넛라떼">
+                        </div>
+                        <div class="swiper-slide coffee_06" data-menu-name="카라멜 마끼아또">
+                            <img src="../images/main/caramel-macchiato.png" alt="카라멜 마끼아또">
+                        </div>
+                        <div class="swiper-slide coffee_07" data-menu-name="달달한 옛날 커피">
+                            <img src="../images/main/mix-coffe.png" alt="달달한옛날커피">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-navigation-and-name">
+                    <div class="swiper-button-prev coffee-prev"><i class="fa-solid fa-angle-left"></i></div>
+                    <div class="menu-name coffee-menu-name"></div>
+                    <div class="swiper-button-next coffee-next"><i class="fa-solid fa-angle-right"></i></div>
+                </div>
+            </li>
+
+            <li>
+                <div class="swiper teaMenu_box">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide tea_01" data-menu-name="자몽 에이드<br>ICE">
+                            <img src="../images/main/grapeFruit_ade.png" alt="자몽에이드">
+                        </div>
+                        <div class="swiper-slide tea_02" data-menu-name="레몬 에이드<br>ICE">
+                            <img src="../images/main/remon_ade.png" alt="레몬에이드">
+                        </div>
+                        <div class="swiper-slide tea_03" data-menu-name="블루 레몬 에이드<br>ICE">
+                            <img src="../images/main/blueRemon_ade.png" alt="블루레몬에이드">
+                        </div>
+                        <div class="swiper-slide tea_04" data-menu-name="블루베리 에이드<br>ICE">
+                            <img src="../images/main/blueberry_ade.png" alt="블루베리에이드">
+                        </div>
+                        <div class="swiper-slide tea_05" data-menu-name="레몬 티<br>HOT/ICE">
+                            <img src="../images/main/remon_tea.png" alt="레몬티">
+                        </div>
+                        <div class="swiper-slide tea_06" data-menu-name="그린티 라떼<br>HOT/ICE">
+                            <img src="../images/main/greenTea_latte.png" alt="그린티라떼">
+                        </div>
+                        <div class="swiper-slide tea_07" data-menu-name="토피넛 라떼<br>HOT/ICE">
+                            <img src="../images/main/toffee-nut-latte.png" alt="토피넛 라떼">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-navigation-and-name">
+                    <div class="swiper-button-prev tea-prev"><i class="fa-solid fa-angle-left"></i></div>
+                    <div class="menu-name tea-menu-name"></div>
+                    <div class="swiper-button-next tea-next"><i class="fa-solid fa-angle-right"></i></div>
+                </div>
+            </li>
+
+            <li>
+                <div class="swiper dessertMenu_box">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide des_01" data-menu-name="에그햄 토스트">
+                            <img src="../images/main/EggHam Toast.png" alt="에그햄토스트">
+                        </div>
+                        <div class="swiper-slide des_02" data-menu-name="에그샐러드 샌드위치">
+                            <img src="../images/main/egg_sandwich.png" alt="애그샐러드샌드위치">
+                        </div>
+                        <div class="swiper-slide des_03" data-menu-name="햄치즈 샌드위치">
+                            <img src="../images/main/ham-cheese-sandwich.png" alt="햄치즈샌드위치">
+                        </div>
+                        <div class="swiper-slide des_04" data-menu-name="딸기 달카롱">
+                            <img src="../images/main/strawberry-mooncaron.png" alt="딸기달카롱">
+                        </div>
+                        <div class="swiper-slide des_05" data-menu-name="초코 달카롱">
+                            <img src="../images/main/chocolate-mooncaron.png" alt="초코달카롱">
+                        </div>
+                        <div class="swiper-slide des_06" data-menu-name="바닐라 달카롱">
+                            <img src="../images/main/vanilla-mooncaron.png" alt="바닐라달카롱">
+                        </div>
+                        <div class="swiper-slide des_07" data-menu-name="달빵">
+                            <img src="../images/main/moon-bread.png" alt="달빵">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-navigation-and-name">
+                    <div class="swiper-button-prev dessert-prev"><i class="fa-solid fa-angle-left"></i></div>
+                    <div class="menu-name dessert-menu-name"></div>
+                    <div class="swiper-button-next dessert-next"><i class="fa-solid fa-angle-right"></i></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+      <div class="storeGallery">
+        <div class="sg_textBox">
+          <div class="st_imgBox">
+            <img src="../images/main/logo06_en.png" alt="logo">
+          </div>
+          <h2>
+            <span>맛볼 가치</span>가 있는 커피.
+            <br>
+            <span>머물 가치</span>가 있는 자리.
+          </h2>
+
+          <p>
+            바쁜 하루에 잠시 멈춰 쉬는 곳입니다.
+            <br>
+            월담과 함께하는 조용한 공간에서,
+          </p>
+
+          <p>
+            편안한 커피 한 잔의 여유를 느껴보세요.
+            <br>
+            작지만 소중한 휴식이 되어드리겠습니다.
+          </p>
+        </div>
+        <div class="sg_nextBtn">
+          <i class="fa-solid fa-angle-right"></i>
+        </div>
+        <div class="sg_imgBox">
+          <div class="sg_img swiper mySwiper">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="../images/main/storeGallery01.jpg" alt="sgimg"></div>
+            <div class="swiper-slide"><img src="../images/main/storeGallery02.jpg" alt="sgimg"></div>
+            <div class="swiper-slide"><img src="../images/main/storeGallery03.jpg" alt="sgimg"></div>
+            <div class="swiper-slide"><img src="../images/main/storeGallery04.jpg" alt="sgimg"></div>
+            <div class="swiper-slide"><img src="../images/main/storeGallery05.jpg" alt="sgimg"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="franchise">
+
+        <div class="fran_imgBox">
+          <h1>
+            Franchise
+            <span>Notice</span>
+          </h1>
+          <img src="../images/main/noticecat.png" alt="franchise">
+        </div>
+        <ul class="fran_txtbox">
+          <li>
+            <a href="#">
+              <h4>창업경쟁력</h4>
+              <p>
+                커피를 위한 진정성,
+                <span>우리의 경쟁력이 됩니다.</span>
+              </p>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <h4>창업안내</h4>
+              <p>
+                Easy System
+                <span>운영이 쉽고 편리한 카페 월담 창업</span>
+              </p>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <h4>창업News</h4>
+              <p>
+                점주님들의
+                <span>성공 창업 스토리</span>
+              </p>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    <div class="franchise_from">
+      <form>
+        <div><img src="../images/main/logo04_en.png" alt="logo"></div>
+        <h2>창업문의</h2>
+        <table>
+          <tr>
+            <th>고객명</th>
+            <td><input type="text" name="" class="full-width" required></td>
+          </tr>
+          <tr>
+            <th>연락처</th>
+            <td><input type="number" name="" class="full-width" required></td>
+          </tr>
+          <tr>
+            <th>이메일</th>
+            <td><input type="email" name="" class="full-width" required></td>
+          </tr>
+          <tr>
+            <th>창업희망지역</th>
+            <td>
+              <select id="region1" name="" required>
+                <option value="">-선택-</option>
+                <option value="서울">서울</option>
+                <option value="부산">부산</option>
+                <option value="대구">대구</option>
+                <option value="인천">인천</option>
+                <option value="광주">광주</option>
+                <option value="대전">대전</option>
+                <option value="울산">울산</option>
+                <option value="강원">강원</option>
+                <option value="경기">경기</option>
+                <option value="경남">경남</option>
+                <option value="경북">경북</option>
+                <option value="전남">전남</option>
+                <option value="전북">전북</option>
+                <option value="제주">제주</option>
+                <option value="충남">충남</option>
+                <option value="충북">충북</option>
+                <option value="세종">세종</option>
+              </select>
+              <select id="region2" name="">
+                <option value="">-선택-</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>점포보유유무</th>
+            <td>
+              <label><input type="radio" name="" value="있음" required> 있음</label>
+              <label><input type="radio" name="" value="없음"> 없음</label>
+            </td>
+          </tr>
+          <tr>
+            <th>창업시기</th>
+            <td>
+              <label><input type="radio" name="" value="즉시" required> 즉시</label>
+              <label><input type="radio" name="" value="3개월 후"> 3개월 후</label>
+              <label><input type="radio" name="" value="6개월 후"> 6개월 후</label>
+            </td>
+          </tr>
+          <tr>
+            <th>문의경로</th>
+            <td>
+              <label><input type="checkbox" name="" value="웹 검색"> 웹 검색</label>
+              <label><input type="checkbox" name="" value="블로그&카페"> 블로그&카페</label>
+              <label><input type="checkbox" name="" value="광고"> 광고</label>
+              <label><input type="checkbox" name="" value="유튜브"> 유튜브</label><br>
+              <label><input type="checkbox" name="" value="SNS"> SNS</label>
+              <label><input type="checkbox" name="" value="지인 추천"> 지인 추천</label>
+              <label><input type="checkbox" name="" value="인근 매장"> 인근 매장</label>
+              <label><input type="checkbox" name="" value="기타"> 기타</label>
+            </td>
+          </tr>
+          <tr>
+            <th>상세문의내용</th>
+            <td><textarea name="" rows="5" class="full-width"></textarea></td>
+          </tr>
+          <tr>
+            <th>개인정보동의</th>
+            <td>
+              <label>
+                <input type="checkbox" name="" required>
+                개인정보 수집 및 이용에 동의합니다. (필수)
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <button type="submit">제출</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+
+    
+
+      <div class="chat">
+        <div id="chat-button">
+      💬
+    </div>
+    <!-- 채팅창 -->
+    <div id="chat-box">
+  <div class="chat-header">월담 상담문의 🌙</div>
+  <div class="chat-messages">
+    <div class="message bot">방문해주셔서 감사합니다 😍<br>무엇을 도와드릴까요?</div>
+  </div>
+  <div class="chat-input">
+    <input type="text" placeholder="메시지를 입력" />
+    <button>전송</button>
+  </div>
+    </div>
+      </div>
+
+    <div class="goup">
+      <div class="up_icon">
+        <i class="fa-solid fa-angle-up"></i>
+      </div>
+    </div>
+
+
+  <div id="footer">
+    <div class="bt_foot">
+      <div class="txtbox">
+        <ul class="foot_sb">
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#">개인정보처리방침</a></li>
+        <li><a href="#">위치기반서비스 이용약관</a></li>
+        <li><a href="#">이메일 무단수집거부</a></li>
+        <li><a href="#">법적고지</a></li>
+        <li><a href="#">사업자정보확인</a></li>
+        </ul>
+        <address>
+          <p>
+          대표이사 : 김도현　|　개인정보보호책임자 : 이지아　|　 사업자등록번호 : 521-98-3471088
+        </p>
+        <p>
+          통신판매업종신고증 : 제 2025-서울남서구-1049호　|　대표이메일 : mooncat@moonwall.fake
+        </p>
+        <p>
+          Copyright ⓒ 2025 Moon Wall Co., LTD. All Rights Reserved.
+        </p>
+    
+    </address>
+      </div>
+      
+      <div>
+        <img src="../images/main/logo02_w.png" alt="logo"></div>
+      </div>
+    </div>
+    
+
+  <!-- JavaScript 영역 -->
+  <script>
+    document.querySelector("form").addEventListener("submit", function(e) {
+  e.preventDefault(); // 폼 전송 방지
+
+
+});
+    const region1 = document.getElementById('region1');
+    const region2 = document.getElementById('region2');
+
+    const districts = {
+      '서울': ['강남구', '강동구', '강북구', '강서구', '관악구', '광진구', '구로구', '금천구', '노원구', '도봉구', '동대문구', '동작구', '마포구', '서대문구', '서초구', '성동구', '성북구', '송파구', '양천구', '영등포구', '용산구', '은평구', '종로구', '중구', '중랑구'],
+      '부산': ['강서구', '금정구', '남구', '동구', '동래구', '부산진구', '북구' ,'사상구', '사하구', '서구', '수영구', '연제구', '영도구', '중구', '해운대구', '기장군'],
+      '대구': ['남구', '달서구', '동구', '북구', '서구', '수성구', '중구', '달성군'],
+      '인천':['계양구', '남구', '남동구', '동구', '부평구', '서구', '연수구', '중구', '강화군', '옹진군'],
+      '광주':['광산구', '남구', '동구', '북구', '서구'],
+      '대전':['대덕구', '동구', '서구', '유성구', '중구'],
+      '울산':['남구', '동구', '북구', '중구', '울주군'],
+      '강원':['강릉시', '동해시', '삼척시', '속초시', '원주시', '춘천시', '태백시', '고성군', '양구군', '양양군', '영월군', '인제군', '정선군', '철원군', '평창군', '홍천군', '화천군', '횡성군'],
+      '경기':['고양시 덕양구', '고양시 일산서구', '고양시 일산동구', '과천시', '광명시', '광주시', '구리시', '군포시', '김포시', '남양주시', '동두천시', '부천시 소사구', '부천시 오정구', '부천시 원미구', '성남시 분당구', '성남시 수정구',  '성남시 중원구', '수원시 권선구', '수원시 장안구', '수원시 팔달구', '시흥시', '안산시 단원구', '안산시 상록구', '안성시', '안양시 동안구', '안양시 만안구', '오산시', '용인시', '의왕시', '의정부시', '이천시', '파주시', '평택시', '하남시', '화성시', '가평군', '양주군', '양평군', '여주군', '연천군', '포천군'],
+      '경남':['거제시', '김해시', '마산시', '밀양시', '사천시', '양산시', '진주시', '진해시', '창원시', '통영시', '거창군', '고성군', '남해군', '산청군', '의령군', '창녕군', '하동군', '함안군', '함양군', '합천군'],
+      '경북':['경산시', '경주시', '구미시', '김천시', '문경시', '상주시', '안동시', '영주시', '영천시', '포항시', '고령군', '군위군', '봉화군', '성주군', '영덕군', '영양군', '예천군', '울릉군', '울진군', '의성군', '청도군', '청송군', '칠곡군'],
+      '전남':['광양시', '나주시', '목포시', '순천시', '여수시', '강진군', '고흥군', '곡성군', '구례군', '담양군', '무안군', '보성군', '신안군', '영관군', '영암군', '완도군', '장성군', '장흥군', '진도군', '함평군', '해남군', '화순군'],
+      '전북':['군산시', '김제시', '남원시', '익산시', '전주시', '정읍시', '고창군', '무주군', '부안군', '순창군', '완주군', '임실군', '장수군', '진안군'],
+      '제주':['서귀포시', '제주시', '남제주군', '북제주군'],
+      '충남':['공주시', '논산시', '보령시', '서산시', '아산시', '천안시', '금산군', '당진군', '부여군', '서천군', '연기군', '예산군', '청양군', '태안군', '홍성군'],
+      '충북':['제천시', '청주시 상당구', '청주시 흥덕구', '충주시', '괴산군', '단양군', '보은군', '영동군', '옥천군', '음성군', '진천군', '청원군'],
+      '세종': []
+    };
+
+    region1.addEventListener('change', function () {
+      const selectedCity = this.value;
+      region2.innerHTML = '<option value="">-선택-</option>';
+      if (districts[selectedCity]) {
+        districts[selectedCity].forEach(function (gu) {
+          const option = document.createElement('option'); //노드생성?
+          option.value = gu;
+          option.textContent = gu;
+          region2.appendChild(option); //노드추가?
+        });
+      }
+    });
+  </script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+  const gallerySwiper = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    grabCursor: true,
+    simulateTouch: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  // 👉 버튼 누르면 다음 슬라이드로 이동
+  document.querySelector('.sg_nextBtn').addEventListener('click', function () {
+    gallerySwiper.slideNext();
+  });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const swiperInstances = {};
+
+    // 메뉴 이름을 업데이트하는 공통 함수
+    function updateMenuName(swiper, nameSelector) {
+        const menuNameElement = document.querySelector(nameSelector);
+        if (!menuNameElement) {
+            console.warn(`Menu name element not found: ${nameSelector}`);
+            return;
+        };
+
+        const activeSlide = swiper.slides[swiper.activeIndex];
+
+        if (!activeSlide) {
+            menuNameElement.innerHTML = '메뉴 정보를 불러올 수 없습니다.';
+            return;
+        }
+
+        const menuName = activeSlide.dataset.menuName || activeSlide.querySelector('img')?.alt || '이름 없음';
+        menuNameElement.innerHTML = menuName;
+    }
+
+    swiperInstances.bestMenu = new Swiper(".bestMenu_box", {
+        slidesPerView: 3, // 기본값 설정 (필요에 따라 auto로 변경 가능)
+        spaceBetween: 20,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        loop: true,
+        centeredSlides: true, // ***** 이 부분이 중요합니다. *****
+        navigation: {
+            prevEl: '.best-prev',
+            nextEl: '.best-next',
+        },
+        breakpoints: {
+            500: { slidesPerView: 1, centeredSlides: true }, // breakpoint에도 centeredSlides: true 적용
+            768: { slidesPerView: 2, centeredSlides: true },
+            1024: { slidesPerView: 3, centeredSlides: true },
+            1240: { slidesPerView: 5, centeredSlides: true }
+        },
+    });
+    swiperInstances.bestMenu.on('slideChange', function() {
+        updateMenuName(this, '.best-menu-name');
+    });
+    // 초기 로드 시 메뉴 이름 설정 (첫 번째 탭이 기본으로 활성화된다고 가정)
+    updateMenuName(swiperInstances.bestMenu, '.best-menu-name');
+
+
+    // Coffee Swiper
+    swiperInstances.coffeeMenu = new Swiper(".coffeeMenu_box", {
+        slidesPerView: 3, // 기본값 설정
+        spaceBetween: 20,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        loop: true,
+        centeredSlides: true, // ***** 이 부분이 중요합니다. *****
+        navigation: {
+            prevEl: '.coffee-prev',
+            nextEl: '.coffee-next',
+        },
+        breakpoints: {
+            500: { slidesPerView: 1, centeredSlides: true },
+            768: { slidesPerView: 2, centeredSlides: true },
+            1024: { slidesPerView: 3, centeredSlides: true },
+            1240: { slidesPerView: 5, centeredSlides: true }
+        },
+    });
+    swiperInstances.coffeeMenu.on('slideChange', function() {
+        updateMenuName(this, '.coffee-menu-name');
+    });
+
+    // Tea Swiper
+    swiperInstances.teaMenu = new Swiper(".teaMenu_box", {
+        slidesPerView: 3, // 기본값 설정
+        spaceBetween: 20,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        loop: true,
+        centeredSlides: true, // ***** 이 부분이 중요합니다. *****
+        navigation: {
+            prevEl: '.tea-prev',
+            nextEl: '.tea-next',
+        },
+        breakpoints: {
+            500: { slidesPerView: 1, centeredSlides: true },
+            768: { slidesPerView: 2, centeredSlides: true },
+            1024: { slidesPerView: 3, centeredSlides: true },
+            1240: { slidesPerView: 5, centeredSlides: true }
+        },
+    });
+    swiperInstances.teaMenu.on('slideChange', function() {
+        updateMenuName(this, '.tea-menu-name');
+    });
+    // updateMenuName(swiperInstances.teaMenu, '.tea-menu-name');
+
+
+    // Dessert Swiper
+    swiperInstances.dessertMenu = new Swiper(".dessertMenu_box", {
+        slidesPerView: 3, // 기본값 설정
+        spaceBetween: 20,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        loop: true,
+        centeredSlides: true, // ***** 이 부분이 중요합니다. *****
+        navigation: {
+            prevEl: '.dessert-prev',
+            nextEl: '.dessert-next',
+        },
+        breakpoints: {
+            500: { slidesPerView: 1, centeredSlides: true },
+            768: { slidesPerView: 2, centeredSlides: true },
+            1024: { slidesPerView: 3, centeredSlides: true },
+            1240: { slidesPerView: 5, centeredSlides: true }
+        },
+    });
+    swiperInstances.dessertMenu.on('slideChange', function() {
+        updateMenuName(this, '.dessert-menu-name');
+    });
+    // updateMenuName(swiperInstances.dessertMenu, '.dessert-menu-name');
+
+    //-------------------------------------------------------------
+
+
+    // 탭 전환 로직 (순수 JS 기반)
+    const tabs = document.querySelectorAll('.tap li');
+    const views = document.querySelectorAll('.view li');
+    const swiperKeys = ['bestMenu', 'coffeeMenu', 'teaMenu', 'dessertMenu'];
+
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('click', function() {
+          console.log(swiperInstances.bestMenu);
+            // 탭 활성화
+            tabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+
+            // 콘텐츠 전환
+            views.forEach(view => view.classList.remove('menu_on'));
+            views[index].classList.add('menu_on');
+
+            // 해당 Swiper 업데이트 및 메뉴 이름 새로고침
+            const currentSwiperKey = swiperKeys[index];
+            if (swiperInstances[currentSwiperKey]) {
+                swiperInstances[currentSwiperKey].update(); // Swiper 레이아웃 업데이트 (필수)
+                // 탭 전환 시 메뉴 이름도 새로고침
+                updateMenuName(swiperInstances[currentSwiperKey], `.${currentSwiperKey}-menu-name`);
+            }
+        });
+    });
+
+
+    if (swiperInstances.bestMenu) {
+        swiperInstances.bestMenu.update();
+        updateMenuName(swiperInstances.bestMenu, '.best-menu-name');
+    }
+});
+
+//채팅장js
+const chatBtn = document.getElementById('chat-button');
+const chatBox = document.getElementById('chat-box');
+
+chatBtn.addEventListener('click', () => {
+chatBox.style.display = chatBox.style.display === 'none' || chatBox.style.display === '' ? 'flex' : 'none';
+});
+
+//위로 올라감
+document.querySelector('.goup').addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'  // 부드럽게 올라가게 하는 옵션
+  });
+});
+</script>
+  </body>
+</html>

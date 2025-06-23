@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>매장별 재고 현황</title>
+  <link rel="stylesheet" href="../css/inventory_manager_style.css" />
+  <script src="../js/manager.js" defer></script>
+</head>
+<body>
+  <div class="inventoryStatus">
+    <!-- 본문 컨텐츠 -->
+    <h2>매장별 재고 현황</h2>
+    <div class="search-bar">
+      <select>
+        <option>품목명</option>
+      </select>
+      <input type="text" placeholder="매장명" />
+      <button>검색</button>
+    </div>
+
+    <table class="stock-table">
+      <thead>
+        <tr>
+          <th>품목코드</th>
+          <th>품목명</th>
+          <th>합계</th>
+          <th>본사창고</th>
+          <th>강남매장</th>
+          <th>강동매장</th>
+          <th>강서매장</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>A001</td>
+          <td>아라비카원두</td>
+          <td>100</td>
+          <td>200</td>
+          <td>300</td>
+          <td>400</td>
+          <td>500</td>
+        </tr>
+        <tr>
+          <td>A002</td>
+          <td>12온스종이컵</td>
+          <td>4000</td>
+          <td>300</td>
+          <td>500</td>
+          <td>50</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <td>A003</td>
+          <td>커피스틱(대)</td>
+          <td>1000</td>
+          <td>50</td>
+          <td class="low">10</td>
+          <td class="low">6</td>
+          <td>70</td>
+        </tr>
+        <tr>
+          <td>A004</td>
+          <td>핫음료뚜껑(소)</td>
+          <td>1000</td>
+          <td>0</td>
+          <td class="low">5</td>
+          <td class="low">5</td>
+          <td>70</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- <script>
+  const safeStockLevel = 10;
+
+  document.querySelectorAll('.stock-table tbody tr').forEach(row => {
+    [...row.cells].forEach((cell, idx) => {
+      const value = parseInt(cell.textContent);
+      if (!isNaN(value) && value <= safeStockLevel && idx > 2) {
+        cell.classList.add('low');
+      }
+    });
+  });
+</script> -->
+</body>
+
+</html>

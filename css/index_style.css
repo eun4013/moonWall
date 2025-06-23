@@ -1,0 +1,201 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{font-style: normal; color: #000;}
+img{border: 0; vertical-align: top;}
+
+
+    /* #header */
+    #header{
+        width: 100%;
+        height: 120px;
+        background-color:bisque;
+    }
+
+    /* #header */
+
+    /* #section */
+
+    #section .main{
+        width: 100%;
+        height: 600px;
+        background-color: aquamarine;
+    }
+
+    #section .adver{
+        width: 1300px;
+        height: 250px;
+        background-color: bisque;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 50px;
+    }
+    #section .adver div{
+        width: 600px;
+        height: 200px;
+        background-color: aquamarine;
+    }
+
+    #section .menu{
+        width: 100%;
+        height: 600px;
+        background-color: aquamarine;
+    }
+
+    #section .franchise{
+        width: 100%;
+        height: 600px;
+        background-color: bisque;
+    }
+
+
+    /* #section .franchise_from */
+
+    #section .franchise_from{
+        width: 100%;
+        height: 1200px;
+        background-color: #211b42;
+        /* background-image: url(../images/main/franchise_from_bg02.jpg); */
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        position: relative;
+    }
+
+    #section .franchise_from form{
+        width: 900px;
+        height: 1000px;
+        margin: 0 auto;
+        /* background-color: #ffffff5e; */
+        border-radius: 8px;
+        /* position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); */
+        text-align: center;
+    }
+    #section .franchise_from form h1{
+        padding-top: 60px;
+        padding-bottom: 30px;
+        color: #ffffff;
+        font-size: 48px;
+    }
+    #section .franchise_from table {
+    width: 700px;
+    /* border-collapse: collapse; */
+    border-collapse: separate; /* 요거 추가 */
+    border-spacing: 0 12px;     /* 세로 간격 12px 정도 추가 */
+    margin: 0 auto;
+    font-size: 20px;
+    /* border: 1px solid red; */
+    }
+
+    #section .franchise_from table th, 
+    #section .franchise_from table td {
+        height: 60px;
+        padding: 12px;
+        vertical-align: middle;
+    /* border-bottom: 1px solid #ddd; */
+    
+    }
+    #section .franchise_from table tr td{
+        border-radius: 0 10px 10px 0;
+        background-color: #ffffff;
+        text-align: left;
+    }
+    #section .franchise_from table tr:nth-child(10) td{
+        width: 150px;
+        border-radius: 10px;
+        background-color:  transparent;
+        text-align: center;
+    }
+
+    #section .franchise_from select {
+    padding: 10px 50px;
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 999px;
+    background-color: #f9f9f9;
+    appearance: none; 
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+    #section .franchise_from button {
+     background-color: #51408c;   /* 원하는 색상 */
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+#section .franchise_from button:hover {
+    background-color: #3e36c7;
+}
+    
+    #section .franchise_from table th {
+    width: 150px;
+    line-height: 50px;
+    border-radius:10px 0 0 10px;
+    background-color: #e9e9e9;
+    }
+
+    #section .franchise_from table .full-width {
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    /* color: #51408c; */
+    font-weight: 500;
+    }
+    
+    /* #section .franchise_from */
+
+    #section .side_fran_menu{
+        width: 90px;
+        height: 300px;
+        background-color: #ff00008a;
+        position: fixed;
+        top: 30%;
+        right: 50px;
+    }
+    #section .bt_fran_menu{
+        width: 100%;
+        height: 90px;
+        background-color: #f6aece;
+        /*백그라운드 이미지 넣을예정임 아마,,,,*/
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+    #section .bt_fran_menu .bt_gide{
+        border: 1px solid red;
+        max-width: 1200px;
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 20px;
+    }
+    #section .bt_fran_menu .bt_gide .bt_checkBox{
+        margin-top: 10px;
+        text-align: end;
+    }
+    /* #section */
+
+
+
+    /* #footer */
+    #footer{
+        width: 100%;
+        height: 500px;
+        background-color: #333;
+    }
+    /* #footer */
+

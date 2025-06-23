@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>주문신청</title>
+</head>
+<body>
+  <!-- 본문 컨텐츠 -->
+  <div class="orderForm">
+    <h2 class="title">주문신청</h2>
+    <button class="addRow_btn" onclick="addRow()">행 추가 ➕</button>
+    <div class="orderForm-box box">
+      <table id="orderFormTable">
+        <thead>
+          <tr>
+            <th><input type="checkbox" onclick='selectAll(this)'/></th>
+            <th>주문번호</th>
+            <th>품목코드</th>
+            <th>품목명</th>
+            <th></th>
+            <th>수량</th>
+            <th>재고</th>
+            <th>단가</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 샘플 데이터 -->
+          <tr>
+            <td><input type="checkbox"/></td>
+            <td><input type="text"></td>
+            <td><input type="text" class="pd_code"></td>
+            <td><input type="text" class="pd_name"></td>
+            <td class="search_td"><button class="default_btn" onclick="showModal(this)">검색</button></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="text"></td>
+            <td><button onclick="deleteRow(this)" class="del_rowBtn">❌</button></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"/></td>
+            <td><input type="text"></td>
+            <td><input type="text" class="pd_code"></td>
+            <td><input type="text" class="pd_name"></td>
+            <td class="search_td"><button class="default_btn" onclick="showModal(this)">검색</button></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="text"></td>
+            <td><button onclick="deleteRow(this)" class="del_rowBtn">❌</button></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"/></td>
+            <td><input type="text"></td>
+            <td><input type="text" class="pd_code"></td>
+            <td><input type="text" class="pd_name"></td>
+            <td class="search_td"><button class="default_btn" onclick="showModal(this)">검색</button></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="text"></td>
+            <td><button onclick="deleteRow(this)" class="del_rowBtn">❌</button></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"/></td>
+            <td><input type="text"></td>
+            <td><input type="text" class="pd_code"></td>
+            <td><input type="text" class="pd_name"></td>
+            <td class="search_td"><button class="default_btn" onclick="showModal(this)">검색</button></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="text"></td>
+            <td><button onclick="deleteRow(this)" class="del_rowBtn">❌</button></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"/></td>
+            <td><input type="text"></td>
+            <td><input type="text" class="pd_code"></td>
+            <td><input type="text" class="pd_name"></td>
+            <td class="search_td"><button class="default_btn" onclick="showModal(this)">검색</button></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="text"></td>
+            <td><button onclick="deleteRow(this)" class="del_rowBtn">❌</button></td>
+          </tr>
+          <tr>
+            <th colspan="4">총 금액</th>
+            <td colspan="5"><span></span>원</td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="default_btn apply_btn">신청</button>
+    </div>
+    <!-- modal -->
+
+    <!--  모달 영역 -->
+    <div id="modalBg">
+      <div class="modal">
+        <h2 class="modal_tit">품목 검색</h2>
+        <form action="" class="search-box">
+          <div class="search_row">
+            <label>품목명검색</label>
+            <label>품목코드검색</label>
+          </div>
+          <div class="search_row">
+            <input type="text" placeholder="품목명검색" />
+            <input type="text" placeholder="품목코드검색" />
+          </div>
+        </form>
+        <table class="result-table">
+          <thead>
+            <tr>
+              <th>품목코드</th>
+              <th>품목명</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="2" style="color:#aaa;">검색 결과 없음</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="modal-footer">
+          <label class="confirm-btn">확인</label>
+          <label class="close-btn" onclick="hideModal()">닫기</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

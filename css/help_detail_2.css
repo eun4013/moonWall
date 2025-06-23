@@ -1,0 +1,264 @@
+/* 기본 설정 */
+body {
+  margin: 50px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f8f8;
+  height: 900px;
+}
+
+/* 상단 관리자 영역 */
+.top-header {
+  background: #000;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px 20px 0 0;
+  height: 50px;
+}
+
+.left {
+  padding: 5px 10px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.right-area {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.store-info {
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: white;
+}
+
+.store-name {
+  color: #f6bb7c;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+}
+
+.user-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.point {
+  cursor: pointer;
+  margin: 0;
+  font-size: 14px;
+  color: white;
+}
+
+/* 상단 메뉴바 */
+.menu-bar {
+  height: 50px;
+  display: flex;
+  gap: 30px;
+  background: #fff;
+  padding: 10px 30px;
+  border: 1px solid #ddd;
+  align-items: center;
+  font-weight: 600;
+}
+
+.menu-bar img {
+  width: auto;
+  height: 30px;
+  background-color: #aebde8;
+}
+
+.menu-bar a {
+  margin-left: 40px;
+  color: black;
+  text-decoration: none;
+}
+
+/* 전체 감싸는 section */
+.section {
+  border: 0.5px solid rgb(201, 201, 201);
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+}
+
+/* 전체 레이아웃 */
+.main-layout {
+  display: flex;
+  height: 700px;
+}
+
+/* 왼쪽 사이드바 */
+.sidebar {
+  width: 180px;
+  background: #fff;
+  border-right: 1px solid #ccc;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 5px 0;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgb(234, 234, 234);
+  width: 100%;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/* 서브메뉴 항상 보이도록 */
+.sidebar .submenu {
+  list-style: none;
+  padding-left: 15px;
+  margin-top: 15px;
+  display: block;
+}
+
+.sidebar .submenu li {
+  padding: 3px 0;
+  margin-bottom: 5px;
+  border: none;
+}
+
+.sidebar .submenu li a {
+  color: #888888;
+  font-weight: 400;
+}
+
+.sub2, .sub3, .sub1 {
+  display: none;
+}
+
+.sub4 .submenu li:nth-child(2) a{
+  color: #000;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 30px 40px;
+  background: #fff;
+  font-size: 16px;
+  color: #000000;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.content h2 {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #000000;
+  padding-bottom: 8px;
+}
+
+/* 질문 박스 */
+.question-box {
+  background: #ffffff;
+  border: 1px solid #00000044;
+  padding: 20px 25px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  color: #000000;
+  line-height: 1.5;
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+.question-title {
+  font-weight: 600;
+}
+
+.question-date {
+  font-weight: 300;
+  font-size: 14px;
+  color: #0000005e;
+}
+
+.question-info {
+  font-weight: 300;
+  font-size: 14px;
+  color: #0000005e;
+  margin-bottom: 12px;
+  margin-top: -8px; /* 살짝 위로 올림 */
+}
+
+.question-body {
+  font-size: 16px;
+}
+
+/* 답변 박스 */
+.answer-box {
+  background: #ffffff;
+  border: 1px solid #00000044;
+  padding: 20px 25px;
+  border-radius: 8px;
+  color: #000000;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.answer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #000000;
+}
+
+.answer-date {
+  font-weight: 400;
+  font-size: 15px;
+  color: #0000005e;
+}
+
+.answer-body {
+  font-size: 16px;
+  color: #000000;
+}
+
+/* 목록 버튼 */
+.ask-btn {
+  background: #0400f5;
+  border: none;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  float: right;
+}
+
+.ask-btn:hover {
+  background: #030186;}

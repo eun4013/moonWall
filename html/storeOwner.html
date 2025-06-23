@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>점주 관리자 페이지</title>
+  <link rel="stylesheet" href="../css/storeOwner.css" />
+  <!-- 카카오 주소 API -->
+  <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <!-- fontawesome -->
+  <script src="https://kit.fontawesome.com/3e2532440e.js" crossorigin="anonymous"></script>
+  <!-- chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- 상단 관리자 헤더 -->
+  <div class="top-header">
+    <div class="left">admin</div>
+    <div class="right-area">
+      <div class="store-info">
+        <span class="store-name">월담 정발산점</span> 스토어 점주님
+        <span class="circle"></span>
+      </div>
+      <div class="user-actions">
+        <p class="point">로그아웃</p>
+        <p class="point" onclick="loadPage('edit_profile.html')">정보수정</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 상단 메뉴바 + 전체 레이아웃 -->
+  <div class="section">
+    <div class="menu-bar">
+      <img src="../images/moon.jpg" alt="문월로고" onclick="loadPage('main_storeOwner.html')"/>
+      <a href="#" id="menu_order" onclick="changeMenu('order'); loadPage('order_list.html');">주문</a>
+      <a href="#" id="menu_return" onclick="changeMenu('return'); loadPage('return_inquiry.html');">반품</a>
+      <a href="#" id="menu_sales" onclick="changeMenu('sales'); loadPage('sales_status.html');">매출현황</a>
+      <a href="#" id="menu_service" onclick="changeMenu('service'); loadPage('help_list.html');">고객센터</a>
+    </div>
+    
+    <div class="main-layout">
+      <!-- 왼쪽 사이드바 -->
+      <div class="sidebar">
+        <ul>
+          <li class="sub_order">
+            <a href="#">주문</a>
+            <ul class="submenu">
+              <li><a href="#" onclick="loadPage('order_list.html')" class="submenu-item">주문내역</a></li>
+              <li><a href="#" onclick="loadPage('order_form.html')" class="submenu-item">주문신청</a></li>
+            </ul>
+          </li>
+          <li class="sub_return">
+            <a href="#">반품</a>
+            <ul class="submenu">
+              <li><a href="#" onclick="loadPage('return_inquiry.html')" class="submenu-item">반품조회</a></li>
+              <li><a href="#" onclick="loadPage('return_form.html')" class="submenu-item">반품신청</a></li>
+            </ul>
+          </li>
+          <li class="sub_sales">
+            <a href="#">매출현황</a>
+            <ul class="submenu">
+              <li><a href="#" onclick="loadPage('sales_status.html')" class="submenu-item">판매현황</a></li>
+              <li><a href="#" onclick="loadPage('sales_inventory.html')" class="submenu-item">매장 재고현황</a></li>
+            </ul>
+          </li>
+          <li class="sub_service">
+            <a href="#">고객센터</a>
+            <ul class="submenu">
+              <li><a href="#" onclick="loadPage('help_list.html')" class="submenu-item">문의 게시판</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 본문 컨텐츠 불러오기 -->
+      <div data-include="main_storeOwner.html" id="content-area" class="content"></div>
+      
+    </div>
+  </div>
+  <script src="../js/admin.js"></script>
+  <script src="../js/include.js" defer></script>
+</body>
+</html>

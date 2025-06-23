@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>고객센터</title>
+  <link rel="stylesheet" href="../css/a_franchfrom_style.css" />
+</head>
+<body>
+  <!-- 상단 관리자 헤더 -->
+  <div class="top-header">
+    <div class="left">admin</div>
+    <div class="right-area">
+      <div class="store-info">
+        <span class="store-name">월담 정발산점</span> 스토어 점주님
+        <span class="circle"></span>
+      </div>
+      <div class="user-actions">
+        <p class="point">로그아웃</p>
+        <p class="point">정보수정</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 상단 메뉴바 + 전체 레이아웃 -->
+  <div class="section">
+    <div class="menu-bar">
+      <img src="../images/a_franchfrom/moon.jpg" alt="문월로고" />
+      <a href="#">게시판관리</a>
+      <a href="#">입고</a>
+      <a href="#">출고</a>
+      <a href="#">재고</a>
+      <!-- <a href="#">고객센터</a> -->
+    </div>
+
+    <div class="main-layout">
+      <!-- 왼쪽 사이드바 -->
+      <div class="sidebar">
+        <ul>
+          <li class="sub1">
+            <a href="#">게시판 관리</a>
+            <ul class="submenu">
+              <li><a href="#">프렌차이즈 문의</a></li>
+              <li><a href="#">고객의소리</a></li>
+              <li><a href="#">매장현황</a></li>
+            </ul>
+          </li>
+          <li class="sub2">
+            <a href="#">입고</a>
+            <ul class="submenu">
+              <li><a href="#">주문신청</a></li>
+              <li><a href="#">주문목록화면</a></li>
+            </ul>
+          </li>
+          <li class="sub3">
+            <a href="#">출고</a>
+            <ul class="submenu">
+              <li><a href="#">반품목록</a></li>
+            </ul>
+          </li>
+          <li class="sub4">
+            <a href="#">재고</a>
+            <ul class="submenu">
+              <li><a href="#">판매현황</a></li>
+              <li><a href="#">매장재고현황</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 본문 컨텐츠 -->
+      <div class="content">
+        <h2>프랜차이즈 문의</h2>
+        <div class="question-box">
+        <table>
+          <tr>
+            <th>고객명</th>
+            <td><input type="text" name="" class="full-width" required></td>
+          </tr>
+          <tr>
+            <th>연락처</th>
+            <td><input type="tel" name="" class="full-width" required></td>
+          </tr>
+          <tr>
+            <th>이메일</th>
+            <td><input type="email" name="" class="full-width" required></td>
+          </tr>
+          <tr>
+            <th>창업희망지역</th>
+            <td>
+              <select id="region1" name="" required>
+                <option value="">-선택-</option>
+                <option value="서울">서울</option>
+                <option value="부산">부산</option>
+                <option value="대구">대구</option>
+                <option value="인천">인천</option>
+                <option value="광주">광주</option>
+                <option value="대전">대전</option>
+                <option value="울산">울산</option>
+                <option value="강원">강원</option>
+                <option value="경기">경기</option>
+                <option value="경남">경남</option>
+                <option value="경북">경북</option>
+                <option value="전남">전남</option>
+                <option value="전북">전북</option>
+                <option value="제주">제주</option>
+                <option value="충남">충남</option>
+                <option value="충북">충북</option>
+                <option value="세종">세종</option>
+              </select>
+              <select id="region2" name="">
+                <option value="">-선택-</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>점포보유유무</th>
+            <td>
+              <label><input type="radio" name="" value="있음" required> 있음</label>
+              <label><input type="radio" name="" value="없음"> 없음</label>
+            </td>
+          </tr>
+          <tr>
+            <th>창업시기</th>
+            <td>
+              <label><input type="radio" name="" value="즉시" required> 즉시</label>
+              <label><input type="radio" name="" value="3개월 후"> 3개월 후</label>
+              <label><input type="radio" name="" value="6개월 후"> 6개월 후</label>
+            </td>
+          </tr>
+          <tr>
+            <th>문의경로</th>
+            <td>
+              <label><input type="checkbox" name="" value="웹 검색"> 웹 검색</label>
+              <label><input type="checkbox" name="" value="블로그&카페"> 블로그&카페</label>
+              <label><input type="checkbox" name="" value="광고"> 광고</label>
+              <label><input type="checkbox" name="" value="유튜브"> 유튜브</label><br>
+              <label><input type="checkbox" name="" value="SNS"> SNS</label>
+              <label><input type="checkbox" name="" value="지인 추천"> 지인 추천</label>
+              <label><input type="checkbox" name="" value="인근 매장"> 인근 매장</label>
+              <label><input type="checkbox" name="" value="기타"> 기타</label>
+            </td>
+          </tr>
+          <tr>
+            <th>상세문의내용</th>
+            <td><textarea name="" rows="5" class="full-width"></textarea></td>
+          </tr>
+        </table>
+        </div>
+        
+        <div class="counsel-form">
+          <div class="counsel-header">
+            <div class="counsel-status">상태</div>
+            <div class="counsel-date">답변일시</div>
+          </div>
+  
+          <div class="counsel-body">
+            <textarea id="counsel-input" placeholder="상담 내용을 입력해주세요."></textarea>
+          </div>
+        </div>
+
+        <button class="ask-btn">상담완료</button>
+        <button class="ask-btn">상담중</button>
+        <!-- <div class="pagination">
+          <span>&lt;</span>
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
+          <span>&gt;</span>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>

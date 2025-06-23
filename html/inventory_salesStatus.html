@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>매장별 판매 현황</title>
+</head>
+<body>
+<div class="inventorySalesStatus sales-status">
+  <h2>매장별 판매 현황</h2>
+  <div class="filter-section">
+    <label>기준일자</label>
+    <input type="date"> ~ <input type="date">
+    <input type="text" placeholder="매장ID를 입력하세요.">
+    <button class="search-btn default_btn">조회</button>
+  </div>
+  <table class="status-table" id="salesTable">
+    <thead>
+      <tr>
+        <th>매장ID</th>
+        <th>매장명</th>
+        <th>메뉴ID</th>
+        <th>메뉴명</th>
+        <th>총판매수량</th>
+        <th>매출액</th>
+      </tr>
+    </thead>
+    <tbody id="salesBody">
+      <tr>
+        <td>S001</td>
+        <td>고양일점장</td>
+        <td>M001</td>
+        <td>아메리카노</td>
+        <td>20</td>
+        <td>30000</td>
+      </tr>
+      <tr>
+        <td>S002</td>
+        <td>홍대점</td>
+        <td>M002</td>
+        <td>카페라떼</td>
+        <td>30</td>
+        <td>90000</td>
+      </tr>
+      <tr>
+        <td>S003</td>
+        <td>합정점</td>
+        <td>M003</td>
+        <td>바닐라라떼</td>
+        <td>40</td>
+        <td>160000</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr class="total-row">
+        <td colspan="4">합계</td>
+        <td id="totalQty">0</td>
+        <td id="totalSales">0</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <div class="input-section">
+    <label>판매입력</label>
+    <select id="storeSelect">
+      <option value="">매장을 선택하세요</option>
+    </select>
+
+    <input type="date" id="saleDate">
+
+    <select id="menuSelect">
+      <option value="">메뉴를 선택하세요</option>
+    </select>
+
+    <input type="number" id="qtyInput" placeholder="수량을 입력하세요">
+
+    <button onclick="addSale()" class="default_btn">입력</button>
+  </div>
+</div>
+<script>
+  const stores = [
+    { id: 'S001', name: '정발산점' },
+    { id: 'S002', name: '홍대점' },
+    { id: 'S003', name: '합정점' }
+  ];
+
+  const menus = [
+    { id: 'M001', name: '아메리카노', price: 1500 },
+    { id: 'M002', name: '카페라떼', price: 3000 },
+    { id: 'M003', name: '바닐라라떼', price: 4000 }
+  ];
+
+  const storeSelect = document.getElementById('storeSelect');
+  const menuSelect = document.getElementById('menuSelect');
+  const salesBody = document.getElementById('salesBody');
+  const totalQty = document.getElementById('totalQty');
+  const totalSales = document.getElementById('totalSales');
+
+  stores.forEach(store => {
+    const option = document.createElement('option');
+    option.value = store.id;
+    option.textContent = store.name;
+    storeSelect.appendChild(option);
+  });
+
+  menus.forEach(menu => {
+    const option = document.createElement('option');
+    option.value = menu.id;
+    option.textContent = menu.name;
+    menuSelect.appendChild(option);
+  });
+
+  function addSale() {
+    const storeId = storeSelect.value;
+    const menuId = menuSelect.value;
+    const qty = parseInt(document.getElementById('qtyInput').value);
+
+    const store = stores.find(s => s.id === storeId);
+    const menu = menus.find(m => m.id === menuId);
+
+    if (!store || !menu || !qty) {
+      alert('모든 항목을 입력해주세요');
+      return;
+    }
+
+    const sales = qty * menu.price;
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${store.id}</td>
+      <td>${store.name}</td>
+      <td>${menu.id}</td>
+      <td>${menu.name}</td>
+      <td>${qty}</td>
+      <td>${sales}</td>
+    `;
+    salesBody.appendChild(row);
+
+    updateTotal();
+  }
+
+  function updateTotal() {
+    let totalQtyVal = 0;
+    let totalSalesVal = 0;
+    const rows = salesBody.querySelectorAll('tr');
+
+    rows.forEach(row => {
+      const cells = row.querySelectorAll('td');
+      totalQtyVal += parseInt(cells[4].textContent);
+      totalSalesVal += parseInt(cells[5].textContent);
+    });
+
+    totalQty.textContent = totalQtyVal;
+    totalSales.textContent = totalSalesVal;
+  }
+</script>
+</body>
+</html>

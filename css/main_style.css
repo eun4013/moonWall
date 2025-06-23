@@ -1,0 +1,1316 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none; color: #000;}
+img{border: 0; vertical-align: top;}
+span{display: block;}
+h1{font-size: 70px; font-weight: 900; line-height: 70px;}
+h2{font-size: 48px;}
+h3{font-size: 38px; line-height: 38px;}
+h4{font-size: 28px; line-height: 34px;}
+
+    /* #header */
+    #header{
+        width: 100%;
+        height: 120px;
+        background-color:rgba(255, 255, 255, 0);
+        position: relative;
+        z-index: 50000;
+        transition: all 0.3s;
+        user-select: none;
+    }
+    #header .bkBg{
+        width: 100%;
+        height: 120px;
+        line-height: 120px;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        transition: all 0.5s;
+    }
+
+    #header .bkBg a img{
+        width: 90%;
+        max-width:150px;
+        margin-left: 30px;
+        vertical-align: middle;
+    }
+
+    #header .bkBg .gnb{
+        width: 55%;
+        max-width: 600px;
+        display: flex;
+        justify-content: space-between;
+        margin-right: 30px;
+        transition: all 0.5s;
+    }
+    #header .bkBg .gnb>li{
+        width: 20%;
+        text-align: center;
+    }
+    #header .bkBg .gnb>li>a{
+        display: block;
+        width: 100%;
+        color: #fff;
+        /* border: 1px solid red; */
+        font-size: 20px;
+        font-weight: 700;
+    }
+    #header .bkBg .gnb:hover>li>a{
+        color: #000;
+    }
+    #header .bkBg .gnb>li .sub{
+        line-height: 35px;
+    }
+    #header .bkBg .gnb>li .sub>li>a{
+        color: #797979;
+        /* border: 1px solid red; */
+    }
+    #header .bkBg .gnb>li .sub>li:hover>a{
+        color: #222;
+        font-weight: 600;
+    }
+
+
+
+    #header .bkBg .m_menu, 
+    #header .m-gnb{
+        display: none;
+    }
+
+    /* #header */
+
+    /* #section */
+
+    /*메인베너*/
+    #section .main{
+        width: 100%;
+        height: 50vw;
+        /* border: 1px solid red; */
+        user-select: none;
+    }
+    #section .main .mainbg{
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    #section .main .mainbg video{
+        width: 100%;
+        /* border: 1px solid red; */
+    }
+
+
+    /*광고페이지*/
+    #section .adver{
+        width: 100%;
+        max-width: 1100px;
+        height: 400px;
+        /* background-color: rgba(255, 255, 255, 0.479); */
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        /* padding-top: 50px; */
+        user-select: none;
+    }
+    #section .adver>div{
+        width: 520px;
+        height: 300px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 100px 0;
+        cursor: pointer;
+        color: #fff;
+    }
+    #section .adver>div .adverText_box{
+        position: relative;
+        z-index: 50;
+    }
+    #section .adver .adver_box_01{
+        border-radius: 150px 10px 10px 10px;
+        background-image: url(../images/main/adver_01.jpg);
+        position: relative;
+        
+    }
+    
+    #section .adver .adver_box_01::after{
+        content: "";
+        display: flex;
+        width: 100%;
+        height: 100%;
+        border-radius: 150px 10px 10px 10px;
+        background-color: #50408cb2;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        transition: background-color 0.5s;
+    }
+    #section .adver .adver_box_01:hover::after{
+        background-color: #251c46bd;
+    }
+    
+    #section .adver .adver_box_02{
+        border-radius: 10px 10px 150px 10px;
+        /* background-color: #f6aece; */
+        background-image: url(../images/main/adver_02.jpg);
+        position: relative;
+    }
+    #section .adver .adver_box_02::after{
+        content: "";
+        display: flex;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px 10px 150px 10px;
+        background-color: #f6aecec2;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        transition: background-color 0.5s;
+    }
+    #section .adver .adver_box_02:hover::after{
+        background-color: #8b6074d2;
+    }
+
+    #section .adver .adver_box_02 h4 span, 
+    #section .adver .adver_box_01 h4 span{
+        font-weight: 900;
+    }
+    #section .adver>div>div>p{
+        padding-top: 10px;
+    }
+
+
+
+
+
+    #section .advertext{
+        width: 100%;
+        height: 500px;
+        text-align: center;
+        /* border: 1px solid red; */
+    }
+    #section .advertext>div img{
+        width: 300px;
+    }
+    #section .advertext .advertext02_box{
+        margin-top: 50px;
+    }
+    #section .advertext .advertext02_box p{
+        font-size: 26px;
+        line-height: 36px;
+    }
+
+
+
+    /*메뉴페이지*/
+    #section .menu{
+        width: 100%;
+        height: 800px;
+        /* background-color: #665a60; */
+        text-align: center;
+        user-select: none;
+        position: relative;
+    }
+
+    #section .menu h1{
+        padding:50px;
+        padding-top: 100px;
+        color: #51408c;
+        cursor: pointer;
+    }
+
+    #section .menu .pinkbg{
+        background-color: #f6aece54;
+        height: 600px;
+        /* border-radius: 50% 50% 0 0 ; */
+    }
+    
+    #section .menu .tap{
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        /* gap: 1vw; */
+        list-style: none;
+        margin: 0 0 3vw 0;
+    }
+    #section .menu .tap li{
+        padding: 0.5vw 2vw;
+        border-radius: 100px;
+        cursor: pointer;
+        transition: background 0.3s;
+        color: #51408c;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    #section .menu .tap .active{
+        background-color: #51408c;
+        box-shadow: 0 5px 15px rgba(191, 122, 173, 0.6);
+        color: #fff;
+
+    }
+    #section .menu .tap li:hover:not(.active) {
+    color: #5a2a4e;
+}
+
+    #section .menu .view{
+        /* border: 1px solid red; */
+        /* background-color: #3e36c7; */
+        width: 100%;
+        height: 400px;
+    }
+    #section .menu .view li{
+        display: none;
+    }
+    
+    #section .menu .view > li.menu_on {
+        display: block;
+    }
+
+    #section .menu .view li .swiper{
+        width: 80%;
+    }
+
+    #section .menu .view li .swiper .swiper-wrapper{
+        height: 100%;
+    }
+
+    #section .menu .view li .swiper-wrapper .swiper-slide {
+    /* background-color: #682a2a; */
+    height: 400px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* overflow: hidden; */
+    position: relative;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+    #section .menu .view li .swiper-wrapper .swiper-slide img{
+    width: 500px;
+    transform-origin: center center; 
+    transition: transform 0.3s ease; 
+    position: absolute;
+    top: -60px;
+    }
+    #section .menu .view li .swiper-wrapper .swiper-slide img:hover{
+        transform: scale(1.2) rotateZ(-12deg);
+        filter: drop-shadow(0 0 10px #f6aece);
+        z-index: 10;
+        animation: shake 0.5s ease-in-out;
+    }
+    @keyframes shake {
+        0%, 100% { transform:scale(1.2) translateX(0) rotateZ(-12deg); }
+        25% { transform:scale(1.2) translateX(-5px) rotateZ(15deg); }
+        75% { transform:scale(1.2) translateX(5px) rotateZ(-9deg); }
+    }
+
+
+    .swiper-navigation-and-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 70px;
+    background-color: #51408c;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    z-index: 10;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.swiper-navigation-and-name .menu-name {
+    flex-grow: 1;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Swiper 내비게이션 화살표 스타일 */
+.swiper-button-prev,
+.swiper-button-next {
+    width: 50px;
+    height: 50px; 
+    /* background-color: rgba(255, 255, 255, 0.3); */
+    border-radius:50%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s; 
+}
+
+/* Swiper의 기본 화살표가 보이지 않게 하려면 (이전 답변에서 드린 코드입니다) */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    content: ''; 
+    display: none; /* 이 부분이 Swiper 기본 화살표를 확실히 숨깁니다. */
+}
+
+/* 여러분이 HTML에 직접 넣은 폰트어썸 아이콘의 크기를 조절하는 부분입니다. */
+.swiper-button-prev i,
+.swiper-button-next i {
+    font-size: 1.5em; /* 이 값을 원하는 크기로 변경해보세요! */
+    /* 예를 들어, 더 크게 하고 싶으면 2em, 2.5em, 3em 등으로 늘려보세요. */
+    /* color: inherit; */ /* 부모 요소의 색상 상속 (현재 흰색) */
+    color: #fff;
+}
+
+
+
+    /*스토어안내페이지*/
+    #section .storeGallery{
+        width: 100%;
+        height: 600px;
+        /* background-color: rgb(177, 190, 186); */
+        display: flex;
+        position: relative;
+        margin: 150px 0;
+        user-select: none;
+    }
+
+    #section .storeGallery .sg_textBox{
+        width: 50%; height: 100%;
+        /* border: 1px solid red; */
+        box-sizing: border-box;
+        text-align: center;
+        padding-top: 100px;
+        
+    }
+    #section .storeGallery .sg_textBox .st_imgBox{
+        text-align: center;
+    }
+    #section .storeGallery .sg_textBox .st_imgBox img{
+        max-width: 100px;
+        width: 100%;
+        min-width: 50px;
+    }
+    #section .storeGallery .sg_textBox h2{
+        line-height: 60px;
+        font-weight: 900;
+        color: #f6aece;
+        margin: 30px 0;
+        font-size: 48px;
+    }
+    #section .storeGallery .sg_textBox h2 span{
+        display:inline;
+        color: #211b42;
+    }
+
+    #section .storeGallery .sg_textBox p{
+        line-height: 25px;
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    #section .storeGallery .sg_textBox p:nth-child(2){
+        margin-top: 50px;
+    }
+    #section .storeGallery .sg_nextBtn{
+        width: 4vw;
+        height: 3vw;
+        line-height: 3vw;
+        background-color: #211b42;
+        border-radius: 50px;
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%);
+        color: #fff;
+        text-align: end;
+        font-size: 2vw;
+        padding-right: 1vw;
+        cursor: pointer;
+        z-index: 10;
+    }
+    
+
+    #section .storeGallery .sg_imgBox{
+        width: 50%;
+        height: 100%;
+        /* background-color: #3e36c7; */
+        overflow: hidden;
+    }
+    #section .storeGallery .sg_imgBox .sg_img {
+    width: 100%;         /* 수정 */
+    height: 100%;
+    }
+
+    #section .storeGallery .sg_imgBox .sg_img .swiper-slide {
+    width: 100%;         /* 슬라이드 하나가 꽉 차도록 설정 */
+    height: 100%;
+    }
+
+    #section .storeGallery .sg_imgBox .sg_img .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+    #section .storeGallery .sg_imgBox .sg_img img{
+        width: 100%;
+        height: 34vw;
+    }
+    .swiper {
+    width: 100%;
+    height: 100%;
+    }
+
+    .swiper-slide {
+    width: auto; /* slidesPerView: 'auto' 쓸 때 필요 */
+    }
+
+
+    /*프랜차이즈 안내 페이지*/
+    #section .franchise{
+        width: 100%;
+        height: 500px;
+        /* background-color: bisque; */
+        display: flex;
+        margin-bottom: 100px;
+        user-select: none;
+    }
+    #section .franchise .fran_imgBox{
+        /* border: 1px solid red; */
+        width: 50%;
+        text-align: center;
+    }
+    #section .franchise .fran_imgBox h1{
+        margin: 10px 30px;
+        /* margin-bottom: 50px; */
+        text-align: left;
+        position: relative;
+    }
+    #section .franchise .fran_imgBox h1::after{
+        content: "";
+        display: block;
+        width: 15px;
+        height: 15px;
+        background-color: #f6aece;
+        position: absolute;
+        bottom: 0px;
+        left: 250px;
+    }
+    #section .franchise .fran_imgBox img{
+        padding-top: 100px;
+        width: 40%;
+        min-width: 200px;
+        /* margin-top: 0px; */
+    }
+
+
+
+    #section .franchise .fran_txtbox{
+        width: 50%;
+        height: 100%;
+    }
+    #section .franchise .fran_txtbox li{
+        height: 30%;
+        border-bottom: 1px solid rgb(236, 236, 236);
+        margin-top: 15px;
+        position: relative;
+        overflow: hidden;
+    }
+    .fran_txtbox li::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background: #f6aece;
+        z-index: 0;
+        transition: width 1s ease;
+}
+
+    .fran_txtbox li:hover::before {
+        width: 100%;
+    }
+    #section .franchise .fran_txtbox li a{
+        display: block;
+        width: 100%;
+        height: auto;
+        /* padding: 25px 50px; */
+        /* border: 1px solid red; */
+        padding: 1.5rem; /* 여백 조정 */
+        transition: color 0.3s;
+        position: relative;
+        z-index: 1;
+    }
+
+    .fran_txtbox li:hover a {
+        color: white;
+    }
+    #section .franchise .fran_txtbox li a h4{
+        margin-bottom: 10px;
+        font-weight: 900;
+        letter-spacing: 1px;
+        transition: color 0.3s;
+    }
+    #section .franchise .fran_txtbox li a p{
+        font-size: 18px;
+        line-height: 25px;
+        color: #f6aece;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+    #section .franchise .fran_txtbox li:hover a p{
+        color: white;
+    }
+
+
+
+
+    /* 프렌차이즈 문의 폼 */
+    #section .franchise_from{
+        width: 100%;
+        height: 1250px;
+        background-image: url(../images/main/fr_fromBg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        position: relative;
+        user-select: none;
+    }
+    
+    #section .franchise_from form{
+        width: 900px;
+        height: 1000px;
+        border-radius: 8px;
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 70px;
+    }
+    #section .franchise_from form>div img{
+        width: 100px;
+    }
+    #section .franchise_from form h2{
+        padding-bottom: 30px;
+        color: #211b42;
+        font-weight: 900;
+    }
+    #section .franchise_from table {
+    width: 700px;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    margin: 0 auto;
+    font-size: 20px;
+    }
+
+    #section .franchise_from table th, 
+    #section .franchise_from table td {
+        height: 60px;
+        padding: 12px;
+        vertical-align: middle;
+    
+    }
+    #section .franchise_from table tr td{
+        border-radius: 0 10px 10px 0;
+        background-color: #ffffff;
+        text-align: left;
+        padding-left: 30px;
+    }
+    #section .franchise_from table tr:nth-child(10) td{
+        width: 150px;
+        border-radius: 10px;
+        background-color:  transparent;
+        text-align: center;
+    }
+
+    #section .franchise_from select {
+    width: 48%;
+    padding: 10px 50px;
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 999px;
+    background-color: #f9f9f9;
+    appearance: none; 
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-align: center;
+}
+    #section .franchise_from button {
+        background-color: #ddd;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        color: #000;
+    }
+
+#section .franchise_from button:hover {
+    background-color: #51408c;
+    color: #fff;
+}
+    
+    #section .franchise_from table th {
+    width: 150px;
+    line-height: 50px;
+    border-radius:10px 0 0 10px;
+    background-color: #51408c;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    }
+
+    #section .franchise_from table .full-width {
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    /* color: #51408c; */
+    font-weight: 500;
+    }
+    #section .franchise_from table textarea{
+        resize: none;
+    }
+    
+    /* #section .franchise_from */
+
+
+
+    /*채팅봇*/
+
+    #chat-button {
+position: fixed;
+bottom: 100px;
+right: 30px;
+width: 60px;
+height: 60px;
+background-color: #ff69b4;
+color: #fff;
+border-radius: 50%;
+font-size: 24px;
+text-align: center;
+line-height: 60px;
+cursor: pointer;
+z-index: 1000;
+box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#chat-box {
+position: fixed;
+bottom: 170px;
+right: 30px;
+width: 300px;
+height: 400px;
+background: white;
+border-radius: 10px;
+box-shadow: 0 0 20px rgba(0,0,0,0.15);
+display: none;
+flex-direction: column;
+z-index: 1000;
+overflow: hidden;
+font-family: 'Pretendard', sans-serif;
+}
+
+.chat-header {
+background-color: #ff69b4;
+color: white;
+padding: 1rem;
+font-weight: bold;
+height: 20px;
+line-height: 25px;
+}
+
+.chat-messages {
+flex: 1;
+padding: 1rem;
+overflow-y: auto;
+background: #fdfdfd;
+}
+
+.message.bot {
+background: #f0f0f0;
+padding: 0.7rem;
+margin-bottom: 0.5rem;
+border-radius: 8px;
+font-size: 14px;
+width: 200px;
+height: 30px;
+line-height: 1.2;
+}
+
+.chat-input {
+display: flex;
+border-top: 1px solid #ccc;
+height: 40px;
+}
+
+.chat-input input {
+flex: 1;
+border: none;
+padding: 0.5rem;
+font-size: 14px;
+}
+
+.chat-input button {
+background-color: #ff69b4;
+color: white;
+border: none;
+padding: 0 1rem;
+cursor: pointer;
+}
+
+
+
+    #section .goup{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color:#51408c;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        cursor: pointer;
+        user-select: none;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        text-align: center;
+        font-size: 34px;
+        color: #fff;
+    }
+    #section .goup .up_icon{
+        padding-top: 4px;
+    }
+
+    
+    /* #section */
+
+
+
+    /* #footer 푸터 입니다 */
+    #footer{
+        width: 100%;
+        height: 250px;
+        background-color: #333;
+        user-select: none;
+        transition: all 0.5s;
+        box-sizing: border-box;
+    }
+    #footer .bt_foot{
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        transition: all 0.5s;
+        /* padding-top: 10px; */
+    }
+    #footer .bt_foot .foot_sb{
+        display: flex;
+        justify-content: space-between;
+        /* border: 1px solid red; */
+        padding: 50px 0;
+        width: 900px;
+        transition: all 0.5s;
+    }
+    
+    #footer .bt_foot .foot_sb li a{
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: 700;
+        transition: all 0.5s;
+    }
+    #footer .bt_foot .foot_sb li:hover a{
+        color: #f6aece;
+    }
+    #footer .bt_foot>div img{
+        max-width: 200px;
+        min-width: 100px;
+        width: 100%;
+        transition: all 0.5s;
+    }
+
+    #footer .bt_foot .txtbox address{
+        color: #cfcfcf;
+        font-style: normal;
+        line-height: 20px;
+
+    }
+
+
+    /* #footer */
+
+
+
+
+/* 1240px ~ 760px */
+@media all and (max-width: 1240px) and (min-width: 760px) {
+#header .bkBg .gnb {
+            width: 70%;
+            max-width: none;
+        }
+
+        #header .bkBg .gnb > li > a {
+            font-size: 18px;
+        }
+
+
+        /*반응형 광고부분*/
+        #section .adver {
+            max-width: 90%;
+            padding: 0 20px;
+        }
+        #section .adver > div {
+            width: 45%;
+            height: 280px;
+            padding: 80px 0;
+        }
+
+        .advertext {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px;
+    }
+
+    .advertext02_box p {
+    font-size: 1.1rem;
+    }
+
+        /*반응형 스토어갤러리*/
+    #section .storeGallery {
+    flex-direction: column;  
+    align-items: center;
+    height: auto;
+    }
+
+    #section .storeGallery .sg_textBox {
+    width: 100%;
+    padding: 40px 5vw;
+    text-align: center;
+    }
+
+    #section .storeGallery .sg_textBox h2{
+    line-height: 55px;
+    }
+
+    #section .storeGallery .sg_textBox p {
+    font-size: 18px;
+    line-height: 24px;
+    }
+
+    #section .storeGallery .sg_imgBox {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    }
+
+    #section .storeGallery .sg_imgBox .sg_img img {
+    height: auto;
+    max-height: 60vw;
+    }
+
+    #section .storeGallery .sg_nextBtn {
+    display: none;
+    }
+
+
+
+    /*반응형 프렌차이즈안내*/
+    #section .franchise {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #section .franchise .fran_imgBox,
+    #section .franchise .fran_txtbox {
+        width: 100%;
+        height: auto;
+    }
+
+    #section .franchise .fran_imgBox img {
+        width: 30%;
+        padding-top: 50px;
+    }
+
+    #section .franchise .fran_imgBox h1::after {
+        left: 240px;
+    }
+
+    #section .franchise .fran_txtbox li {
+        height: auto;
+    }
+
+/*반응형 프렌차이즈 문의 폼*/
+
+    #section .franchise_from form {
+        width: 90%;
+        height: auto;
+        padding-top: 50px;
+    }
+
+    #section .franchise_from table {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    #section .franchise_from table th,
+    #section .franchise_from table td {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    #section .franchise_from select {
+        width: 40%;
+        margin:.0 20px;
+    }
+
+
+        /*반응형 푸터*/
+    #footer {
+        height: auto;
+        padding: 30px 20px;
+    }
+
+    #footer .bt_foot {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #footer .bt_foot .foot_sb {
+        width: 100%;
+        justify-content: center;
+        padding: 30px 0;
+        text-align: center;
+    }
+
+    #footer .bt_foot .foot_sb li a {
+        font-size: 0.9rem;
+        margin: 5px 10px;
+    }
+
+    #footer .bt_foot > div img {
+        max-width: 160px;
+    }
+
+    #footer .bt_foot .txtbox address {
+        text-align: center;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        font-size: clamp(0.75rem, 2.5vw, 1rem);
+    }
+}
+
+
+/* 759px 이하 (모바일) */
+
+@media all and (max-width: 759px) {
+
+    /*반응형 헤더*/
+    #header {
+        height: auto;
+        position: relative;
+    }
+
+    #header .bkBg {
+        height: 60px;
+        line-height: 60px;
+        /* border: 1px solid red; */
+        box-sizing: border-box;
+    }
+
+    #header .bkBg .gnb {
+        display: none;
+    }
+
+    #header .bkBg .m_menu {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        color: #fff;
+        padding-right: 30px;
+    }
+    #header .m-gnb {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: #fff;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -1000px;
+        overflow-y: scroll;
+    }
+
+    #header .m-gnb>li {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 50px;
+    }
+    #header .m-gnb .delt{
+        font-size: 30px;
+        text-align: end;
+        padding: 20px 30px;
+    }
+    #header .m-gnb>li>a {
+    display: block;
+    padding: 10px 20px;
+    color: #000;
+    font-weight: 600;
+    font-size: 20px;
+    }
+
+    #header .m-gnb li .sub {
+    padding-left: 20px;
+    /* background: #f9f9f9; */
+    }
+
+    #header .m-gnb li .sub li a {
+    display: block;
+    padding: 8px 0;
+    color: #666;
+    }
+    #header .m-gnb li .sub li:hover a{
+        color: #222;
+    }
+
+
+    /*반응형 광고부분*/
+     #section .adver {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    gap: 20px;
+  }
+
+  #section .adver > div {
+    width: 90%;
+    height: 240px;
+    padding: 60px 0;
+  }
+
+  #section .adver .adver_box_01{border-radius: 150px 150px 10px 10px;}
+  #section .adver .adver_box_02 {border-radius: 10px 10px 150px 150px;}
+
+  #section .adver .adver_box_01::after{border-radius: 150px 150px 10px 10px;}
+  #section .adver .adver_box_02::after {border-radius: 10px 10px 150px 150px}
+
+    #section .advertext {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding-top: 150px;
+    }
+
+    #section .advertext img {
+    max-width: 200px;
+    }
+
+    #section .advertext02_box p {
+    font-size: 1.1em !important;
+    line-height: 1.4;
+    }
+
+
+    #section .side_fran_menu{
+        display: none;
+    }
+
+
+
+
+    /*반응형 스토어갤러리*/
+ #section .storeGallery {
+    flex-direction: column;
+    height: auto;
+    margin: 80px 0;
+  }
+
+  #section .storeGallery .sg_textBox,
+  #section .storeGallery .sg_imgBox {
+    width: 100%;
+    height: auto;
+  }
+
+  #section .storeGallery .sg_textBox {
+    padding: 40px 15px;
+  }
+
+  #section .storeGallery .sg_textBox h2 {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  #section .storeGallery .sg_textBox p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  #section .storeGallery .sg_nextBtn {
+    display: none;
+  }
+  #section .storeGallery .sg_nextBtn{
+    line-height: 34px;
+    padding-right: 10px;
+  }
+
+  #section .storeGallery .sg_imgBox .sg_img img {
+    height: 60vw;
+  }
+
+
+
+
+    /*반응형 프렌차이즈 안내*/
+    #section .franchise {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #section .franchise .fran_imgBox,
+    #section .franchise .fran_txtbox {
+        width: 100%;
+        height: auto;
+    }
+
+    #section .franchise .fran_imgBox img {
+        width: 60%;
+        padding-top: 30px;
+    }
+
+    #section .franchise .fran_imgBox h1 {
+        margin: 10px 20px;
+    }
+
+    #section .franchise .fran_imgBox h1::after {
+        left: 240px;
+    }
+
+    #section .franchise .fran_txtbox li a {
+        padding: 1rem;
+    }
+
+    #section .franchise .fran_txtbox li a h4 {
+        font-size: 1.5rem;
+    }
+
+    #section .franchise .fran_txtbox li a p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+
+    /*반응형 프렌차이즈 문의 폼*/
+#section .franchise_from {
+        height: auto;
+        /* padding: 40px 20px; */
+        background-attachment: scroll;
+    }
+
+    #section .franchise_from form {
+        width: 85%;
+        height: auto;
+        padding-top: 30px;
+    }
+
+    #section .franchise_from table {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    #section .franchise_from table tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    #section .franchise_from table th{
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius:10px 10px 0 0 ;
+    }
+    #section .franchise_from table td {
+        display: block;
+        width: 100%;
+        height: 60px;
+        
+        border-radius:0 0 10px 10px  !important ;
+        text-align: left;
+        padding-left: 15px;
+        box-sizing: border-box;
+    }
+    #section .franchise_from table tr:nth-child(4) td, 
+    #section .franchise_from table tr:nth-child(8) td{
+        height: 100px;
+    }
+
+    
+    #section .franchise_from table td input[type="text"], 
+    #section .franchise_from table td input[type="number"],
+    #section .franchise_from table td input[type="email"]{   height: 30px;
+    }
+
+    #section .franchise_from select,
+    #section .franchise_from .full-width {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+
+
+    /*반응형 푸터*/
+    #footer {
+        height: auto;
+        padding: 30px 15px;
+    }
+
+    #footer .bt_foot {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #footer .bt_foot .foot_sb {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 20px;
+    }
+    #footer .bt_foot .foot_sb li{
+        width: 100%;
+        padding-bottom: 20px;
+        text-align: center;
+        border-bottom: 1px solid #ffffff2f;
+    }
+    #footer .bt_foot .foot_sb li a {
+        font-size: 1rem;
+        margin: 4px 0;
+    }
+
+    #footer .bt_foot > div img {
+        max-width: 140px;
+    }
+
+    #footer .bt_foot .txtbox address {
+        font-size: 0.65rem;
+        text-align: center;
+        line-height: 1.4;
+        word-break: keep-all;
+        padding: 0 10px;
+    }
+}
+
+

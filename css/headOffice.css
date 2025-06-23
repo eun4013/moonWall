@@ -1,0 +1,1359 @@
+@charset "UTF-8";
+
+/* 기본 설정 */
+* { margin: 0; padding: 0; }
+a { text-decoration: none; color: #000; }
+img { border: 0; vertical-align: top; }
+button{ background: inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer }
+
+body {
+  margin: 50px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f8f8;
+}
+
+/* 상단 관리자 영역 */
+.top-header {
+  background: #000;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px 20px 0 0;
+  height: 50px;
+}
+
+.left {
+  padding: 5px 10px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.right-area {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.store-info {
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #fff;
+}
+
+.store-name {
+  color: #f6bb7c;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.user-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.point {
+  cursor: pointer;
+  margin: 0;
+  font-size: 14px;
+  color: #fff;
+}
+
+/* 상단 메뉴바 */
+.menu-bar {
+  height: 50px;
+  display: flex;
+  gap: 30px;
+  background: #fff;
+  padding: 10px 30px;
+  border: 1px solid #ddd;
+  align-items: center;
+  font-weight: 600;
+}
+
+.menu-bar img {
+  width: auto;
+  height: 30px;
+  background-color: #aebde8;
+}
+
+.menu-bar a {
+  margin-left: 40px;
+}
+
+/* 전체 감싸는 section */
+.section {
+  border: 0.5px solid rgb(201, 201, 201);
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+}
+
+/* 전체 레이아웃 */
+.main-layout {
+  display: flex;
+  flex-wrap: wrap;
+  height: 700px;
+}
+
+/* 왼쪽 사이드바 */
+.sidebar {
+  width: 10%;
+  background: #fff;
+  border-right: 1px solid #ccc;
+  padding: 20px;
+}
+
+.sidebar > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 5px 0;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgb(234, 234, 234);
+  width: 100%;
+}
+
+.sidebar a {
+  font-weight: bold;
+  display: block;
+}
+
+/* 서브메뉴 항상 보이도록 */
+.sidebar .submenu {
+  list-style: none;
+  padding-left: 15px;
+  margin-top: 15px;
+  display: block;
+}
+.sidebar .submenu li {
+  padding: 3px 0;
+  margin-bottom: 5px;
+  border: none;
+}
+.sidebar .submenu li a {
+  color: #888888;
+  font-weight: 400;
+}
+.sidebar .submenu li a.active {
+  color: #000;
+}
+
+/* 서브메뉴 항목 숨기기 */
+.sidebar > ul > li {
+  display: none;
+}
+
+/* 본문 컨텐츠 */
+.content {
+  flex-grow: 1;
+  padding: 30px 40px;
+  background: #fff;
+  font-size: 16px;
+  color: #000000;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.content h2 {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #000000;
+  padding-bottom: 8px;
+}
+
+.content h3.tit {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* 기본 버튼 레이아웃 */
+.default_btn {
+  background: #0400f5;
+  border: none;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  float: right;
+}
+.default_btn:hover {
+  background: #030186;
+}
+
+/* 테이블 영역 */
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.content thead {
+  background-color: #ededed;
+  color: #000;
+}
+
+.content table th,
+.content table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+/* 페이지네이션 */
+.pagination {
+  text-align: center;
+  position: absolute;
+  left: 50%;  bottom: 30px;
+  transform: translate(-50%);
+}
+
+.pagination a {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+/*   고객문의 상세   */
+
+/* 질문 박스 */
+.helpDetail .question-box {
+  background: #ffffff;
+  border: 1px solid #00000044;
+  padding: 20px 25px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  color: #000000;
+  line-height: 1.5;
+}
+
+.helpDetail .question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+.helpDetail .question-title {
+  font-weight: 600;
+}
+
+.helpDetail .question-date {
+  font-weight: 300;
+  font-size: 14px;
+  color: #0000005e;
+}
+
+.helpDetail .question-info {
+  font-weight: 300;
+  font-size: 14px;
+  color: #0000005e;
+  margin-bottom: 12px;
+  margin-top: -8px; /* 살짝 위로 올림 */
+}
+
+.helpDetail .question-body {
+  font-size: 16px;
+}
+
+/* 답변 박스 */
+.helpDetail .answer-box {
+  background: #ffffff;
+  border: 1px solid #00000044;
+  padding: 20px 25px;
+  border-radius: 8px;
+  color: #000000;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.helpDetail .answer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #000000;
+}
+
+.helpDetail .answer-date {
+  font-weight: 400;
+  font-size: 15px;
+  color: #0000005e;
+}
+
+.helpDetail .answer-body {
+  font-size: 16px;
+  color: #000000;
+}
+
+/* 목록 버튼 */
+.helpDetail .ask-btn {
+  background: #0400f5;
+  border: none;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  float: right;
+}
+
+.helpDetail .ask-btn:hover {
+  background: #030186;
+}
+
+.vault-locked{
+  margin-left: 10px;
+}
+
+/* select_box */
+.search_box select, 
+.search_box input{
+  width: 100px;
+  padding: 8px 0;
+  text-align: center;
+  color: #888888;
+  outline: none;
+  margin-bottom: 20px;
+  margin-right: 5px;
+}
+.search_box input[type="date"] {
+  width: 150px; 
+}
+.search_box input[type="button"] {
+  color: #000;
+}
+
+/* 질문하기 버튼 */
+.ask-btn {
+  margin-top: 20px;
+}
+
+/*   프랜차이즈 문의 */
+.franchiseInquiry .search_form {
+  height: 40px;
+  display: flex;
+  justify-content: end;
+  margin-top: 50px;
+}
+.franchiseInquiry .search_form .searchTerm {
+  width: 100px; height: 100%;
+  margin-right: 5px;
+}
+.franchiseInquiry .search_form .statusBox {
+  width: 150px;
+  display: none;
+}
+.franchiseInquiry .search_form .textBox {
+  width: 330px;
+  height: 100%;
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+.franchiseInquiry .search_form .search_date {
+  width: 147px; height: 93%;
+}
+.franchiseInquiry .search_form .dateBox > span {
+  margin: 0px 5px;
+}
+.franchiseInquiry .search_form .dateBox {
+  display: none;
+}
+.franchiseInquiry .search_btn {
+  height: 100%;
+  margin-left: 10px;
+}
+
+/* 프랜차이즈 문의 상세 */
+.franchDetail table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.franchDetail thead {
+  background-color: #ededed;
+  color: #000;
+}
+
+.franchDetail table th,
+.franchDetail table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+
+}
+
+.franchDetail table .full-width{
+  width: 100%;
+  border: none;
+  outline: none;
+}
+.franchDetail table select{
+  width: 300px;
+  height: 30px;
+  text-align: center;
+  outline: none;
+}
+.franchDetail table #answer-date{
+  border: 1px solid rgb(234, 234, 234);
+}
+
+.franchDetail table tr:nth-child(10) td textarea{
+  height: 150px;
+}
+.franchDetail .answer_table {
+  margin: 20px 0px;
+}
+
+.franchDetail .close-btn {
+  background: #cacaca;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.franchDetail .close-btn:hover {
+  background: #919191;
+}
+/*    입고등록     */
+/*  모달창 전체 영역  */
+.receiving_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 1000;
+}
+
+#receiving-modal-toggle:checked ~ .receiving_modal,
+#order-modal-toggle:checked ~ .receiving_modal {
+  display: block;
+}
+
+.receiving_modal_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  width: 800px;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.receiving_modal_title {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.receiving_search-box {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.receiving_row {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.receiving_row label {
+  width: 120px;
+  font-weight: bold;
+}
+
+.receiving_row input {
+  width: 200px;
+  padding: 6px;
+}
+
+.receiving_result-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.receiving_result-table th,
+.receiving_result-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.receiving_result-table th {
+  background: #f0f0f0;
+}
+
+.receiving_modal-footer {
+  text-align: right;
+}
+
+
+.ask-btn-receiving-madal {
+  background: #061bff;
+  color: #fff;
+  padding: 8px 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 8px;
+  display: inline-block;
+  text-align: center;
+}
+
+.ask-btn-receiving-madal {
+  float: left;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.receiving_row label:nth-child(2) {
+  margin-left: 95px;
+}
+
+.receiving_modal-footer .close-btn {
+  padding: 10px 20px;
+  background: #cacaca;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.receiving_modal-footer .close-btn:hover {
+  background: #919191;
+}
+
+.receiving_modal-footer .confirm-btn {
+  padding: 10px 20px;
+  background: #cacaca;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.receiving_modal-footer .confirm-btn:hover {
+  background: #919191;
+}
+
+/*      출고관리     */
+.shippingForm .filter-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.shippingForm .date-filter label,
+.shippingForm .store-filter label {
+  font-weight: 600;
+  width: 80px; height: 40px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.shippingForm .date-filter input,
+.shippingForm .store-filter input {
+  width: 60px;
+  padding: 10px;
+  margin-right: 5px;
+  height: 23px;
+}
+
+.shippingForm .shipment-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.shippingForm .shipment-table th,
+.shippingForm .shipment-table td {
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 10px;
+}
+
+.shippingForm thead tr {
+  background-color: #f0f0f0
+}
+
+.shippingForm input[type="date"] {
+  width: 160px;
+  padding: 4px 8px;
+  font-size: 14px;
+}
+
+.shippingForm input[type="text"] {
+  width: 360px;
+  padding: 4px 8px;
+  font-size: 14px;
+}
+.shippingForm .approve-btn {
+  margin-right: 10px;
+}
+.shippingForm .search-btn {
+  float: none;
+  margin-left: 5px;
+  padding: 8px 14px;
+}
+
+/*    반품신청     */
+.returnInquiry .return-request {
+  font-size: 18px;
+}
+
+.returnInquiry .return-request button,
+.returnInquiry .return-request label {
+  background: #061bff;
+  color: #fff;
+  padding: 8px 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 8px;
+  margin-left: 25px;
+  display: inline-block;
+  user-select: none;
+  font-size: 13px;
+}
+
+.returnInquiry .return-apply-table {
+  margin-top: 30px;
+}
+
+.returnInquiry .return-apply-table .row-header {
+  display: flex;
+}
+
+.returnInquiry .return-apply-extra {
+  margin-top: 20px;
+}
+
+.returnInquiry .return-reason {
+  margin-top: 30px;
+}
+
+.returnInquiry .return-reason {
+  display: block;
+  margin-top: 10px;
+  width: 650px;
+  height: 120px;
+  padding: 10px;
+  font-size: 16px;
+  resize: vertical;
+}
+
+/* 모달창 전체 영역 */
+.returnInquiry .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 1000;
+}
+
+/* 체크되었을 때 보이도록 */
+.returnInquiry #modal-toggle:checked~.modal {
+  display: block;
+}
+
+/* 모달 내용 박스 */
+.returnInquiry .modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  width: 800px;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.returnInquiry .modal-title {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.returnInquiry .search-box {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.returnInquiry .search-box input {
+  width: 30%;
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.returnInquiry .result-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.returnInquiry .result-table th,
+.returnInquiry .result-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.returnInquiry .result-table th {
+  background: #f0f0f0;
+}
+
+.returnInquiry .modal-footer {
+  text-align: right;
+}
+
+.returnInquiry .close-btn {
+  padding: 10px 20px;
+  background: #cacaca;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.returnInquiry .close-btn:hover {
+  background: #919191;
+}
+
+.returnInquiry .confirm-btn {
+  padding: 10px 20px;
+  background: #cacaca;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.returnInquiry .confirm-btn:hover {
+  background: #919191;
+}
+
+/*    반품신청    */
+.return_Inquiry_filter_buttons label {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  margin-right: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  user-select: none;
+  display: inline-block;
+}
+
+.return_Inquiry_filter_buttons label:hover {
+  background-color: #f0f0f0;
+}
+
+.return_Inquiry_filter_buttons label.active {
+  background-color: #061bff;
+  color: white;
+  border-color: #061bff;
+}
+
+.return_Inquiry_table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+.return_Inquiry_table thead tr {
+  background-color: #eee;
+}
+
+.return_Inquiry_table th,
+.return_Inquiry_table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+/* 기본: 모든 행 보임 */
+.return_Inquiry_table .return_row {
+  display: table-row;
+}
+
+/* 숨기기 처리 */
+.return_Inquiry_table .hidden {
+  display: none !important;
+}
+
+
+/*    매장별 재고 현황    */
+.newProduct select, input,
+.newMenu select, input,
+.inventoryStatus select, input {
+  padding: 8px;
+  font-size: 14px;
+}
+.newProduct button,
+.newMenu button,
+.inventoryStatus button {
+  margin-left: 5px;
+  background-color: #061bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 8px 14px;
+  border: none;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 8px;
+}
+.newProduct button:hover,
+.newMenu button:hover,
+.inventoryStatus button:hover {
+  background-color: #030186;
+}
+
+.inventoryStatus .stock-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.inventoryStatus .stock-table th,
+.inventoryStatus .stock-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.inventoryStatus .stock-table th {
+  background-color: #f0f0f0;
+}
+
+.inventoryStatus .low {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+.inventoryStatus select {
+  width: 80px;
+}
+.inventoryStatus input[type="text"] {
+  width: 300px;
+  padding: 8px;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+/*   기초 품목 등록   */
+.newProduct .unit-form {
+  max-width: 300px;
+  margin: 10px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.newProduct .unit-form label {
+  display: inline-flex;
+  align-items: center;
+  gap: 40px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.newProduct .hidden {
+  display: none;
+}
+
+.newProduct .label-itemName {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+}
+
+.newProduct .label-gap {
+  display: inline-flex;
+  align-items: center;
+  gap: 40px;
+  font-weight: 500;
+}
+
+.newProduct .type-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.newProduct .type-label {
+  white-space: nowrap;
+}
+
+.newProduct .group-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.newProduct .group-label {
+  white-space: nowrap;
+}
+.newProduct label {
+  height: 40px;
+  font-weight: normal;
+}
+.newProduct input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  font-size: 14px;
+  margin-left: 30px;
+}
+.newProduct input[type="radio"] {
+  width: 25px;
+}
+.newProduct select {
+  margin-left: 30px;
+}
+.newProduct .type-label,
+.newProduct .group-label {
+  margin-right: 15px;
+  font-weight: normal;
+}
+.newProduct .submit-btn {
+  float: right;
+  padding: 10px 24px;
+}
+/*    메뉴 등록     */
+.newMenu label {
+  display: inline-block;
+  width: 80px;
+  height: 55px;
+}
+.newMenu .label {
+  display: inline-block;
+  width: 60px;
+  margin-left: 30px;
+}
+.newMenu input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  font-size: 14px;
+}
+.newMenu .delete-btn,
+.newMenu .add-btn {
+  background: inherit;
+  border:none;
+  box-shadow:none;
+  border-radius:0;
+  padding:0;
+  overflow:visible;
+  cursor:pointer;
+}
+.newMenu .delete-btn:hover,
+.newMenu .add-btn:hover {
+  background: none;
+}
+.newMenu .default_btn {
+  padding: 10px 24px;
+}
+
+/*    입고현황      */
+.receiving_status_filter_buttons label {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  margin-right: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  user-select: none;
+  display: inline-block;
+}
+
+.receiving_status_filter_buttons label:hover {
+  background-color: #f0f0f0;
+}
+
+.receiving_status_filter_buttons label.active {
+  background-color: #061bff;
+  color: white;
+  border-color: #061bff;
+}
+
+.receiving_status_table,
+.receiving_status_order_check_table,
+.receiving_status_return_check_table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+.receiving_status_table thead tr,
+.receiving_status_order_check_table thead tr,
+.receiving_status_return_check_table thead tr {
+  background-color: #eee;
+}
+
+.receiving_status_table th,
+.receiving_status_table td,
+.receiving_status_order_check_table th,
+.receiving_status_order_check_table td,
+.receiving_status_return_check_table th,
+.receiving_status_return_check_table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.receiving_status_table_group {
+  display: none;
+}
+
+/* 기본 노출 테이블 */
+.receiving_status_table_group.default-visible {
+  display: table;
+}
+
+/* 버튼 클릭시에 보이게 */
+.receiving_status_table_group.active {
+  display: table;
+}
+
+.receivingOrder .po_number {
+  margin-top: 20px;
+}
+
+
+
+/* 본사 관리자 메인 페이지 */
+/* 레이아웃 */
+.headOfficeMain .contents {
+  flex-grow: 1;
+  padding: 0px 30px;
+}
+
+.headOfficeMain h4 {
+  font-weight: 600;
+}
+
+.headOfficeMain .section_02,
+.headOfficeMain .section_03{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.headOfficeMain .section_02 > div,
+.headOfficeMain .section_03 > div {
+  width: 48%;
+  height: 180px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px #0000002d;
+}
+
+.headOfficeMain .sales {
+  width: 100%;
+  height: 250px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #0000002d;
+}
+.headOfficeMain .cont {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.headOfficeMain .cont_top {
+  width: 90%;
+  height: 20px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute; top: 10px;
+}
+.headOfficeMain .sales .cont_top {
+  width: 95%;
+}
+.headOfficeMain .cont_top > span {
+  font-size: 12px;
+  cursor: pointer;
+}
+/*   컨텐츠 내용   */
+/* 재고현황 */
+.headOfficeMain .inventory {
+  padding-left: 30px;
+  box-sizing: border-box;
+  display: flex; justify-content: left;
+  overflow: hidden;
+}
+.headOfficeMain .notice_wrap {
+  width: 100%; height: 75%;
+  margin-top: 40px;
+  overflow-y: scroll;
+}
+.headOfficeMain .stock_notice {
+  list-style: disc;
+  margin-left: 10px;
+}
+
+.headOfficeMain .stock_notice > li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 14px;
+  height: 18px;
+  margin-top: 3px;
+}
+.headOfficeMain .franchise_notice > li {
+  width: 75%;
+  margin-left: 60px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.headOfficeMain .franchise_notice .date {
+  float: right;
+  font-size: 12px;
+}
+.headOfficeMain .stock_notice > li:last-child {
+  margin: 0;
+}
+.headOfficeMain .low {
+  padding: 3px 5px;
+  background-color: red;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+/* 전체매출 */
+.headOfficeMain .chart_wrap {
+  width: 80%; height: 95%;
+  margin: 0 auto;
+}
+
+/* 공통 css */
+.headOfficeMain input {
+  height: 10px;
+}
+.headOfficeMain table {
+  width: 90%;
+  font-size: 12px;
+  margin-top: 20px;
+}
+.headOfficeMain table tr {
+  height: 10px;
+}
+.headOfficeMain table tr th,
+.headOfficeMain table tr td {
+  padding: 5px;
+}
+
+/*    매장등록     */
+.storeForm .form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.storeForm .form-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px; /* 행 간 간격 통일 */
+}
+
+.storeForm .form-row.three-columns {
+  grid-template-columns: 100px 1fr 100px;
+}
+
+.storeForm .form-row.address-combined {
+  grid-template-columns: 100px 1fr;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.storeForm .form-row.two-columns-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  margin-top: 20px;
+}
+
+.storeForm .form-row.checkbox-row {
+  margin-top: 4px;
+}
+
+.storeForm .form-row label {
+  margin-right: 4px; /* 라벨과 인풋 사이 여백 */
+  white-space: nowrap; /* 라벨 줄바꿈 방지 */
+  font-weight: 500;
+  width: 150px; /* 라벨 너비 통일 */
+  display: flex;
+  align-items: center;
+}
+.storeForm .form-row input[type="checkbox"] {
+  margin-right: 15px;
+}
+.storeForm .form-row input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-left: 0;
+}
+
+.storeForm .form-row button {
+  width: 90%;
+}
+
+.storeForm .address-group {
+  display: block; /* grid 해제 */
+}
+
+.storeForm .address-group input {
+  width: 100%;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+}
+
+/* checkbox label 따로 스타일링 */
+.storeForm .checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.storeForm .close-btn {
+  background: #cacaca;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.storeForm .close-btn:hover {
+  background: #919191;
+}
+
+.storeForm .form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.storeForm .form-wrapper {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.storeForm .info-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* 길면 ...으로 표시 */
+}
+
+.storeForm .form-row small {
+  white-space: nowrap; /* 줄바꿈 금지 */
+  display: inline-block; /* 줄 바꿈 방지 + 레이아웃 제어 */
+}
+.storeForm .addFile-wrap {
+  margin-top: 10px;
+}
+.storeForm .set_txt {
+  font-weight: normal;
+}
+
+/*  매장 상세  */
+.storeDetail span {
+  display: inline-block;
+  width: 100px;
+}
+
+/*    매장별 판매 현황   */
+.inventorySalesStatus .filter-section, .input-section {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.inventorySalesStatus .status-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+.inventorySalesStatus .status-table th, .status-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+.inventorySalesStatus .total-row {
+  background-color: #d1e8ff;
+  font-weight: bold;
+}
+.inventorySalesStatus input,
+.inventorySalesStatus select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.inventorySalesStatus .default_btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+
+/* 미디어쿼리 */
+@media (max-width: 768px) {
+  .form-row.two-columns-split {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

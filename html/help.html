@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>고객센터 > 문의하기</title>
+</head>
+<body>
+  <!-- 본문 컨텐츠 -->
+  <div class="help">
+    <h2>고객 문의</h2>
+    <div class="help-box box">
+      <table>
+        <form action="" name="">
+          <tr>
+            <th><h3 class="tit">제목</h3></th>
+            <td colspan="2"><input type="text" class="write_tit"></td>
+          </tr>
+          <tr>
+            <td><h3 class="tit">내용</h3></td>
+            <td colspan="2"><textarea name="" rows="20" class="write_txt"></textarea></td>
+          </tr>
+          <tr class="file_tr">
+            <th><h3 class="tit">첨부파일</h3></th>
+            <td colspan="2"><input type="file" name=""></td>
+          </tr>
+          <tr class="private_tr">
+            <th><h3 class="tit">비공개</h3></th>
+            <td class="private_td"><input type="checkbox" name=""/></td>
+            <td><p>(미체크 시 다른사람이 볼 수 있으므로 개인정보에 유의하세요.)</p></td>
+          </tr>
+        </form>
+      </table>
+      <form action="" class="write_btns">
+        <button type="submit" class="cancel-btn default_btn" onclick="loadPage('help_list.html')">취소</button>
+        <button type="submit" class="write-btn default_btn">작성</button>
+      </form>
+  </div>
+</div>
+</body>
+</html>

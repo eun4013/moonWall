@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반품신청</title>
+</head>
+<body>
+  <div class="returnForm">
+    <!-- 모달 토글용 체크박스(숨김) -->
+    <input type="checkbox" id="modal-toggle" style="display:none;">
+      <h2>반품신청</h2>
+      <div class="question-box box"></div>
+      <!-- 본문 영역 -->
+      <section class="return-apply">
+        <div class="return-request">
+          <label for="modal-toggle">주문조회</label>
+        </div>
+
+        <!-- 입력 테이블 -->
+        <table class="return-apply-table">
+          <thead>
+            <tr>
+              <th>품목코드</th>
+              <th>품목명</th>
+              <th>반품수량</th>
+              <th>반품신청일</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" placeholder="예: A1234"></td>
+              <td><input type="text" placeholder="예: 12온스종이컵"></td>
+              <td><input type="number" min="1"></td>
+              <td><input type="date"></td>
+            </tr>
+            <tr>
+              <td><input type="text"></td>
+              <td><input type="text"></td>
+              <td><input type="number" min="1"></td>
+              <td><input type="date"></td>
+            </tr>
+            <tr>
+              <td><input type="text"></td>
+              <td><input type="text"></td>
+              <td><input type="number" min="1"></td>
+              <td><input type="date"></td>
+            </tr>
+            <tr>
+              <td><input type="text"></td>
+              <td><input type="text"></td>
+              <td><input type="number" min="1"></td>
+              <td><input type="date"></td>
+            </tr>
+            <tr>
+              <td><input type="text"></td>
+              <td><input type="text"></td>
+              <td><input type="number" min="1"></td>
+              <td><input type="date"></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- 사유, 번호, 저장 -->
+        <div class="return-apply-extra">
+          <label>반품사유:
+            <textarea class="return-reason" rows="4" placeholder="사유를 입력하세요"></textarea>
+          </label>
+          <br>
+          <label>반품번호:
+            <input type="text" placeholder="예: R20240601">
+          </label>
+          <button class="save-btn default_btn">저장</button>
+        </div>
+
+      </section>
+
+    <!-- 모달 -->
+    <div class="modal">
+      <div class="modal-content">
+        <div class="modal-title">주문검색</div>
+        <form action="" class="search-box">
+          <div class="search_row">
+            <label>주문번호검색</label>
+            <label>품목코드검색</label>
+          </div>
+          <div class="search_row">
+            <input type="text" placeholder="주문번호검색" />
+            <input type="text" placeholder="품목코드검색" />
+          </div>
+        </form>
+        <table class="result-table">
+          <thead>
+            <tr>
+              <th>주문번호</th>
+              <th>요청일</th>
+              <th>품목코드</th>
+              <th>품목명</th>
+              <th>수량</th>
+              <th>주문상태</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="6" style="color:#aaa;">검색 결과 없음</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="modal-footer">
+          <label for="modal-toggle" class="confirm-btn">확인</label>
+          <label for="modal-toggle" class="close-btn">닫기</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

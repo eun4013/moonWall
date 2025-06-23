@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>주문현황</title>
+</head>
+<body>
+  <!-- 본문 컨텐츠 -->
+    <div class="order_wrap">
+      <div class="orderList">
+        <h2>주문현황</h2>
+        <div class="orderList-box box">
+          <div class="search-section-orderlist">
+            요청일자
+            <input type="date" class="start-date-orderlist" /> -
+            <input type="date" class="end-date-orderlist" />
+            <button class="search-btn-orderlist">검색</button>
+          </div>
+
+          <table class="orderlist-table">
+            <thead>
+              <tr>
+                <th>주문번호</th>
+                <th>요청일</th>
+                <th>품목코드</th>
+                <th>품목명</th>
+                <th>수량</th>
+                <th>주문상태</th>
+                <th>비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>2025/06/08</td>
+                <td>A001</td>
+                <td>아라비카원두</td>
+                <td>2</td>
+                <td>준비중</td>
+                <td><button class="return-btn">반품</button></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>2025/06/08</td>
+                <td>A002</td>
+                <td>12온스종이컵</td>
+                <td>30</td>
+                <td>주문완료</td>
+                <td><button class="return-btn">반품</button></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>2025/06/07</td>
+                <td>A003</td>
+                <td>커피스틱(대)</td>
+                <td>100</td>
+                <td>주문완료</td>
+                <td><button class="return-btn">반품</button></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>2025/06/07</td>
+                <td>A004</td>
+                <td>핫음료뚜껑(소)</td>
+                <td>100</td>
+                <td>주문완료</td>
+                <td><button class="return-btn">반품</button></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>2025/06/07</td>
+                <td>B001</td>
+                <td>빨대(중)</td>
+                <td>50</td>
+                <td>준비중</td>
+                <td><button class="return-btn">반품</button></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>2025/06/06</td>
+                <td>B002</td>
+                <td>빨대(대)</td>
+                <td>200</td>
+                <td>준비중</td>
+                <td><button class="return-btn">반품</button></td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>2025/06/06</td>
+                <td>B003</td>
+                <td>커피스틱(소)</td>
+                <td>100</td>
+                <td>주문완료</td>
+                <td><button class="return-btn">반품</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="pagination">
+        <a href="#">&lt;</a>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">&gt;</a>
+      </div>
+
+      <div class="return-wrapper">
+      <h3 class="return_tit">반품리스트</h3>
+
+      <table class="return-table">
+        <thead>
+          <tr>
+            <th>주문번호</th>
+            <th>품목코드</th>
+            <th>품목명</th>
+            <th>반품수량</th>
+            <th>삭제</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ORD-2-20250611-001</td>
+            <td>A005</td>
+            <td>아라비카원두</td>
+            <td><input type="number" value="100"></td>
+            <td><button class="delete-row-btn">삭제</button></td>
+          </tr>
+          <tr>
+            <td>ORD-2-20250611-002</td>
+            <td>A002</td>
+            <td>계란</td>
+            <td><input type="number" value="1"></td>
+            <td><button class="delete-row-btn">삭제</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="return-reason">
+        <label>반품사유 :</label><br>
+        <textarea rows="3"></textarea>
+      </div>
+
+      <div class="return-number">
+        <label>반품번호 :</label>
+        <input type="text" value="RE20250611-9469" readonly>
+      </div>
+
+      <button class="submit-return-btn">반품신청</button>
+    </div>
+  </div>
+</body>
+</html>

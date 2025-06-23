@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>고객센터</title>
+  <link rel="stylesheet" href="../css/storeOwner.css" />
+  <script src="https://kit.fontawesome.com/3e2532440e.js" crossorigin="anonymous"></script>
+  <script src="../js/manager.js" defer></script>
+</head>
+<body>
+  <!-- 상단 관리자 헤더 -->
+  <div class="top-header">
+    <div class="left">admin</div>
+    <div class="right-area">
+      <div class="store-info">
+        <span class="store-name">월담</span> 본사 매니저님
+        <span class="circle"></span>
+      </div>
+      <div class="user-actions">
+        <p class="point">로그아웃</p>
+        <p class="point">정보수정</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 상단 메뉴바 + 전체 레이아웃 
+  현재 파일 이름이 변경될수있어 a 태그 링크들 수정예정입니다 -->
+  <div class="section">
+    <div class="menu-bar">
+      <a href="../html/manager_page.html"><img src="../images/a_franchfrom/moon.jpg" alt="문월로고" /></a>
+      <a href="../html/noticeManager.html">게시판관리</a>
+      <a href="../html/receiving_ manager.html">입고</a>
+      <a href="../html/shipping_manager.html">출고</a>
+      <a href="../html/inventory_manager.html">재고</a>
+      <!-- <a href="#">고객센터</a> -->
+    </div>
+
+    <div class="main-layout">
+      <!-- 왼쪽 사이드바 -->
+      <div class="sidebar">
+        <ul>
+          <li class="sub1">
+            <a href="#">게시판 관리</a>
+            <ul class="submenu">
+              <li data-target="content_01">프렌차이즈 문의</li>
+              <li data-target="content_02">고객의소리</li>
+              <li data-target="content_03">매장현황</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- 본문 컨텐츠 -->
+      <div class="content_01 franchiseInquiry content " id="on">
+        <h2>프랜차이즈 문의</h2>
+        <div class="franchiseInquiry-box">
+          <table>
+            <thead>
+              <tr>
+                <th>번호</th>
+                <th>고객명</th>
+                <th>연락처</th>
+                <th>날짜</th>
+                <th>상태</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 샘플 데이터 -->
+              <tr><td>1</td><td>홍길동</td><td>010-0000-0000</td><td>2025-05-29</td><td>상담완료</td></tr>
+              <tr><td>2</td><td>홍길동</td><td>010-0000-0000</td><td>2025-05-29</td><td>상담완료</td></tr>
+              <tr><td>3</td><td>홍길동</td><td>010-0000-0000</td><td>2025-05-29</td><td>상담완료</td></tr>
+              <tr><td>4</td><td>홍길동</td><td>010-0000-0000</td><td>2025-05-29</td><td>상담완료</td></tr>
+              <tr><td>5</td><td>홍길동</td><td>010-0000-0000</td><td>2025-05-29</td><td>상담완료</td></tr>
+              <tr><td>6</td><td>홍길동</td><td>010-0000-0000</td><td>2025-05-29</td><td>상담완료</td></tr>
+              <tr><td>7</td><td>홍길동</td><td>010-0000-0000</td><td>2025-05-29</td><td>상담완료</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <form action="" class="search_form">
+            <select name="" form="" class="searchTerm" onchange="changeForm(this)">
+              <option value="customer">고객명</option>
+              <option value="callNum">연락처</option>
+              <option value="date">날짜</option>
+              <option value="status">상태</option>
+            </select>
+            <input type="text" class="textBox" placeholder="검색어를 입력하시오.">
+            <div class="dateBox">
+              <input type="date" class="search_date">
+              <span>~</span>
+              <input type="date" class="search_date">
+            </div>
+            <select name="" form="" class="statusBox">
+              <option>문의</option>
+              <option>처리중</option>
+              <option>상담완료</option>
+            </select>
+            <button type="submit" class="default_btn search_btn">검색</button>
+        </form>
+        <div class="pagination">
+          <span>&lt;</span>
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
+          <span>&gt;</span>
+        </div>
+      </div>
+      <div class="content_02 content ">
+        <h2>고객의 소리</h2>
+        
+        <div class="question-box">
+          <table>
+            <thead>
+              <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>날짜</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 샘플 데이터 -->
+              <tr><td>1</td><td>제품 출고 관련</td><td>홍길동</td><td>2025-05-29</td></tr>
+              <tr><td>2</td><td>제품 출고 관련</td><td>홍길동</td><td>2025-05-29</td></tr>
+              <tr><td>3</td><td>제품 출고 관련</td><td>홍길동</td><td>2025-05-29</td></tr>
+              <tr><td>4</td><td>제품 출고 관련</td><td>홍길동</td><td>2025-05-29</td></tr>
+              <tr><td>5</td><td>제품 출고 관련</td><td>홍길동</td><td>2025-05-29</td></tr>
+              <tr><td>6</td><td>제품 출고 관련</td><td>홍길동</td><td>2025-05-29</td></tr>
+              <tr><td>7</td><td>제품 출고 관련</td><td>홍길동</td><td>2025-05-29</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination">
+          <span>&lt;</span>
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
+          <span>&gt;</span>
+        </div>
+        <!-- <button class="ask-btn">질문하기</button> -->
+      </div>
+      <div class="content_03 storeStatus content ">
+        <h2>매장 현황</h2>
+        <button type="submit" class="default_btn new_btn">신규입점 등록</button>
+        <div class="storeStatus-box box">
+          <table>
+            <thead>
+              <tr>
+                <th>번호</th>
+                <th>고객명</th>
+                <th>연락처</th>
+                <th>입점일</th>
+                <th>매장명</th>
+                <th>매장위치</th>
+                <th>상태</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 샘플 데이터 -->
+              <tr>
+                <td>1</td>
+                <td>홍길동</td>
+                <td>010-1234-5678</td>
+                <td>2025/05/29</td>
+                <td>월담 정발산점</td>
+                <td>경기도 일산동구</td>
+                <td>운영중</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>홍길동</td>
+                <td>010-1234-5678</td>
+                <td>2025/05/29</td>
+                <td>월담 정발산점</td>
+                <td>경기도 일산동구</td>
+                <td>운영중</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>홍길동</td>
+                <td>010-1234-5678</td>
+                <td>2025/05/29</td>
+                <td>월담 정발산점</td>
+                <td>경기도 일산동구</td>
+                <td>운영중</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>홍길동</td>
+                <td>010-1234-5678</td>
+                <td>2025/05/29</td>
+                <td>월담 정발산점</td>
+                <td>경기도 일산동구</td>
+                <td>운영중</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>홍길동</td>
+                <td>010-1234-5678</td>
+                <td>2025/05/29</td>
+                <td>월담 정발산점</td>
+                <td>경기도 일산동구</td>
+                <td>운영중</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>홍길동</td>
+                <td>010-1234-5678</td>
+                <td>2025/05/29</td>
+                <td>월담 정발산점</td>
+                <td>경기도 일산동구</td>
+                <td>운영중</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <form action="" class="search_form">
+            <select name="" form="" class="searchTerm" onchange="changeForm(this)">
+              <option value="customer">고객명</option>
+              <option value="callNum">연락처</option>
+              <option value="store">매장명</option>
+              <option value="status">상태</option>
+            </select>
+            <input type="text" class="textBox" placeholder="검색어를 입력하시오.">
+            <select name="" form="" class="statusBox">
+              <option>운영중</option>
+              <option>휴점</option>
+              <option>폐업</option>
+            </select>
+            <button type="submit" class="default_btn search_btn">검색</button>
+        </form>
+        <div class="pagination">
+          <span>&lt;</span>
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
+          <span>&gt;</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

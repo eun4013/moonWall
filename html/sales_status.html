@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>판매현황</title>
+</head>
+<body>
+  <!-- 본문 컨텐츠 -->
+  <div class="salesStatus">
+    <h2 class="title">판매 현황</h2>
+    <div class="date_box form_group">
+      <h3 class="tit">기준일자</h3>
+      <form action="" class="date_form">
+        <input type="date" class="search_date">
+        <span>~</span>
+        <input type="date" class="search_date">
+      </form>
+    </div>
+    <div class="search_box form_group">
+      <h3 class="tit">메뉴명</h3>
+      <form action="" class="menu_form">
+        <input type="text" class="search_name" placeholder="메뉴명 조회">
+        <button type="submit" class="default_btn check_btn">조회</button>
+      </form>
+    </div>
+    <div class="salesStatus-box box">
+      <table id="salesStatus_table">
+        <thead>
+          <tr>
+            <th><input type="checkbox" onclick='selectAll(this)'/></th>
+            <th>메뉴코드</th>
+            <th>메뉴명</th>
+            <th>판매량</th>
+            <th>개당단가</th>
+            <th>판매액</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 샘플 데이터 -->
+          <tr>
+            <td><input type="checkbox"/></td>
+            <td>M001</td>
+            <td>아메리카노</td>
+            <td>200</td>
+            <td>4000</td>
+            <td>10000000</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"/></td>
+            <td>M002</td>
+            <td>카페라떼</td>
+            <td>100</td>
+            <td>5000</td>
+            <td>5222000</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"/></td>
+            <td>M003</td>
+            <td>바닐라라떼</td>
+            <td>100</td>
+            <td>6000</td>
+            <td>2054055</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"/></td>
+            <td>M004</td>
+            <td>아샷추</td>
+            <td>200</td>
+            <td>7000</td>
+            <td>2313453</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"/></td>
+            <td>M005</td>
+            <td>돌체라떼</td>
+            <td>10</td>
+            <td>5000</td>
+            <td>2132132</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>합계</th>
+            <td></td>
+            <td></td>
+            <td>123231</td>
+            <td>124214</td>
+            <td>12342</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="input_box form_group">
+      <h3 class="tit">판매입력</h3>
+      <form action="" class="data_input">
+        <input type="text" class="input_name" placeholder="판매 입력">
+        <button type="submit" class="default_btn">입력</button>
+      </form>
+    </div>
+    <div class="pagination">
+      <a href="#">&lt;</a>
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#">&gt;</a>
+    </div>
+  </div>
+</body>
+</html>
