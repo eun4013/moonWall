@@ -1,0 +1,642 @@
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none; color: #000;}
+img{border: 0; vertical-align: top;}
+span{display: block;}
+h1{font-size: 70px; font-weight: 900; line-height: 70px;}
+h2{font-size: 48px;}
+h3{font-size: 38px; line-height: 38px;}
+h4{font-size: 28px; line-height: 34px;}
+
+
+
+#header{
+        width: 100%;
+        height: 120px;
+        background-color:#211b42;
+        position: relative;
+        z-index: 50000;
+        transition: all 0.3s;
+        user-select: none;
+    }
+    #header .bkBg{
+        width: 100%;
+        height: 120px;
+        line-height: 120px;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        transition: all 0.5s;
+    }
+
+    #header .bkBg a img{
+        width: 90%;
+        max-width:150px;
+        margin-left: 30px;
+        vertical-align: middle;
+    }
+
+    #header .bkBg .gnb{
+        width: 55%;
+        max-width: 600px;
+        display: flex;
+        justify-content: space-between;
+        margin-right: 30px;
+        transition: all 0.5s;
+    }
+    #header .bkBg .gnb>li{
+        width: 20%;
+        text-align: center;
+    }
+    #header .bkBg .gnb>li>a{
+        display: block;
+        width: 100%;
+        color: #fff;
+        /* border: 1px solid red; */
+        font-size: 20px;
+        font-weight: 700;
+    }
+    #header .bkBg .gnb>li .sub{
+        line-height: 35px;
+    }
+    #header .bkBg .gnb>li .sub>li>a{
+        color: #d4d4d4;
+        /* border: 1px solid red; */
+    }
+    #header .bkBg .gnb>li .sub>li:hover>a{
+        color: #fff;
+        font-weight: 600;
+    }
+
+    #header .bkBg .m_menu, 
+    #header .m-gnb{
+        display: none;
+    }
+
+
+
+    #footer{
+        width: 100%;
+        height: 250px;
+        background-color: #333;
+        user-select: none;
+        transition: all 0.5s;
+        box-sizing: border-box;
+    }
+    #footer .bt_foot{
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        transition: all 0.5s;
+        /* padding-top: 10px; */
+    }
+    #footer .bt_foot .foot_sb{
+        display: flex;
+        justify-content: space-between;
+        /* border: 1px solid red; */
+        padding: 50px 0;
+        width: 900px;
+        transition: all 0.5s;
+    }
+    
+    #footer .bt_foot .foot_sb li a{
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: 700;
+        transition: all 0.5s;
+    }
+    #footer .bt_foot .foot_sb li:hover a{
+        color: #f6aece;
+    }
+    #footer .bt_foot>div img{
+        max-width: 200px;
+        min-width: 100px;
+        width: 100%;
+        transition: all 0.5s;
+    }
+
+    #footer .bt_foot .txtbox address{
+        color: #cfcfcf;
+        font-style: normal;
+        line-height: 20px;
+
+    }
+
+
+    /*본문내용디자인입니다*/
+
+    .history_tit {
+        width: 100%;
+        max-width: 1200px;
+        height: 600px;
+        position: relative;
+        background-color: #f6aece;
+        margin: 0 auto;
+    }
+    .history_tit h2{
+        position: absolute;
+        left: 5%;
+        bottom: 150px;
+        line-height: 70px;
+        font-weight: 900;
+    }
+
+    .history_warp{
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        height: 800px; /* 필요시 100vh 로 바꿔도 됨 */
+        overflow: hidden;
+    }
+    .h2{
+        font-size: 250px;
+        font-weight: 800;
+        margin-top: 50px;
+    }
+    .history_warp .history_nav{
+        /* width: 350px; */
+        background: #864141;
+        box-sizing: border-box;
+
+    }
+    .history_warp .history_contents{
+        margin-left: 10px;
+        flex: 1;
+        overflow-y: auto;
+        height: 100%;
+        box-sizing: border-box;
+        background: #418677;
+    }
+    .history_warp .history_contents dl{
+        display: flex;
+        margin: 10px;
+        font-size: 20px;
+        font-weight: 500;
+        color: #222;
+    }
+    .history_warp .history_contents dl:last-child{
+        margin-bottom: 150px;
+    }
+    .history_warp .history_contents dl dt{
+        margin-right: 20px;
+    }
+
+    /* 1240px ~ 760px */
+@media all and (max-width: 1240px) and (min-width: 760px) {
+#header .bkBg .gnb {
+            width: 70%;
+            max-width: none;
+        }
+
+        #header .bkBg .gnb > li > a {
+            font-size: 18px;
+        }
+
+
+
+        /*반응형 푸터*/
+    #footer {
+        height: auto;
+        padding: 30px 20px;
+    }
+
+    #footer .bt_foot {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #footer .bt_foot .foot_sb {
+        width: 100%;
+        justify-content: center;
+        padding: 30px 0;
+        text-align: center;
+    }
+
+    #footer .bt_foot .foot_sb li a {
+        font-size: 0.9rem;
+        margin: 5px 10px;
+    }
+
+    #footer .bt_foot > div img {
+        max-width: 160px;
+    }
+
+    #footer .bt_foot .txtbox address {
+        text-align: center;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        font-size: clamp(0.75rem, 2.5vw, 1rem);
+    }
+}
+
+
+
+/* 759px 이하 (모바일) */
+
+@media all and (max-width: 759px) {
+
+    /*반응형 헤더*/
+    #header {
+        height: auto;
+        position: relative;
+    }
+
+    #header .bkBg {
+        height: 60px;
+        line-height: 60px;
+        /* border: 1px solid red; */
+        box-sizing: border-box;
+    }
+
+    #header .bkBg .gnb {
+        display: none;
+    }
+
+    #header .bkBg .m_menu {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        color: #fff;
+        padding-right: 30px;
+    }
+    #header .m-gnb {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: #fff;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -1000px;
+        overflow-y: scroll;
+    }
+
+    #header .m-gnb>li {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 50px;
+    }
+    #header .m-gnb .delt{
+        font-size: 30px;
+        text-align: end;
+        padding:  20px 30px;
+    }
+    #header .m-gnb>li>a {
+    display: block;
+    padding: 10px 20px;
+    color: #000;
+    font-weight: 600;
+    font-size: 20px;
+    }
+
+    #header .m-gnb li .sub {
+    padding-left: 20px;
+    /* background: #f9f9f9; */
+    }
+
+    #header .m-gnb li .sub li a {
+    display: block;
+    padding: 8px 0;
+    color: #666;
+    }
+    #header .m-gnb li .sub li:hover a{
+        color: #222;
+    }
+
+
+    /*반응형 푸터*/
+    #footer {
+        height: auto;
+        padding: 30px 15px;
+    }
+
+    #footer .bt_foot {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #footer .bt_foot .foot_sb {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 20px;
+    }
+    #footer .bt_foot .foot_sb li{
+        width: 100%;
+        padding-bottom: 20px;
+        text-align: center;
+        border-bottom: 1px solid #ffffff2f;
+    }
+    #footer .bt_foot .foot_sb li a {
+        font-size: 1rem;
+        margin: 4px 0;
+    }
+
+    #footer .bt_foot > div img {
+        max-width: 140px;
+    }
+
+    #footer .bt_foot .txtbox address {
+        font-size: 0.65rem;
+        text-align: center;
+        line-height: 1.4;
+        word-break: keep-all;
+        padding: 0 10px;
+    }
+}
+
+
+/*  본문 css  */
+h2.tit {
+  text-align: center;
+  /* margin-bottom: 80px; */
+  margin-bottom: 2em;
+  color: #111;
+}
+h2.sect_tit {
+  font-size: 2.3em;
+  font-weight: 800;
+}
+#statusByYear {
+  padding-top: 200px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  color: #060b2c;
+  font-size: 14px;
+}
+.dot_wrap {
+  position: relative;
+  width: 22px; height: 22px;
+}
+.dot_wrap::before { /* 세로 선 */
+  content: '';
+  display: block;
+  width: 1px; height: 2000px;
+  background-color: #060b2c;
+  position: absolute;
+  left: 10px; top: 20px;
+  transition: all 5s;
+  transition-delay: 1s;
+}
+#statusByYear .bg_img {
+  width: 100%; height: 100%;
+  transform-origin: 50% 100%;
+  transform: scale(1, 0);
+  transition: all 2s ease 1s;
+}
+#statusByYear .dot_img {
+  width: 100%; height: 100%;
+}
+#statusByYear .cat_img {
+  width: 10%;
+  position: absolute;
+  /* right: 200px; top: 200px; */
+  right: 12%; top: 24%;
+  opacity: 0;
+  transition: all 1s;
+  transition-delay: 2500ms;
+}
+.stores-num {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 1s;
+  transition-delay: 2s;
+}
+.stores-num > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 0%;
+  transition: all 2s;
+  transition-delay: 2s;
+  font-size: 14px;
+}
+.stores-num > li > p {
+  opacity: 0;
+  transition: all 1500ms;
+  transition-delay: 2s;
+}
+/* 연도별 오픈 현황 가로 배치 */
+.stores-num .store-open { left: 10%; bottom: 1%; }
+.stores-num .stores-100 { left: 30%; }
+.stores-num .stores-200 { left: 50%; }
+.stores-num .stores-300 { left: 70%; }
+.stores-num .stores-400 { left: 90%; }
+.stores-num .store-open .dot_wrap::before { content: none; }
+.year-txt { font-size: 1em; font-weight: 400; }
+.store-txt { font-size: 1.8em; font-weight: 500; margin-bottom: 0.8em; }
+.stores-num .store-open .store-txt { font-size: 1.5em; font-weight: 900; }
+
+.top-txt {
+  position: absolute;
+  /* left: 330px; top: 150px; */
+  left: 15%; top: 15%;
+}
+.top-txt .tit { overflow: hidden; color: #211B42; margin: 0; }
+.top-txt .tit .txt1 {
+  text-align: left;
+  /* font-size: 40px; */
+  font-size: 0.8em;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+.top-txt .tit .txt2 {
+  /* font-size: 60px; */
+  font-size: 1.3em;
+  font-weight: 900;
+  margin: 0;
+}
+.top-txt .desc-wrap { overflow: hidden; }
+.top-txt .desc-wrap .desc {
+  font-size: 1.25em;
+  font-weight: 300;
+  color: #ccc;
+  letter-spacing: -1px;
+  margin-top: 18px;
+}
+
+h2.bt-txt {
+  position: absolute;
+  /* right: 160px; bottom: 100px; */
+  right: 9%; bottom: 0%;
+  overflow: hidden;
+  text-align: right;
+  color: #211B42;
+}
+.bt-txt .txt1 {
+  /* font-size: 40px; */
+  font-size: 0.8em;
+  font-weight: 400;
+  line-height: 1;
+}
+.bt-txt .txt2 {
+  /* font-size: 48px; */
+  font-size: 1em;
+  font-weight: 900;
+  line-height: 2;
+}
+
+/* --- 창업 비용 --- */
+#franchisePrice { width: 58%; margin: 150px auto; font-size: 18px; }
+#franchisePrice .priceTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 1em;
+}
+#franchisePrice .desc {
+  font-size: 0.9em;
+  padding-bottom: 5px;
+  font-weight: 300;
+  display: flex;
+  justify-content: space-between;
+}
+/* thead */
+.priceTable th {
+  padding: 1em 0;
+  font-size: 1.2em;
+  color: white;
+  font-weight: 600;
+  background-color: #503f8de0;
+}
+/* tbody */
+.priceTable tr td {
+  padding: 1em;
+  border-bottom: 1px solid #ccc;
+}
+/* 구분, 금액 사이즈 설정 */
+.priceTable tr td:nth-child(1), 
+.priceTable tr td:nth-child(2) { width: 25%; }
+
+/* 구분 */
+.priceTable tr td:nth-child(1) {
+  font-weight: 600;
+  color: #222;
+}
+/* 금액 */
+.priceTable tr td:nth-child(2) {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  color: #222;
+  font-weight: 300;
+}
+/* 비고 */
+.priceTable tr td:nth-child(3) {
+  color: #111;
+  font-weight: 300;
+}
+/* 총계 */
+.priceTable .total {
+  padding: 1em 0;
+  background: #fabad770;
+  /* background: #f6aece; */
+}
+.priceTable .last-item td { border: 0; }
+.priceTable .total td { border: 0; }
+.priceTable .total td:nth-child(1) {
+  font-size: 1.1em;
+  font-weight: 400;
+  color: #211B42;
+}
+.priceTable .total td:nth-child(2) {
+  font-size: 1.6em;
+  border: 0;
+  text-align: left;
+  padding-left: 50px;
+  font-weight: 500;
+  color: #211B42;
+}
+/* 유의사항 */
+#franchisePrice .note { display: flex; margin-top: 25px; color: #222; }
+#franchisePrice .note > p { white-space: nowrap; width: 10%; font-size: 1.2em; font-weight: 600; margin-right: 20px; }
+#franchisePrice .note > ul { width: 90%; font-weight: 400; color: #555; }
+
+/* 렌탈비용 */
+#franchisePrice #rental { margin-top: 150px; }
+
+/* 창업 절차 */
+#franchiseProcess { width: 60%; margin: 150px auto; overflow: hidden; padding: 50px 0; }
+#franchiseProcess .process-swiper { overflow: visible; }
+
+#franchiseProcess .swiper-slide {
+  position: relative; text-align: center;
+}
+#franchiseProcess .swiper-slide::after {
+  content: '';
+  display: block;
+  width: 40px; height: 40px;
+  background-image: url(../images/franchise/con09_01.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  right: -20px; top: 45%;
+  transition: all 300ms;
+}
+#franchiseProcess .last-slide::after { content: none; }
+#franchiseProcess .swiper-slide:hover::after { background-image: url(../images/franchise/con09_01_h.png); }
+#franchiseProcess .arrow { position: absolute; right: 0px; top: 45%; }
+#franchiseProcess .swiper-pagination { bottom: -50px; }
+/* ... 본문 css  */
+
+
+/*   본문 반응형   */
+@media all and (max-width:1570px) {
+  h2.tit { font-size: 40px; }
+  #statusByYear { font-size: 14px; }
+  #franchisePrice { width: 65%; }
+  #franchiseProcess { width: 70%; }
+  .cat_img { display: none; }
+  .stores-num > li { font-size: 13px; }
+}
+@media all and (max-width:1250px) {
+  h2.tit { font-size: 35px; }
+  #statusByYear { font-size: 14px; }
+  #franchisePrice { width: 70%; }
+  #franchiseProcess { width: 75%; }
+  .top-txt { left: 14%; top: 16%; }
+  h2.bt-txt { right: 7%; }
+  .stores-num > li { font-size: 11px; }
+  #franchiseProcess .swiper-slide::after { width: 30px; height: 30px; }
+}
+/* PC , 테블릿 가로 (해상도 768px ~ 1023px)*/
+@media all and (max-width:1023px) { 
+  h2.tit { font-size: 30px; }
+  #statusByYear { font-size: 12px; }
+  #franchisePrice { width: 80%; font-size: 16px; }
+  #franchiseProcess { width: 85%; }
+  #franchiseProcess .swiper-slide::after { display: none; }
+  #franchiseProcess .swiper-slide > img { width: 70%; }
+  .top-txt { left: 8%; top: 14%; }
+  h2.bt-txt  { right: 6.2%; bottom: -5%; }
+  .stores-num > li { font-size: 9px; }
+}
+
+/* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/
+@media all and (max-width:767px) {
+  h2.tit { font-size: 20px; }
+  #statusByYear { font-size: 9px; }
+  #franchisePrice { width: 80%; }
+  #franchiseProcess { width: 85%; }
+  #franchiseProcess .swiper-slide::after { display: none; }
+  #franchiseProcess .swiper-slide > img { width: 70%; }
+  .top-txt { left: 8%; top: 14%; }
+  h2.bt-txt { right: 6.2%; bottom: -8%; }
+  .stores-num > li { font-size: 7px; }
+}
+
+/* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/
+@media all and (max-width:500px) {
+  h2.tit { font-size: 15px; }
+  #statusByYear { font-size: 7px; }
+  #franchisePrice { font-size: 8px; }
+  #franchiseProcess .swiper-slide::after { display: none; }
+}
