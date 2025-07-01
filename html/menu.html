@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>달 메뉴 소개</title>
+  <style>
+    /* 기본 */
+    *{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none; color: #000;}
+img{border: 0; vertical-align: top;}
+span{display: block;}
+h1{font-size: 70px; font-weight: 900; line-height: 70px;}
+h2{font-size: 48px;}
+h3{font-size: 38px; line-height: 38px;}
+h4{font-size: 28px; line-height: 34px;}
+
+
+
+#header{
+        width: 100%;
+        height: 120px;
+        background-color:#211b42;
+        position: relative;
+        z-index: 50000;
+        transition: all 0.3s;
+        user-select: none;
+    }
+    #header .bkBg{
+        width: 100%;
+        height: 120px;
+        line-height: 120px;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        transition: all 0.5s;
+    }
+
+    #header .bkBg a img{
+        width: 90%;
+        max-width:150px;
+        margin-left: 30px;
+        vertical-align: middle;
+    }
+
+    #header .bkBg .gnb{
+        width: 55%;
+        max-width: 600px;
+        display: flex;
+        justify-content: space-between;
+        margin-right: 30px;
+        transition: all 0.5s;
+    }
+    #header .bkBg .gnb>li{
+        width: 20%;
+        text-align: center;
+    }
+    #header .bkBg .gnb>li>a{
+        display: block;
+        width: 100%;
+        color: #fff;
+        /* border: 1px solid red; */
+        font-size: 20px;
+        font-weight: 700;
+    }
+    #header .bkBg .gnb>li .sub{
+        line-height: 35px;
+    }
+    #header .bkBg .gnb>li .sub>li>a{
+        color: #d4d4d4;
+        /* border: 1px solid red; */
+    }
+    #header .bkBg .gnb>li .sub>li:hover>a{
+        color: #fff;
+        font-weight: 600;
+    }
+
+    #header .bkBg .m_menu, 
+    #header .m-gnb{
+        display: none;
+    }
+
+
+
+    #footer{
+        width: 100%;
+        height: 250px;
+        background-color: #333;
+        user-select: none;
+        transition: all 0.5s;
+        box-sizing: border-box;
+    }
+    #footer .bt_foot{
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        transition: all 0.5s;
+        /* padding-top: 10px; */
+    }
+    #footer .bt_foot .foot_sb{
+        display: flex;
+        justify-content: space-between;
+        /* border: 1px solid red; */
+        padding: 50px 0;
+        width: 900px;
+        transition: all 0.5s;
+    }
+    
+    #footer .bt_foot .foot_sb li a{
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: 700;
+        transition: all 0.5s;
+    }
+    #footer .bt_foot .foot_sb li:hover a{
+        color: #f6aece;
+    }
+    #footer .bt_foot>div img{
+        max-width: 200px;
+        min-width: 100px;
+        width: 100%;
+        transition: all 0.5s;
+    }
+
+    #footer .bt_foot .txtbox address{
+        color: #cfcfcf;
+        font-style: normal;
+        line-height: 20px;
+
+    }
+
+
+    /*본문내용디자인입니다*/
+
+    .history_tit {
+        width: 100%;
+        max-width: 1200px;
+        height: 600px;
+        position: relative;
+        background-color: #f6aece;
+        margin: 0 auto;
+    }
+    .history_tit h2{
+        position: absolute;
+        left: 5%;
+        bottom: 150px;
+        line-height: 70px;
+        font-weight: 900;
+    }
+
+    .history_warp{
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        height: 800px; /* 필요시 100vh 로 바꿔도 됨 */
+        overflow: hidden;
+    }
+    .h2{
+        font-size: 250px;
+        font-weight: 800;
+        margin-top: 50px;
+    }
+    .history_warp .history_nav{
+        /* width: 350px; */
+        background: #864141;
+        box-sizing: border-box;
+
+    }
+    .history_warp .history_contents{
+        margin-left: 10px;
+        flex: 1;
+        overflow-y: auto;
+        height: 100%;
+        box-sizing: border-box;
+        background: #418677;
+    }
+    .history_warp .history_contents dl{
+        display: flex;
+        margin: 10px;
+        font-size: 20px;
+        font-weight: 500;
+        color: #222;
+    }
+    .history_warp .history_contents dl:last-child{
+        margin-bottom: 150px;
+    }
+    .history_warp .history_contents dl dt{
+        margin-right: 20px;
+    }
+
+    /* 1240px ~ 760px */
+@media all and (max-width: 1240px) and (min-width: 760px) {
+#header .bkBg .gnb {
+            width: 70%;
+            max-width: none;
+        }
+
+        #header .bkBg .gnb > li > a {
+            font-size: 18px;
+        }
+
+
+
+        /*반응형 푸터*/
+    #footer {
+        height: auto;
+        padding: 30px 20px;
+    }
+
+    #footer .bt_foot {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #footer .bt_foot .foot_sb {
+        width: 100%;
+        justify-content: center;
+        padding: 30px 0;
+        text-align: center;
+    }
+
+    #footer .bt_foot .foot_sb li a {
+        font-size: 0.9rem;
+        margin: 5px 10px;
+    }
+
+    #footer .bt_foot > div img {
+        max-width: 160px;
+    }
+
+    #footer .bt_foot .txtbox address {
+        text-align: center;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        font-size: clamp(0.75rem, 2.5vw, 1rem);
+    }
+}
+
+ 
+
+/* 759px 이하 (모바일) */
+
+@media all and (max-width: 759px) {
+
+    /*반응형 헤더*/
+    #header {
+        height: auto;
+        position: relative;
+    }
+
+    #header .bkBg {
+        height: 60px;
+        line-height: 60px;
+        /* border: 1px solid red; */
+        box-sizing: border-box;
+    }
+
+    #header .bkBg .gnb {
+        display: none;
+    }
+
+    #header .bkBg .m_menu {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        color: #fff;
+        padding-right: 30px;
+    }
+    #header .m-gnb {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: #fff;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -1000px;
+        overflow-y: scroll;
+    }
+
+    #header .m-gnb>li {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 50px;
+    }
+    #header .m-gnb .delt{
+        font-size: 30px;
+        text-align: end;
+        padding:  20px 30px;
+    }
+    #header .m-gnb>li>a {
+    display: block;
+    padding: 10px 20px;
+    color: #000;
+    font-weight: 600;
+    font-size: 20px;
+    }
+
+    #header .m-gnb li .sub {
+    padding-left: 20px;
+    /* background: #f9f9f9; */
+    }
+
+    #header .m-gnb li .sub li a {
+    display: block;
+    padding: 8px 0;
+    color: #666;
+    }
+    #header .m-gnb li .sub li:hover a{
+        color: #222;
+    }
+
+
+    /*반응형 푸터*/
+    #footer {
+        height: auto;
+        padding: 30px 15px;
+    }
+
+    #footer .bt_foot {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #footer .bt_foot .foot_sb {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 20px;
+    }
+    #footer .bt_foot .foot_sb li{
+        width: 100%;
+        padding-bottom: 20px;
+        text-align: center;
+        border-bottom: 1px solid #ffffff2f;
+    }
+    #footer .bt_foot .foot_sb li a {
+        font-size: 1rem;
+        margin: 4px 0;
+    }
+
+    #footer .bt_foot > div img {
+        max-width: 140px;
+    }
+
+    #footer .bt_foot .txtbox address {
+        font-size: 0.65rem;
+        text-align: center;
+        line-height: 1.4;
+        word-break: keep-all;
+        padding: 0 10px;
+    }
+}
+    /* 메뉴바디 */
+
+
+    .tab-menu {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .tab {
+      background: none;
+      border: none;
+      font-size: 18px;
+      font-weight: 600;
+      color: #666;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: color 0.3s, border-color 0.3s;
+    }
+
+    .tab:hover {
+      color: #f6aece;
+    }
+
+    .tab.active {
+      color: #f6aece;
+      border-color: #f6aece;
+    }
+
+    .menu-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .menu-wrapper h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    .menu-wrapper p {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 60px;
+    }
+
+    .menu-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      /* 새로 추가 */
+      gap: 58px;
+      /* 기존 58px → 40px 정도로 줄임 */
+      max-width: 1180px;
+      /* 약간 늘려도 좋음 */
+      margin: 0 auto;
+    }
+
+
+    /* 3D 플립 카드 기본 스타일 */
+    .moon-card {
+      width: 220px;
+      /* 180px -> 200px 으로 크기 키움 */
+      height: 220px;
+      /* 180px -> 200px 으로 크기 키움 */
+      border-radius: 50%;
+      perspective: 1000px;
+      /* 3D 공간 생성 */
+      cursor: pointer;
+      outline: none;
+      color: #000000;
+    }
+
+    .moon-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 25px #f6aece;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+      transform-style: preserve-3d;
+    }
+
+    .moon-card:hover .moon-card-inner {
+      box-shadow: 0 0 40px #f6aece;
+    }
+
+    /* 플립 시 뒤집기 */
+    .moon-card.flipped .moon-card-inner {
+      transform: rotateY(180deg);
+      box-shadow: 0 0 50px #f6aece;
+    }
+
+    /* 앞면과 뒷면 스타일 */
+    .front,
+    .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      backface-visibility: hidden;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 앞면 */
+    .front {
+      background-color: #eee;
+      box-shadow: 0 0 25px #f6aece;
+      color: #000;
+    }
+
+    .front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      transition: filter 0.3s ease;
+    }
+
+    .moon-title {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 16px;
+      background: rgba(255, 255, 255, 0.7);
+      color: #000;
+      padding: 6px 0;
+      font-weight: bold;
+      animation: floatText 3s ease-in-out infinite;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    @keyframes floatText {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-4px);
+      }
+    }
+
+    /* 뒷면 */
+    .back {
+      background: url('images/moon2.png') center/cover no-repeat;
+      color: #222;
+      /* 기존 글씨 색 유지 */
+      transform: rotateY(180deg);
+      padding: 15px;
+      font-weight: 600;
+      font-size: 15px;
+      text-align: center;
+      /* 이미지 위에 글씨 가독성 위해 연한 흰색 반투명 오버레이 추가 */
+      position: relative;
+      user-select: text;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      box-shadow: 0 0 40px #f6aece
+    }
+
+    /* 반투명 오버레이를 위한 ::before 추가 */
+    .back::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+
+      border-radius: 50%;
+      pointer-events: none;
+      /* 클릭 방해 안함 */
+      z-index: 0;
+    }
+
+    /* 글씨가 ::before 위로 올라오도록 z-index 조절 */
+    .back>* {
+      position: relative;
+      z-index: 1;
+    }
+
+
+    @media (max-width: 600px) {
+      .moon-card {
+        width: 160px;
+        /* 140px -> 160px 으로 살짝 키움 */
+        height: 160px;
+        /* 140px -> 160px 으로 살짝 키움 */
+      }
+
+      .moon-title {
+        font-size: 14px;
+      }
+
+      .back {
+        font-size: 13px;
+        padding: 15px;
+      }
+    }
+  </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+      $(document).ready(function() {
+        //gnb호버
+        
+        $('#header .bkBg .gnb').mouseenter(function() {
+      $('#header .bkBg').stop().animate({ height: '350px' }, 300);
+      $('#header .bkBg').css('background-color', '#211b42');
+    });
+
+    // 전체 bkBg에서 마우스가 벗어나면 원상복귀
+    $('#header .bkBg').mouseleave(function() {
+      $('#header .bkBg').stop().animate({ height: '120px'}, 10);
+      $('#header .bkBg').css('background-color', 'rgba(255, 255, 255, 0)');
+      $('#header .bkBg .gnb > li > a').css('color', '#fff');
+    });
+
+    //모바일 메뉴
+     $(".m_menu").on("click", function () {
+      $(".m-gnb").animate({ right: "0" }, 300); // 오른쪽으로 슬라이드 인
+    });
+
+    // 모바일 메뉴 닫기 (닫기 아이콘 클릭 시)
+    $(".m-gnb .delt").on("click", function () {
+      $(".m-gnb").animate({ right: "-1000px" }, 300); // 다시 오른쪽으로 슬라이드 아웃
+    });
+
+        //메뉴탭
+      $('.tap li').click(function() {
+        const idx = $(this).index();
+
+        // 버튼 스타일
+        $('.tap li').removeClass('active');
+        $(this).addClass('active');
+
+        // 메뉴 콘텐츠 보이기
+        $('.view li').removeClass('menu_on');
+        $('.view li').eq(idx).addClass('menu_on');
+      });
+
+
+    });
+    </script>
+</head>
+
+<body>
+ <div id="header">
+      <div class="bkBg">
+        <a href="../html/main.html"><img src="../images/main/logo01_ko_cc.png" alt="logo"></a>
+        <ul class="gnb">
+        <li>
+          <a href="#">Brand</a>
+          <ul class="sub">
+            <li><a href="#">브랜드 BI</a></li>
+            <li><a href="#">브랜드스토리</a></li>
+            <li><a href="#">회사연혁</a></li>
+            <li><a href="#">오시는길</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Menu</a>
+          <ul class="sub">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Franchise</a>
+          <ul class="sub">
+            <li><a href="#">월담의경쟁력</a></li>
+            <li><a href="#">창업절차</a></li>
+            <li><a href="#">창업문의</a></li>
+            <li><a href="#">창업News</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">store</a>
+          <ul class="sub">
+            <li><a href="#">매장찾기</a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">News</a>
+          <ul class="sub">
+            <li><a href="#">News</a></li>
+            <li><a href="#">공지사항</a></li>
+          </ul>
+        </li>
+        </ul>
+        <div class="m_menu"><i class="fa-solid fa-bars"></i></div>
+      </div>
+
+      <ul class="m-gnb">
+        <li class="delt">
+          <i class="fa-solid fa-xmark fa-beat"></i>
+        </li>
+        <li>
+          <a href="#">Brand</a>
+          <ul class="sub">
+            <li><a href="#">브랜드 BI</a></li>
+            <li><a href="#">브랜드스토리</a></li>
+            <li><a href="#">회사연혁</a></li>
+            <li><a href="#">오시는길</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Menu</a>
+          <!-- <ul class="sub">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+          </ul> -->
+        </li>
+        <li>
+          <a href="#">Franchise</a>
+          <ul class="sub">
+            <li><a href="#">월담의경쟁력</a></li>
+            <li><a href="#">창업절차</a></li>
+            <li><a href="#">창업문의</a></li>
+            <li><a href="#">창업News</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">store</a>
+          <ul class="sub">
+            <li><a href="#">매장찾기</a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">News</a>
+          <ul class="sub">
+            <li><a href="#">News</a></li>
+            <li><a href="#">공지사항</a></li>
+          </ul>
+        </li>
+        </ul>
+
+  </div>
+  <div class="menu-wrapper">
+    <nav class="tab-menu">
+      <button class="tab active" data-tab="best">베스트메뉴</button>
+      <button class="tab" data-tab="coffee">커피</button>
+      <button class="tab" data-tab="tea">논커피&티/에이드</button>
+      <button class="tab" data-tab="dessert">디저트</button>
+    </nav>
+
+    <h2>달을 넘은 이야기, 한 잔에 담다</h2>
+    <p>무심히 흐르는 시간 속에 놓인 부드러운 위로.</p>
+
+    <!-- 탭별 콘텐츠 영역 -->
+    <div class="menu-grid active" data-content="best">
+      <div class="moon-card" tabindex="0" data-description="진한 에스프레소 샷과 풍부한 아로마가 조화를 이루는 베스트 커피입니다.">
+        <div class="moon-card-inner">
+          <div class="front">
+            <img src="images/americano.gif" alt="아메리카노" />
+            <div class="moon-title">아메리카노</div>
+          </div>
+          <div class="back"></div>
+        </div>
+      </div>
+      <div class="moon-card" tabindex="0" data-description="부드러운 우유와 달콤한 시럽이 어우러진 크리미한 라떼입니다.">
+        <div class="moon-card-inner">
+          <div class="front">
+            <img src="images/dallatte.jpg" alt="달라떼" />
+            <div class="moon-title">달라떼</div>
+          </div>
+          <div class="back"></div>
+        </div>
+      </div>
+      <div class="moon-card" tabindex="0" data-description="거품 많은 크림과 에스프레소가 만나 부드러운 맛을 자랑하는 카푸치노입니다.">
+        <div class="moon-card-inner">
+          <div class="front">
+            <img src="images/cappuccino.gif" alt="카푸치노" />
+            <div class="moon-title">카푸치노</div>
+          </div>
+          <div class="back"></div>
+        </div>
+      </div>
+
+      <div class="moon-card" tabindex="0" data-description="부드럽고 달콤한 월담 시그니처 라떼">
+        <div class="moon-card-inner">
+          <div class="front">
+            <img src="images/dolce-latte.jpg" alt="돌체 라떼" />
+            <div class="moon-title">돌체 라떼</div>
+          </div>
+          <div class="back"></div>
+        </div>
+      </div>
+
+      <div class="moon-card" tabindex="0" data-description="전통 달고나와 에스프레소의 감성 브루잉">
+        <div class="moon-card-inner">
+          <div class="front">
+            <img src="images/dalgona-latte.jpg" alt="달고나 라떼" />
+            <div class="moon-title">달고나 라떼</div>
+          </div>
+          <div class="back"></div>
+        </div>
+      </div>
+
+      <div class="moon-card" tabindex="0" data-description="진한 말차와 우유의 조화로운 여운">
+        <div class="moon-card-inner">
+          <div class="front">
+            <img src="images/green-tea-latte.gif" alt="그린티 라떼" />
+            <div class="moon-title">그린티 라떼</div>
+          </div>
+          <div class="back"></div>
+        </div>
+      </div>
+
+      <div class="moon-card" tabindex="0" data-description="진한 초콜릿이 녹아드는 부드러운 라떼">
+        <div class="moon-card-inner">
+          <div class="front">
+            <img src="images/chocolate-latte.gif" alt="초콜릿 라떼" />
+            <div class="moon-title">초콜릿 라떼</div>
+          </div>
+          <div class="back"></div>
+        </div>
+      </div>
+
+      <div class="moon-card" tabindex="0" data-description="고소한 토피넛 향의 카페 라떼입니다.">
+        <div class="moon-card-inner">
+          <div class="front">
+            <img src="images/toffee-nut-cafe-latte.gif" alt="토피넛 카페라떼" />
+            <div class="moon-title">토피넛 카페 라떼</div>
+          </div>
+          <div class="back"></div>
+        </div>
+      </div>
+
+      <div class="moon-card" tabindex="0" data-description="청량한 블루 큐라소 향의 시트러스 에이드">
+        <div class="moon-card-inner">
+          <div class="front">
+            <img src="images/blue-lemon-ade.gif" alt="블루 레몬 에이드" />
+            <div class="moon-title">블루 레몬 에이드</div>
+          </div>
+          <div class="back"></div>
+        </div>
+      </div>
+
+      <div class="moon-card" tabindex="0" data-description="겉은 바삭하고 안은 부드러운 플레인 크로플입니다.">
+        <div class="moon-card-inner">
+          <div class="front">
+            <img src="images/mooncroffle.jpg" alt="달크로플" />
+            <div class="moon-title">달 크로플</div>
+          </div>
+          <div class="back"></div>
+        </div>
+      </div>
+
+      <div class="moon-card" tabindex="0" data-description="진한 초콜릿의 풍미가 느껴지는 꾸덕한 리얼 브라우니입니다.">
+        <div class="moon-card-inner">
+          <div class="front">
+            <img src="images/real-brownie.jpg" alt="리얼 브라우니" />
+            <div class="moon-title">리얼 브라우니</div>
+          </div>
+          <div class="back"></div>
+        </div>
+      </div>
+
+      <div class="moon-card" tabindex="0" data-description="상큼한 딸기 필링의 귀여운 무드 디저트">
+        <div class="moon-card-inner">
+          <div class="front">
+            <img src="images/strawberry-mooncaron.gif" alt="딸기 달카롱" />
+            <div class="moon-title">딸기 달카롱</div>
+          </div>
+          <div class="back"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-grid" data-content="coffee" style="display:none;">
+    <div class="moon-card" tabindex="0" data-description="진한 에스프레소 샷과 풍부한 아로마가 조화를 이루는 베스트 커피입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/americano.gif" alt="아메리카노" />
+          <div class="moon-title">아메리카노</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="부드러운 우유와 달콤한 시럽이 어우러진 크리미한 라떼입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/dallatte.jpg" alt="달라떼" />
+          <div class="moon-title">달라떼</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="거품 많은 크림과 에스프레소가 만나 부드러운 맛을 자랑하는 카푸치노입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/cappuccino.gif" alt="카푸치노" />
+          <div class="moon-title">카푸치노</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="콜드브루와 달콤한 연유가 더해진 고급스러운 시그니처 돌체 콜드브루.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/Dolce-Cold-Brew.gif" alt="돌체콜드브루" />
+          <div class="moon-title">돌체콜드브루</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="고소한 헤이즐넛의 풍미가 가득한 라떼입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/hazelnut-latte.gif" alt="헤이즐넛 라떼" />
+          <div class="moon-title">헤이즐넛 라떼</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="카라멜의 달콤함이 어우러진 마키아토입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/caramel-macchiato.gif" alt="카라멜 마키아토" />
+          <div class="moon-title">카라멜 마키아토</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="진한 믹스커피의 향과 맛을 즐길 수 있는 음료.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/mix-coffee.jpg" alt="믹스커피" />
+          <div class="moon-title">달달한 옛날 커피</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="은은한 바닐라향의 라떼입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/vanilla-latte.gif" alt="바닐라 라떼" />
+          <div class="moon-title">바닐라 라떼</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="풍부하고 달콤한 돌체 라떼입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/dolce-latte.jpg" alt="돌체 라떼" />
+          <div class="moon-title">돌체 라떼</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="달고나가 올라간 달고나 라떼입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/dalgona-latte.jpg" alt="달고나 라떼" />
+          <div class="moon-title">달고나 라떼</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="고소한 토피넛 향의 카페 라떼입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/toffee-nut-cafe-latte.gif" alt="토피넛 카페라떼" />
+          <div class="moon-title">토피넛 카페 라떼</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="고소한 헤이즐넛의 풍미가 가득한 라떼입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/Dutch-Latte.jpg" alt="더치 라떼" />
+          <div class="moon-title">더치 라떼</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="menu-grid" data-content="tea" style="display:none;">
+    <div class="moon-card" tabindex="0" data-description="상큼한 자몽의 풍미가 살아있는 자몽에이드입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/grapefruit-aid.gif" alt="자몽에이드" />
+          <div class="moon-title">자몽에이드</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="상큼한 레몬 에이드입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/lemon-ade.gif" alt="레몬에이드" />
+          <div class="moon-title">레몬 에이드</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="블루 레몬의 상큼함을 담았습니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/blue-lemon-ade.gif" alt="블루레몬에이드" />
+          <div class="moon-title">블루 레몬 에이드</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="상큼하고 깔끔한 레몬티입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/lemon-tea.gif" alt="레몬티" />
+          <div class="moon-title">레몬티</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="말차의 향긋함이 가득한 그린티 라떼입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/green-tea-latte.gif" alt="그린티라떼" />
+          <div class="moon-title">그린티 라떼</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="진한 초콜릿이 들어간 초코라떼입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/chocolate-latte.gif" alt="초코라떼" />
+          <div class="moon-title">초콜릿 라떼</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="토피넛 향이 가득한 달콤한 라떼입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/toffee-nut-latte.jpg" alt="토피넛 라떼" />
+          <div class="moon-title">토피넛 라떼</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="고구마의 달콤함이 전해지는 라떼입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/sweetpotato-latte.gif" alt="고구마 라떼" />
+          <div class="moon-title">고구마 라떼</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="상큼한 딸기가 들어간 라떼입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/strawberry-latte.gif" alt="딸기 라떼" />
+          <div class="moon-title">딸기 라떼</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="향긋한 밀크티 한 잔 어떠세요?">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/milk-tea.gif" alt="밀크티" />
+          <div class="moon-title">밀크티</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="향긋한 밀크티 한 잔 어떠세요?">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/ChocolateBubbleTea.jpg" alt="초코버블티" />
+          <div class="moon-title">초코버블티</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="향긋한 밀크티 한 잔 어떠세요?">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/TaroBubbleTea.jpg" alt="타로버블티" />
+          <div class="moon-title">타로버블티</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-grid" data-content="dessert" style="display:none;">
+    <div class="moon-card" tabindex="0" data-description="바삭하고 고소한 에그햄토스트입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/EggHam Toast.png" alt="에그햄토스트" />
+          <div class="moon-title">에그햄토스트</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+
+    <div class="moon-card" tabindex="0" data-description="풍부한 맛의 오리지널 핫도그입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/OriginalHotdog.gif" alt="오리지널핫도그" />
+          <div class="moon-title">오리지널핫도그</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="햄과 치즈가 듬뿍 들어간 든든한 샌드위치입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/ham-cheese-sandwich.jpg" alt="햄치즈샌드위치" />
+          <div class="moon-title">햄치즈샌드위치</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="상큼한 딸기맛의 달카롱입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/strawberry-mooncaron.gif" alt="딸기 달카롱" />
+          <div class="moon-title">딸기 달카롱</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="진한 초콜릿의 달카롱입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/chocolate-mooncaron.gif" alt="초코 달카롱" />
+          <div class="moon-title">초코 달카롱</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="부드러운 바닐라 맛 달카롱입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/vanilla-mooncaron.gif" alt="바닐라 달카롱" />
+          <div class="moon-title">바닐라 달카롱</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="바삭한 크로와상 비스킷과 달콤한 크림이 조화를 이루는 디저트입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/croissant-biscuit.gif" alt="크로와상비스킷" />
+          <div class="moon-title">크룽지</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+
+
+
+
+    <div class="moon-card" tabindex="0" data-description="겉은 바삭하고 안은 부드러운 플레인 크로플입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/mooncroffle.jpg" alt="달크로플" />
+          <div class="moon-title">달 크로플</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+
+    <div class="moon-card" tabindex="0" data-description="달콤한 메이플 시럽이 뿌려진 풍미 가득한 메이플 크로플입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/maple-croffle.gif" alt="메이플크로플" />
+          <div class="moon-title">메이플 크로플</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+    <div class="moon-card" tabindex="0" data-description="건강하게 말린 고구마 스낵으로 부드럽고 달콤한 맛이 특징입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/dried-sweet-potato.gif" alt="말린 고구마" />
+          <div class="moon-title">고구마말랭이</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+
+
+    <div class="moon-card" tabindex="0" data-description="겉은 바삭하고 속은 쫀득한 무드있는 초코칩 쿠키입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/choco-chip-cookie.gif" alt="초코칩쿠키" />
+          <div class="moon-title">초코칩 쿠키</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+
+
+    <div class="moon-card" tabindex="0" data-description="진한 초콜릿의 풍미가 느껴지는 꾸덕한 리얼 브라우니입니다.">
+      <div class="moon-card-inner">
+        <div class="front">
+          <img src="images/real-brownie.jpg" alt="리얼 브라우니" />
+          <div class="moon-title">리얼 브라우니</div>
+        </div>
+        <div class="back"></div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <!-- 푸터 -->
+  <div id="footer">
+    <div class="bt_foot">
+      <div class="txtbox">
+        <ul class="foot_sb">
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#">개인정보처리방침</a></li>
+        <li><a href="#">위치기반서비스 이용약관</a></li>
+        <li><a href="#">이메일 무단수집거부</a></li>
+        <li><a href="#">법적고지</a></li>
+        <li><a href="#">사업자정보확인</a></li>
+        </ul>
+        <address>
+          <p>
+          대표이사 : 김도현　|　개인정보보호책임자 : 이지아　|　 사업자등록번호 : 521-98-3471088
+        </p>
+        <p>
+          통신판매업종신고증 : 제 2025-서울남서구-1049호　|　대표이메일 : mooncat@moonwall.fake
+        </p>
+        <p>
+          Copyright ⓒ 2025 Moon Wall Co., LTD. All Rights Reserved.
+        </p>
+    
+    </address>
+      </div>
+      
+      <div>
+        <img src="../images/main/logo02_w.png" alt="logo"></div>
+      </div>
+  </div>
+  <script>
+    // ✅ 탭 메뉴 기능
+    const tabs = document.querySelectorAll('.tab-menu .tab');
+    const contents = document.querySelectorAll('.menu-grid');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-tab');
+
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        contents.forEach(content => {
+          if (content.getAttribute('data-content') === target) {
+            content.style.display = 'flex';
+            content.classList.add('active');
+          } else {
+            content.style.display = 'none';
+            content.classList.remove('active');
+          }
+        });
+      });
+    });
+
+    // ✅ 카드 뒤집기 + 설명 넣기 + 3초 후 자동 복귀
+    const cards = document.querySelectorAll('.moon-card');
+
+    cards.forEach(card => {
+      const back = card.querySelector('.back');
+      const desc = card.getAttribute('data-description') || '설명 없음';
+
+      back.textContent = desc;
+
+      card.addEventListener('click', () => {
+        // 이미 뒤집혀 있으면 무시
+        if (!card.classList.contains('flipped')) {
+          card.classList.add('flipped');
+
+          // 3초 후 다시 앞면으로
+          setTimeout(() => {
+            card.classList.remove('flipped');
+          }, 3000);
+        }
+      });
+
+      // ✅ 키보드 접근성 개선 (Enter/Space로 뒤집기)
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          if (!card.classList.contains('flipped')) {
+            card.classList.add('flipped');
+            setTimeout(() => {
+              card.classList.remove('flipped');
+            }, 3000);
+          }
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

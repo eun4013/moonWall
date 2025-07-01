@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>월담 브랜드소개</title>
+  <style>
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none; color: #000;}
+img{border: 0; vertical-align: top;}
+span{display: block;}
+h1{font-size: 70px; font-weight: 900; line-height: 70px;}
+h2{font-size: 48px;}
+h3{font-size: 38px; line-height: 38px;}
+h4{font-size: 28px; line-height: 34px;}
+
+
+
+#header{
+        width: 100%;
+        height: 120px;
+        background-color:#211b42;
+        position: relative;
+        z-index: 50000;
+        transition: all 0.3s;
+        user-select: none;
+    }
+    #header .bkBg{
+        width: 100%;
+        height: 120px;
+        line-height: 120px;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        transition: all 0.5s;
+    }
+
+    #header .bkBg a img{
+        width: 90%;
+        max-width:150px;
+        margin-left: 30px;
+        vertical-align: middle;
+    }
+
+    #header .bkBg .gnb{
+        width: 55%;
+        max-width: 600px;
+        display: flex;
+        justify-content: space-between;
+        margin-right: 30px;
+        transition: all 0.5s;
+    }
+    #header .bkBg .gnb>li{
+        width: 20%;
+        text-align: center;
+    }
+    #header .bkBg .gnb>li>a{
+        display: block;
+        width: 100%;
+        color: #fff;
+        /* border: 1px solid red; */
+        font-size: 20px;
+        font-weight: 700;
+    }
+    #header .bkBg .gnb>li .sub{
+        line-height: 35px;
+    }
+    #header .bkBg .gnb>li .sub>li>a{
+        color: #d4d4d4;
+        /* border: 1px solid red; */
+    }
+    #header .bkBg .gnb>li .sub>li:hover>a{
+        color: #fff;
+        font-weight: 600;
+    }
+
+    #header .bkBg .m_menu, 
+    #header .m-gnb{
+        display: none;
+    }
+
+
+
+    #footer{
+        width: 100%;
+        height: 250px;
+        background-color: #333;
+        user-select: none;
+        transition: all 0.5s;
+        box-sizing: border-box;
+    }
+    #footer .bt_foot{
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        transition: all 0.5s;
+        /* padding-top: 10px; */
+    }
+    #footer .bt_foot .foot_sb{
+        display: flex;
+        justify-content: space-between;
+        /* border: 1px solid red; */
+        padding: 50px 0;
+        width: 900px;
+        transition: all 0.5s;
+    }
+    
+    #footer .bt_foot .foot_sb li a{
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: 700;
+        transition: all 0.5s;
+    }
+    #footer .bt_foot .foot_sb li:hover a{
+        color: #f6aece;
+    }
+    #footer .bt_foot>div img{
+        max-width: 200px;
+        min-width: 100px;
+        width: 100%;
+        transition: all 0.5s;
+    }
+
+    #footer .bt_foot .txtbox address{
+        color: #cfcfcf;
+        font-style: normal;
+        line-height: 20px;
+
+    }
+
+
+    /*본문내용디자인입니다*/
+
+    .history_tit {
+        width: 100%;
+        max-width: 1200px;
+        height: 600px;
+        position: relative;
+        background-color: #f6aece;
+        margin: 0 auto;
+    }
+    .history_tit h2{
+        position: absolute;
+        left: 5%;
+        bottom: 150px;
+        line-height: 70px;
+        font-weight: 900;
+    }
+
+    .history_warp{
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        height: 800px; /* 필요시 100vh 로 바꿔도 됨 */
+        overflow: hidden;
+    }
+    .h2{
+        font-size: 250px;
+        font-weight: 800;
+        margin-top: 50px;
+    }
+    .history_warp .history_nav{
+        /* width: 350px; */
+        background: #864141;
+        box-sizing: border-box;
+
+    }
+    .history_warp .history_contents{
+        margin-left: 10px;
+        flex: 1;
+        overflow-y: auto;
+        height: 100%;
+        box-sizing: border-box;
+        background: #418677;
+    }
+    .history_warp .history_contents dl{
+        display: flex;
+        margin: 10px;
+        font-size: 20px;
+        font-weight: 500;
+        color: #222;
+    }
+    .history_warp .history_contents dl:last-child{
+        margin-bottom: 150px;
+    }
+    .history_warp .history_contents dl dt{
+        margin-right: 20px;
+    }
+
+    /* 1240px ~ 760px */
+@media all and (max-width: 1240px) and (min-width: 760px) {
+#header .bkBg .gnb {
+            width: 70%;
+            max-width: none;
+        }
+
+        #header .bkBg .gnb > li > a {
+            font-size: 18px;
+        }
+
+
+
+        /*반응형 푸터*/
+    #footer {
+        height: auto;
+        padding: 30px 20px;
+    }
+
+    #footer .bt_foot {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #footer .bt_foot .foot_sb {
+        width: 100%;
+        justify-content: center;
+        padding: 30px 0;
+        text-align: center;
+    }
+
+    #footer .bt_foot .foot_sb li a {
+        font-size: 0.9rem;
+        margin: 5px 10px;
+    }
+
+    #footer .bt_foot > div img {
+        max-width: 160px;
+    }
+
+    #footer .bt_foot .txtbox address {
+        text-align: center;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        font-size: clamp(0.75rem, 2.5vw, 1rem);
+    }
+}
+
+ 
+
+/* 759px 이하 (모바일) */
+
+@media all and (max-width: 759px) {
+
+    /*반응형 헤더*/
+    #header {
+        height: auto;
+        position: relative;
+    }
+
+    #header .bkBg {
+        height: 60px;
+        line-height: 60px;
+        /* border: 1px solid red; */
+        box-sizing: border-box;
+    }
+
+    #header .bkBg .gnb {
+        display: none;
+    }
+
+    #header .bkBg .m_menu {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        color: #fff;
+        padding-right: 30px;
+    }
+    #header .m-gnb {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: #fff;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -1000px;
+        overflow-y: scroll;
+    }
+
+    #header .m-gnb>li {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 50px;
+    }
+    #header .m-gnb .delt{
+        font-size: 30px;
+        text-align: end;
+        padding:  20px 30px;
+    }
+    #header .m-gnb>li>a {
+    display: block;
+    padding: 10px 20px;
+    color: #000;
+    font-weight: 600;
+    font-size: 20px;
+    }
+
+    #header .m-gnb li .sub {
+    padding-left: 20px;
+    /* background: #f9f9f9; */
+    }
+
+    #header .m-gnb li .sub li a {
+    display: block;
+    padding: 8px 0;
+    color: #666;
+    }
+    #header .m-gnb li .sub li:hover a{
+        color: #222;
+    }
+
+
+    /*반응형 푸터*/
+    #footer {
+        height: auto;
+        padding: 30px 15px;
+    }
+
+    #footer .bt_foot {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #footer .bt_foot .foot_sb {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 20px;
+    }
+    #footer .bt_foot .foot_sb li{
+        width: 100%;
+        padding-bottom: 20px;
+        text-align: center;
+        border-bottom: 1px solid #ffffff2f;
+    }
+    #footer .bt_foot .foot_sb li a {
+        font-size: 1rem;
+        margin: 4px 0;
+    }
+
+    #footer .bt_foot > div img {
+        max-width: 140px;
+    }
+
+    #footer .bt_foot .txtbox address {
+        font-size: 0.65rem;
+        text-align: center;
+        line-height: 1.4;
+        word-break: keep-all;
+        padding: 0 10px;
+    }
+}
+    .section {
+      position: relative;
+      padding: 100px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .section p {
+      font-size: 1.4rem;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+
+    .section strong {
+      font-size: 1.2rem;
+    }
+
+    .cat-icon {
+      font-size: 1.8rem;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    /* 고양이 + 달 애니메이션 */
+    .moon, .cat, .cat-in-moon {
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .moon {
+      top: 200px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 5rem;
+      color: #aaaaff;
+      filter: drop-shadow(0 0 6px #aabbee88);
+      transition: font-size 1s ease, filter 1s ease;
+      z-index: 0;
+    }
+
+    .cat-in-moon {
+      top: 230px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5rem;
+      color: yellow;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      filter: drop-shadow(0 0 5px yellow);
+      z-index: 0;
+    }
+
+    .cat {
+      top: 80vh;
+      left: 10%;
+      font-size: 2rem;
+      color: yellow;
+      filter: drop-shadow(0 0 5px yellow);
+      transition: all 0.3s ease;
+      z-index: 0;
+    }
+
+    /* 영상 */
+    .moon-video-wrapper {
+      max-width: 960px;
+      margin: 120px auto 100px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .moon-video-wrapper video {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+        .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+    }
+
+    .fade-in.delay-1 { animation-delay: 0.5s; }
+    .fade-in.delay-2 { animation-delay: 1s; }
+    .fade-in.delay-3 { animation-delay: 1.5s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .highlight {
+      margin: 2em auto;
+      text-align: center;
+      padding: 1em;
+      border-radius: 12px;
+      margin: 2em 0;
+      font-size: 1.1rem;
+    }
+
+    .moon-desc {
+      text-align: center;
+      margin: 100px auto;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+    .moon-desc h2 {
+      font-size: 2.5rem;
+      color: #51408c;
+      margin-bottom: 20px;
+    }
+    .moon-desc p {
+      font-size: 1.25rem;
+      line-height: 1.8;
+      color: #444;
+    }
+    
+  </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+      $(document).ready(function() {
+        //gnb호버
+        
+        $('#header .bkBg .gnb').mouseenter(function() {
+      $('#header .bkBg').stop().animate({ height: '350px' }, 300);
+      $('#header .bkBg').css('background-color', '#211b42');
+    });
+
+    // 전체 bkBg에서 마우스가 벗어나면 원상복귀
+    $('#header .bkBg').mouseleave(function() {
+      $('#header .bkBg').stop().animate({ height: '120px'}, 10);
+      $('#header .bkBg').css('background-color', 'rgba(255, 255, 255, 0)');
+      $('#header .bkBg .gnb > li > a').css('color', '#fff');
+    });
+
+    //모바일 메뉴
+     $(".m_menu").on("click", function () {
+      $(".m-gnb").animate({ right: "0" }, 300); // 오른쪽으로 슬라이드 인
+    });
+
+    // 모바일 메뉴 닫기 (닫기 아이콘 클릭 시)
+    $(".m-gnb .delt").on("click", function () {
+      $(".m-gnb").animate({ right: "-1000px" }, 300); // 다시 오른쪽으로 슬라이드 아웃
+    });
+
+        //메뉴탭
+      $('.tap li').click(function() {
+        const idx = $(this).index();
+
+        // 버튼 스타일
+        $('.tap li').removeClass('active');
+        $(this).addClass('active');
+
+        // 메뉴 콘텐츠 보이기
+        $('.view li').removeClass('menu_on');
+        $('.view li').eq(idx).addClass('menu_on');
+      });
+
+
+    });
+    </script>
+</head>
+<body>
+  <div id="header">
+      <div class="bkBg">
+        <a href="../html/main.html"><img src="../images/main/logo01_ko_cc.png" alt="logo"></a>
+        <ul class="gnb">
+        <li>
+          <a href="#">Brand</a>
+          <ul class="sub">
+            <li><a href="#">브랜드 BI</a></li>
+            <li><a href="#">브랜드스토리</a></li>
+            <li><a href="#">회사연혁</a></li>
+            <li><a href="#">오시는길</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Menu</a>
+          <ul class="sub">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Franchise</a>
+          <ul class="sub">
+            <li><a href="#">월담의경쟁력</a></li>
+            <li><a href="#">창업절차</a></li>
+            <li><a href="#">창업문의</a></li>
+            <li><a href="#">창업News</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">store</a>
+          <ul class="sub">
+            <li><a href="#">매장찾기</a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">News</a>
+          <ul class="sub">
+            <li><a href="#">News</a></li>
+            <li><a href="#">공지사항</a></li>
+          </ul>
+        </li>
+        </ul>
+        <div class="m_menu"><i class="fa-solid fa-bars"></i></div>
+      </div>
+
+      <ul class="m-gnb">
+        <li class="delt">
+          <i class="fa-solid fa-xmark fa-beat"></i>
+        </li>
+        <li>
+          <a href="#">Brand</a>
+          <ul class="sub">
+            <li><a href="#">브랜드 BI</a></li>
+            <li><a href="#">브랜드스토리</a></li>
+            <li><a href="#">회사연혁</a></li>
+            <li><a href="#">오시는길</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Menu</a>
+          <!-- <ul class="sub">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+          </ul> -->
+        </li>
+        <li>
+          <a href="#">Franchise</a>
+          <ul class="sub">
+            <li><a href="#">월담의경쟁력</a></li>
+            <li><a href="#">창업절차</a></li>
+            <li><a href="#">창업문의</a></li>
+            <li><a href="#">창업News</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">store</a>
+          <ul class="sub">
+            <li><a href="#">매장찾기</a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">News</a>
+          <ul class="sub">
+            <li><a href="#">News</a></li>
+            <li><a href="#">공지사항</a></li>
+          </ul>
+        </li>
+        </ul>
+
+  </div>
+ <div class="section fade-in">
+    <p>소란한 하루 끝에, 말없이도 위로가 되는 공간.<br>
+    고양이처럼 다정하고, 달처럼 고요한 무인카페.</p>
+  </div>
+
+  <div class="moon-desc fade-in delay-1">
+    <h2>고양이와 달, 그리고 쉼의 공간</h2>
+    <p>월담은 감성과 휴식이 머무는 곳입니다. 하루의 끝에서, 말 없이도 마음을 어루만져주는 공간. 달빛 아래 고양이처럼 조용히 머무르며 나를 위한 시간을 가져보세요.</p>
+  </div>
+
+  <div class="highlight fade-in delay-2">
+    <p><strong>🌕 월담은 단순한 카페를 넘어선 브랜드입니다.</strong><br>
+    무인 운영을 통해 자유로운 쉼의 공간을 만들고, 매장 곳곳에는 감성을 자극하는 요소들이 숨어 있습니다. 한 잔의 커피에 담긴 이야기, 월담이 전해드립니다.</p>
+  </div>
+
+  <div class="section fade-in delay-3">
+    <p><strong>월담은 '쉼'과 '감성'이 머무는 곳입니다.</strong></p>
+    <div class="cat-icon">🐾</div>
+  </div>
+
+  <div class="moon-video-wrapper fade-in">
+    <video src="images/mooncat.mp4" autoplay muted loop playsinline></video>
+  </div>
+
+
+
+  <div id="footer">
+    <div class="bt_foot">
+      <div class="txtbox">
+        <ul class="foot_sb">
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#">개인정보처리방침</a></li>
+        <li><a href="#">위치기반서비스 이용약관</a></li>
+        <li><a href="#">이메일 무단수집거부</a></li>
+        <li><a href="#">법적고지</a></li>
+        <li><a href="#">사업자정보확인</a></li>
+        </ul>
+        <address>
+          <p>
+          대표이사 : 김도현　|　개인정보보호책임자 : 이지아　|　 사업자등록번호 : 521-98-3471088
+        </p>
+        <p>
+          통신판매업종신고증 : 제 2025-서울남서구-1049호　|　대표이메일 : mooncat@moonwall.fake
+        </p>
+        <p>
+          Copyright ⓒ 2025 Moon Wall Co., LTD. All Rights Reserved.
+        </p>
+    
+    </address>
+      </div>
+      
+      <div>
+        <img src="../images/main/logo02_w.png" alt="logo"></div>
+      </div>
+  </div>
+  <script>
+
+    const elements = document.querySelectorAll('.fade-in');
+    elements.forEach(el => {
+      const delay = el.classList.contains('delay-1') ? 500 : el.classList.contains('delay-2') ? 1000 : el.classList.contains('delay-3') ? 1500 : 0;
+      setTimeout(() => el.style.animationPlayState = 'running', delay);
+    });
+
+    const cat = document.querySelector('.cat');
+    const moon = document.querySelector('.moon');
+    const catInMoon = document.querySelector('.cat-in-moon');
+
+    let posX = 10;
+    let posY = 80;
+    let running = false;
+
+    window.addEventListener('scroll', () => {
+      let scrollY = window.scrollY;
+      let newSize = Math.min(10, 5 + scrollY / 100);
+      moon.style.fontSize = newSize + 'rem';
+
+      let glow = Math.min(1, 0.3 + scrollY / 300);
+      let hexAlpha = Math.floor(glow * 255).toString(16).padStart(2, '0');
+      moon.style.filter = `drop-shadow(0 0 ${glow * 10}px #aabbee${hexAlpha})`;
+    });
+
+    function animateCat() {
+      if (!running) return;
+
+      const moonRect = moon.getBoundingClientRect();
+      let catLeftPx = window.innerWidth * (posX / 100);
+      let catTopPx = window.innerHeight * (posY / 100);
+
+      let targetX = moonRect.left + moonRect.width / 2;
+      let targetY = moonRect.top + moonRect.height * 0.75;
+
+      let diffX = targetX - catLeftPx;
+      let diffY = targetY - catTopPx;
+
+      posX += diffX * 0.02 / window.innerWidth * 100;
+      posY += diffY * 0.02 / window.innerHeight * 100;
+
+      let dist = Math.hypot(diffX, diffY);
+      let maxDist = window.innerWidth / 2;
+      let scale = Math.min(1, dist / maxDist);
+      cat.style.fontSize = (2 * scale) + 'rem';
+      cat.style.opacity = scale;
+
+      cat.style.left = posX + '%';
+      cat.style.top = posY + '%';
+
+      if (dist < 20) {
+        cat.style.opacity = 0;
+        catInMoon.style.opacity = 1;
+        running = false;
+      } else {
+        requestAnimationFrame(animateCat);
+      }
+    }
+
+    setTimeout(() => {
+      running = true;
+      animateCat();
+    }, 2000);
+  </script>
+
+</body>
+</html>
