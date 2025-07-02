@@ -230,35 +230,35 @@
     });
 
 
-    document.addEventListener('DOMContentLoaded', function () {
-    if (typeof kakao !== 'undefined') {
-      const container = document.getElementById('location-map');
-      const mapOption = {
-        center: new kakao.maps.LatLng(37.5665, 126.9780),
-        level: 3
-      };
-      const map = new kakao.maps.Map(container, mapOption);
+  //   document.addEventListener('DOMContentLoaded', function () {
+  //   if (typeof kakao !== 'undefined') {
+  //     const container = document.getElementById('location-map');
+  //     const mapOption = {
+  //       center: new kakao.maps.LatLng(37.5665, 126.9780),
+  //       level: 3
+  //     };
+  //     const map = new kakao.maps.Map(container, mapOption);
 
-      const geocoder = new kakao.maps.services.Geocoder();
+  //     const geocoder = new kakao.maps.services.Geocoder();
 
-      geocoder.addressSearch('경기도 고양시 중앙로1275번길 38-10', function (result, status) {
-        if (status === kakao.maps.services.Status.OK) {
-          const coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+  //     geocoder.addressSearch('경기도 고양시 중앙로1275번길 38-10', function (result, status) {
+  //       if (status === kakao.maps.services.Status.OK) {
+  //         const coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 
-          const marker = new kakao.maps.Marker({
-            map: map,
-            position: coords
-          });
+  //         const marker = new kakao.maps.Marker({
+  //           map: map,
+  //           position: coords
+  //         });
 
-          map.setCenter(coords);
-        } else {
-          console.error('주소 변환 실패:', status);
-        }
-      });
-    } else {
-      console.error('카카오 API가 아직 로드되지 않았습니다.');
-    }
-  });
+  //         map.setCenter(coords);
+  //       } else {
+  //         console.error('주소 변환 실패:', status);
+  //       }
+  //     });
+  //   } else {
+  //     console.error('카카오 API가 아직 로드되지 않았습니다.');
+  //   }
+  // });
   </script>
 
 </body>
