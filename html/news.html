@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/ba82af8fec.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      img {
+        border: 0;
+        vertical-align: top;
+      }
+      a{text-decoration: none;}
+
+      h1{
+        width: 80%;
+        margin: 0 auto;
+        /* border: 1px solid red; */
+        font-size: 68px;
+        margin-bottom: 50px;
+    }
+      .news-list {
+        width: 80%;
+        margin: 0 auto;
+        border-top: 1px solid #000;
+        font-size: 14px;
+      }
+      .news-list .news-toggle {
+        display: flex;
+      }
+      .news-list .news-toggle > li {
+        padding: 15px;
+        box-sizing: border-box;
+        text-align: center;
+        cursor: pointer;
+      }
+      .news-list .news-toggle > li:nth-child(1) {
+        /* 번호 */
+        width: 15%;
+      }
+      .news-list .news-toggle > li:nth-child(2) {
+        /* 제목 */
+        width: 80%;
+        text-align: left;
+      }
+      .news-list .news-toggle > li:nth-child(3) {
+        /* 날짜 */
+        width: 10%;
+      }
+      .news-list .news-content {
+        text-align: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+        border-bottom: 1px solid #0000009b;
+      }
+      .news-list .content_top {
+        display: flex;
+        border-bottom: 1px solid #ccc;
+        padding-top: 5px;
+        padding-bottom: 10px;
+        padding-left: 175px;
+        font-size: 12px;
+        margin-bottom: 30px;
+      }
+      .news-list .news-content > li > h2 {
+        margin-bottom: 20px;
+      }
+      .news-list .news-content > li > img {
+        margin-top: 30px;
+        margin-bottom: 10px;
+      }
+      .news-list .news-content > li:last-child > p {
+        margin-bottom: 40px;
+      }
+      .news-list .content_top > div {
+        margin-right: 18px;
+      }
+
+      #header{
+        width: 100%;
+        height: 120px;
+        background-color:#211b42;
+        position: relative;
+        z-index: 50000;
+        transition: all 0.3s;
+        user-select: none;
+        margin-bottom: 150px;
+    }
+    #header .bkBg{
+        width: 100%;
+        height: 120px;
+        line-height: 120px;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        transition: all 0.5s;
+    }
+
+    #header .bkBg a img{
+        width: 90%;
+        max-width:150px;
+        margin-left: 30px;
+        vertical-align: middle;
+    }
+
+    #header .bkBg .gnb{
+        width: 55%;
+        max-width: 600px;
+        display: flex;
+        justify-content: space-between;
+        margin-right: 30px;
+        transition: all 0.5s;
+    }
+    #header .bkBg .gnb>li{
+        width: 20%;
+        text-align: center;
+    }
+    #header .bkBg .gnb>li>a{
+        display: block;
+        width: 100%;
+        color: #fff;
+        /* border: 1px solid red; */
+        font-size: 20px;
+        font-weight: 700;
+    }
+    #header .bkBg .gnb>li .sub{
+        line-height: 35px;
+    }
+    #header .bkBg .gnb>li .sub>li>a{
+        color: #d4d4d4;
+        /* border: 1px solid red; */
+    }
+    #header .bkBg .gnb>li .sub>li:hover>a{
+        color: #fff;
+        font-weight: 600;
+    }
+
+    #header .bkBg .m_menu, 
+    #header .m-gnb{
+        display: none;
+    }
+
+
+
+    #footer{
+        width: 100%;
+        height: 250px;
+        background-color: #333;
+        user-select: none;
+        transition: all 0.5s;
+        box-sizing: border-box;
+        margin-top: 150px;
+    }
+    #footer .bt_foot{
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        transition: all 0.5s;
+        /* padding-top: 10px; */
+    }
+    #footer .bt_foot .foot_sb{
+        display: flex;
+        justify-content: space-between;
+        /* border: 1px solid red; */
+        padding: 50px 0;
+        width: 900px;
+        transition: all 0.5s;
+    }
+    
+    #footer .bt_foot .foot_sb li a{
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: 700;
+        transition: all 0.5s;
+    }
+    #footer .bt_foot .foot_sb li:hover a{
+        color: #f6aece;
+    }
+    #footer .bt_foot>div img{
+        max-width: 200px;
+        min-width: 100px;
+        width: 100%;
+        transition: all 0.5s;
+    }
+
+    #footer .bt_foot .txtbox address{
+        color: #cfcfcf;
+        font-style: normal;
+        line-height: 20px;
+
+    }
+    </style>
+    <script>
+      $(document).ready(function() {
+        //gnb호버
+        
+        $('#header .bkBg .gnb').mouseenter(function() {
+      $('#header .bkBg').stop().animate({ height: '350px' }, 300);
+      $('#header .bkBg').css('background-color', '#211b42');
+      $('#header .bkBg .gnb > li > a').css('color', '#fff');
+    });
+
+    // 전체 bkBg에서 마우스가 벗어나면 원상복귀
+    $('#header .bkBg').mouseleave(function() {
+      $('#header .bkBg').stop().animate({ height: '120px'}, 10);
+      $('#header .bkBg').css('background-color', 'rgba(255, 255, 255, 0)');
+      $('#header .bkBg .gnb > li > a').css('color', '#fff');
+    });
+
+    //모바일 메뉴
+     $(".m_menu").on("click", function () {
+      $(".m-gnb").animate({ right: "0" }, 300); // 오른쪽으로 슬라이드 인
+    });
+
+    // 모바일 메뉴 닫기 (닫기 아이콘 클릭 시)
+    $(".m-gnb .delt").on("click", function () {
+      $(".m-gnb").animate({ right: "-1000px" }, 300); // 다시 오른쪽으로 슬라이드 아웃
+    });
+
+        //메뉴탭
+      $('.tap li').click(function() {
+        const idx = $(this).index();
+
+        // 버튼 스타일
+        $('.tap li').removeClass('active');
+        $(this).addClass('active');
+
+        // 메뉴 콘텐츠 보이기
+        $('.view li').removeClass('menu_on');
+        $('.view li').eq(idx).addClass('menu_on');
+      });
+
+
+    });
+    </script>
+  </head>
+
+
+  <body>
+
+
+      <div id="header">
+      <div class="bkBg">
+        <a href="../html/main.html"><img src="../images/main/logo01_ko_cc.png" alt="logo"></a>
+        <ul class="gnb">
+        <li>
+          <a href="#">Brand</a>
+          <ul class="sub">
+            <li><a href="#">브랜드 BI</a></li>
+            <li><a href="stoty.html">브랜드스토리</a></li>
+            <li><a href="history.html">회사연혁</a></li>
+            <li><a href="location.html">오시는길</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="menu.html">Menu</a>
+          <ul class="sub">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Franchise</a>
+          <ul class="sub">
+            <li><a href="brand.html">월담의경쟁력</a></li>
+            <li><a href="front_franc.html">창업절차</a></li>
+            <li><a href="fr_inquiry.html">창업문의</a></li>
+            <li><a href="#">창업News</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">store</a>
+          <ul class="sub">
+            <li><a href="api.html">매장찾기</a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">News</a>
+          <ul class="sub">
+            <li><a href="news.html">News</a></li>
+            <li><a href="#">공지사항</a></li>
+          </ul>
+        </li>
+        </ul>
+        <div class="m_menu"><i class="fa-solid fa-bars"></i></div>
+      </div>
+
+      <ul class="m-gnb">
+        <li class="delt">
+          <i class="fa-solid fa-xmark fa-beat"></i>
+        </li>
+        <li>
+          <a href="#">Brand</a>
+          <ul class="sub">
+            <li><a href="#">브랜드 BI</a></li>
+            <li><a href="stoty.html">브랜드스토리</a></li>
+            <li><a href="history.html">회사연혁</a></li>
+            <li><a href="location.html">오시는길</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="menu.html">Menu</a>
+          <ul class="sub">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Franchise</a>
+          <ul class="sub">
+            <li><a href="brand.html">월담의경쟁력</a></li>
+            <li><a href="front_franc.html">창업절차</a></li>
+            <li><a href="fr_inquiry.html">창업문의</a></li>
+            <li><a href="#">창업News</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">store</a>
+          <ul class="sub">
+            <li><a href="api.html">매장찾기</a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">News</a>
+          <ul class="sub">
+            <li><a href="news.html">News</a></li>
+            <li><a href="#">공지사항</a></li>
+          </ul>
+        </li>
+        </ul>
+
+        
+    </div>
+
+    <h1>NEWS</h1>
+    <ul class="news-list">
+      <li>
+        <ul class="news-toggle">
+          <li>1</li>
+          <li>카페 월담, 청량한 여름 담은 ‘유자레몬’ 신메뉴 8종 출시</li>
+          <li>06-05</li>
+        </ul>
+        <ul class="news-content">
+          <li class="content_top">
+            <div>월담</div>
+            <div>
+              <i class="fa-regular fa-comment-dots"></i>
+              <span>0건</span>
+            </div>
+            <div>
+              <i class="fa-regular fa-eye"></i>
+              <span>14회</span>
+            </div>
+          </li>
+          <li>
+            <h2>카페 월담, 청량한 여름 담은 ‘유자레몬’ 신메뉴 8종 출시</h2>
+          </li>
+          <li><p>- 유자레몬으로 완성한 청량한 여름의 맛</p></li>
+          <li>
+            <img
+              src="img/news_image1.jpg"
+              alt="카페, 월담이 선보인 유자레몬 신메뉴"
+            />
+          </li>
+          <li><p>[사진 설명] 카페, 월담이 선보인 유자레몬 신메뉴</p></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="news-toggle">
+          <li>2</li>
+          <li>카페 월담, 무인 편견 깼다… “맛있어서 먹어요” 만족도 쾌거</li>
+          <li>05-08</li>
+        </ul>
+        <ul class="news-content">
+          <li class="content_top">
+            <div>월담</div>
+            <div>
+              <i class="fa-regular fa-comment-dots"></i>
+              <span>0건</span>
+            </div>
+            <div>
+              <i class="fa-regular fa-eye"></i>
+              <span>437회</span>
+            </div>
+          </li>
+          <li>
+            <h2>카페 월담, 무인 편견 깼다… “맛있어서 먹어요” 만족도 쾌거</h2>
+          </li>
+          <li>
+            <p>
+              - ‘맛·가격·추천’ 삼박자 긍정 평가받아… “10명 중 9명, 주변에게 추천
+              의향”
+            </p>
+          </li>
+          <li><p>- 가성비 트렌드 속 고객의 ‘이유 있는 선택’ 증명</p></li>
+          <li>
+            <img
+              src="img/news_image2.jpg"
+              alt="카페, 월담 고객 만족도 조사 결과"
+            />
+          </li>
+          <li><p>[사진 설명] 카페, 월담 고객 만족도 조사 결과</p></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="news-toggle">
+          <li>3</li>
+          <li>카페 월담, 쫀득쿠기 2종 출시</li>
+          <li>04-30</li>
+        </ul>
+        <ul class="news-content">
+          <li class="content_top">
+            <div>월담</div>
+            <div>
+              <i class="fa-regular fa-comment-dots"></i>
+              <span>0건</span>
+            </div>
+            <div>
+              <i class="fa-regular fa-eye"></i>
+              <span>280회</span>
+            </div>
+          </li>
+          <li><h2>카페 월담, MZ 취향 저격 ‘쫀득쿠키 2종’ 출시</h2></li>
+          <li>
+            <p>- 5월 31일까지 전국 매장에서 출시 기념 할인 이벤트 진행</p>
+          </li>
+          <li>
+            <img
+              src="img/news_image3.jpg"
+              alt="월담이 선보이는 쫀득쿠키 2종"
+            />
+          </li>
+          <li><p>[사진 설명] 월담이 선보이는 쫀득쿠키 2종</p></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="news-toggle">
+          <li>4</li>
+          <li>카페 월담, ‘봄맞이 고객 프로모션’ 실시</li>
+          <li>04-01</li>
+        </ul>
+        <ul class="news-content">
+          <li class="content_top">
+            <div>월담</div>
+            <div>
+              <i class="fa-regular fa-comment-dots"></i>
+              <span>0건</span>
+            </div>
+            <div>
+              <i class="fa-regular fa-eye"></i>
+              <span>3,200회</span>
+            </div>
+          </li>
+          <li><h2>카페 월담, ‘봄맞이 고객 프로모션’ 실시</h2></li>
+          <li>
+            <p>
+              - 봄 감성 담은 ‘한정판 컵홀더’ 특별 제작… SNS 인증하면 경품 증정
+            </p>
+          </li>
+          <li>
+            <img
+              src="img/news_image4.jpg"
+              alt="월담이 진행하는 봄맞이 고객 프로모션"
+            />
+          </li>
+          <li><p>[사진 설명] 월담이 진행하는 봄맞이 고객 프로모션</p></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="news-toggle">
+          <li>5</li>
+          <li>카페 월담, ‘직영투자형 모델’ 출시</li>
+          <li>03-28</li>
+        </ul>
+        <ul class="news-content">
+          <li class="content_top">
+            <div>월담</div>
+            <div>
+              <i class="fa-regular fa-comment-dots"></i>
+              <span>0건</span>
+            </div>
+            <div>
+              <i class="fa-regular fa-eye"></i>
+              <span>2,933회</span>
+            </div>
+          </li>
+          <li>
+            <h2>
+              "2,500만원 투자에 최소 수익 100만원"…<br />카페 월담,
+              ‘직영투자형 모델’ 출시
+            </h2>
+          </li>
+          <li>
+            <p>
+              - “공간 임대 및 운영 본사가, 수익은 창업자가”… 월매출의 25% 수익
+              배분
+            </p>
+          </li>
+          <li>
+            <p>
+              - “단기 수익보다는 책임지고 지속가능한 프랜차이즈 사업 구조 구상”
+            </p>
+          </li>
+          <li>
+            <img
+              src="img/news_image5.jpg"
+              alt="카페, 월담 직영점(가산SK점)에서 고객들이 음료를 주문하는 모습"
+            />
+          </li>
+          <li>
+            <p>
+              [사진 설명] 카페, 월담 직영점(가산SK점)에서 고객들이 음료를
+              주문하는 모습
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul class="news-toggle">
+          <li>6</li>
+          <li>카페 월담, 고객 만족도 조사 실시</li>
+          <li>03-24</li>
+        </ul>
+        <ul class="news-content">
+          <li class="content_top">
+            <div>월담</div>
+            <div>
+              <i class="fa-regular fa-comment-dots"></i>
+              <span>0건</span>
+            </div>
+            <div>
+              <i class="fa-regular fa-eye"></i>
+              <span>1,118회</span>
+            </div>
+          </li>
+          <li><h2>카페 월담, ‘고객 만족도 조사’ 실시</h2></li>
+          <li>
+            <p>- 전국 월담 매장에서 조사… 참여 고객 대상 경품 이벤트 진행</p>
+          </li>
+          <li>
+            <img
+              src="img/news_image6.jpg"
+              alt="월담 고객 만족도 조사 포스터"
+            />
+          </li>
+          <li><p>[사진 설명] 월담 고객 만족도 조사 포스터</p></li>
+        </ul>
+      </li>
+    </ul>
+
+
+    <div id="footer">
+    <div class="bt_foot">
+      <div class="txtbox">
+        <ul class="foot_sb">
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#">개인정보처리방침</a></li>
+        <li><a href="#">위치기반서비스 이용약관</a></li>
+        <li><a href="#">이메일 무단수집거부</a></li>
+        <li><a href="#">법적고지</a></li>
+        <li><a href="#">사업자정보확인</a></li>
+        </ul>
+        <address>
+          <p>
+          대표이사 : 김도현　|　개인정보보호책임자 : 이지아　|　 사업자등록번호 : 521-98-3471088
+        </p>
+        <p>
+          통신판매업종신고증 : 제 2025-서울남서구-1049호　|　대표이메일 : mooncat@moonwall.fake
+        </p>
+        <p>
+          Copyright ⓒ 2025 Moon Wall Co., LTD. All Rights Reserved.
+        </p>
+    
+    </address>
+      </div>
+      
+      <div>
+        <img src="../images/main/logo02_w.png" alt="logo"></div>
+      </div>
+  </div>
+
+
+    <script>
+      document.querySelectorAll(".news-toggle").forEach((item) => {
+        item.addEventListener("click", () => {
+          const content = item.nextElementSibling;
+
+          // 먼저 모든 콘텐츠를 닫기
+          document.querySelectorAll(".news-content").forEach((otherContent) => {
+            if (otherContent !== content) {
+              otherContent.style.maxHeight = null;
+            }
+          });
+
+          // 클릭한 항목이 열린 상태인지 확인하고 열기/닫기
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

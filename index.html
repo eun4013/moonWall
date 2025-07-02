@@ -1,186 +1,196 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="../moonWall/css/intro.css">
-  <title>월담 인트로</title>
-  <style>
-    @media (max-width: 1600px) {
-      .logo img,
-      .pupil,
-      .speech-bubble,
-      .glow {
-        display: none !important;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../moonWall/css/intro.css" />
+    <title>월담 인트로</title>
+    <style>
+      @media (max-width: 1600px) {
+        .logo img,
+        .pupil,
+        .speech-bubble,
+        .glow {
+          display: none !important;
+        }
       }
-    }
-  </style>
-</head>
-<body>
-  <div class="bg-image"></div>
-  <div class="bg-sparkle"></div>
+      .side {
+        text-decoration: none; /* 밑줄 제거 */
+        color: inherit; /* 글자색 상속 */
+        display: block; /* block으로 만들어서 div처럼 동작 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-image"></div>
+    <div class="bg-sparkle"></div>
 
-  <div class="intro">
-    <div class="glow one"></div>
-    <div class="glow two"></div>
-    <div class="circle" id="circle"></div>
+    <div class="intro">
+      <div class="glow one"></div>
+      <div class="glow two"></div>
+      <div class="circle" id="circle"></div>
 
-    <div class="logo" id="logo">
-      <img src="images/intro/introblackcat.png" alt="intro black cat" />
-      <div class="speech-bubble" id="speech-bubble"></div>
+      <div class="logo" id="logo">
+        <img src="images/intro/introblackcat.png" alt="intro black cat" />
+        <div class="speech-bubble" id="speech-bubble"></div>
+      </div>
+
+      <div class="pupil left" id="pupil-left"></div>
+      <div class="pupil right" id="pupil-right"></div>
+
+      <a href="html/main.html" class="side left" id="left-side"
+        >BRAND<br />브랜드</a
+      >
+      <a href="html/login.html" class="side right" id="right-side"
+        >LOGIN<br />로그인</a
+      >
     </div>
 
-    <div class="pupil left" id="pupil-left"></div>
-    <div class="pupil right" id="pupil-right"></div>
+    <script>
+      const circle = document.getElementById("circle");
+      const leftSide = document.getElementById("left-side");
+      const rightSide = document.getElementById("right-side");
+      const pupilLeft = document.getElementById("pupil-left");
+      const pupilRight = document.getElementById("pupil-right");
+      const logo = document.getElementById("logo");
+      const speechBubble = document.getElementById("speech-bubble");
 
-    <div class="side left" id="left-side">BRAND<br>브랜드</div>
-    <div class="side right" id="right-side">LOGIN<br>로그인</div>
-  </div>
+      let isHoveringSide = false;
+      let currentSide = null;
+      let isCircleExpanded = false;
 
-  <script>
-    const circle = document.getElementById('circle');
-    const leftSide = document.getElementById('left-side');
-    const rightSide = document.getElementById('right-side');
-    const pupilLeft = document.getElementById('pupil-left');
-    const pupilRight = document.getElementById('pupil-right');
-    const logo = document.getElementById('logo');
-    const speechBubble = document.getElementById('speech-bubble');
+      function triggerCircleAnimation(direction) {
+        circle.classList.remove("show-left", "show-right");
+        leftSide.classList.remove("active-black");
+        rightSide.classList.remove("active-black");
+        void circle.offsetWidth;
 
-    let isHoveringSide = false;
-    let currentSide = null;
-    let isCircleExpanded = false;
+        isCircleExpanded = true;
 
-    function triggerCircleAnimation(direction) {
-      circle.classList.remove('show-left', 'show-right');
-      leftSide.classList.remove('active-black');
-      rightSide.classList.remove('active-black');
-      void circle.offsetWidth;
-
-      isCircleExpanded = true;
-
-      if (direction === 'left') {
-        circle.style.left = '0';
-        circle.style.top = '0';
-        circle.style.right = 'auto';
-        circle.style.bottom = 'auto';
-        circle.style.transform = 'translate(-50%, -50%) scale(1)';
-        circle.classList.add('show-left');
-        currentSide = 'left';
-      } else if (direction === 'right') {
-        circle.style.right = '0';
-        circle.style.bottom = '0';
-        circle.style.left = 'auto';
-        circle.style.top = 'auto';
-        circle.style.transform = 'translate(50%, 50%) scale(1)';
-        circle.classList.add('show-right');
-        currentSide = 'right';
+        if (direction === "left") {
+          circle.style.left = "0";
+          circle.style.top = "0";
+          circle.style.right = "auto";
+          circle.style.bottom = "auto";
+          circle.style.transform = "translate(-50%, -50%) scale(1)";
+          circle.classList.add("show-left");
+          currentSide = "left";
+        } else if (direction === "right") {
+          circle.style.right = "0";
+          circle.style.bottom = "0";
+          circle.style.left = "auto";
+          circle.style.top = "auto";
+          circle.style.transform = "translate(50%, 50%) scale(1)";
+          circle.classList.add("show-right");
+          currentSide = "right";
+        }
       }
-    }
 
-    circle.addEventListener('animationend', () => {
-      if (currentSide === 'left') {
-        leftSide.classList.add('active-black');
-      } else if (currentSide === 'right') {
-        rightSide.classList.add('active-black');
+      circle.addEventListener("animationend", () => {
+        if (currentSide === "left") {
+          leftSide.classList.add("active-black");
+        } else if (currentSide === "right") {
+          rightSide.classList.add("active-black");
+        }
+      });
+
+      leftSide.addEventListener("mouseenter", () => {
+        triggerCircleAnimation("left");
+        isHoveringSide = true;
+      });
+
+      rightSide.addEventListener("mouseenter", () => {
+        triggerCircleAnimation("right");
+        isHoveringSide = true;
+      });
+
+      document.querySelector(".intro").addEventListener("mouseleave", () => {
+        circle.classList.remove("show-left", "show-right");
+        leftSide.classList.remove("active-black");
+        rightSide.classList.remove("active-black");
+
+        isHoveringSide = false;
+        isCircleExpanded = false;
+        currentSide = null;
+
+        if (window.innerWidth >= 1600) {
+          pupilLeft.style.transform = "translate(0, 0) scaleX(1) scaleY(1)";
+          pupilRight.style.transform = "translate(0, 0) scaleX(1) scaleY(1)";
+        }
+      });
+
+      document.addEventListener("mousemove", (e) => {
+        if (window.innerWidth < 1600) return;
+
+        const dx = e.clientX - window.innerWidth / 2;
+        const dy = e.clientY - window.innerHeight / 2;
+        const angle = Math.atan2(dy, dx);
+        const radius = 20;
+        const x = Math.cos(angle) * radius;
+        const y = Math.sin(angle) * radius;
+
+        if (isHoveringSide) {
+          pupilLeft.style.transform = `translate(${x}px, ${y}px) scaleX(3) scaleY(1)`;
+          pupilRight.style.transform = `translate(${x}px, ${y}px) scaleX(3) scaleY(1)`;
+        } else {
+          pupilLeft.style.transform = `translate(${x}px, ${y}px) scaleX(1) scaleY(1)`;
+          pupilRight.style.transform = `translate(${x}px, ${y}px) scaleX(1) scaleY(1)`;
+        }
+      });
+
+      logo.addEventListener("click", () => {
+        isHoveringSide = false;
+        isCircleExpanded = false;
+        currentSide = null;
+        circle.classList.remove("show-left", "show-right");
+        leftSide.classList.remove("active-black");
+        rightSide.classList.remove("active-black");
+        pupilLeft.style.transform = "translate(0, 0) scaleX(1) scaleY(1)";
+        pupilRight.style.transform = "translate(0, 0) scaleX(1) scaleY(1)";
+      });
+
+      let floatAmplitude = 15;
+      let floatSpeed = 0.0025;
+      let startTime = Date.now();
+
+      function floatingAnimation() {
+        if (window.innerWidth < 1600)
+          return requestAnimationFrame(floatingAnimation);
+
+        const elapsed = Date.now() - startTime;
+        const floatY = Math.sin(elapsed * floatSpeed) * floatAmplitude;
+
+        logo.style.transform = `translate(-50%, calc(-50% + ${floatY}px))`;
+        requestAnimationFrame(floatingAnimation);
       }
-    });
+      floatingAnimation();
 
-    leftSide.addEventListener('mouseenter', () => {
-      triggerCircleAnimation('left');
-      isHoveringSide = true;
-    });
+      const messages = [
+        "냐옹! 나는 루나다냥 ↀωↀ",
+        "여기서 기다리고 있다냥~!  오늘도 행복하게 하루를　시작하라냥~",
+        "마우스를 움직여보라냥!",
+        "브랜드/로그인 확인하라냥.",
+        "날 클릭하라냥.",
+      ];
+      let msgIndex = 0;
 
-    rightSide.addEventListener('mouseenter', () => {
-      triggerCircleAnimation('right');
-      isHoveringSide = true;
-    });
-
-    document.querySelector('.intro').addEventListener('mouseleave', () => {
-      circle.classList.remove('show-left', 'show-right');
-      leftSide.classList.remove('active-black');
-      rightSide.classList.remove('active-black');
-
-      isHoveringSide = false;
-      isCircleExpanded = false;
-      currentSide = null;
-
-      if (window.innerWidth >= 1600) {
-        pupilLeft.style.transform = 'translate(0, 0) scaleX(1) scaleY(1)';
-        pupilRight.style.transform = 'translate(0, 0) scaleX(1) scaleY(1)';
+      function showSpeechBubble() {
+        if (window.innerWidth < 1600) return;
+        speechBubble.textContent = messages[msgIndex];
+        speechBubble.classList.add("show");
+        msgIndex = (msgIndex + 1) % messages.length;
       }
-    });
 
-    document.addEventListener('mousemove', (e) => {
-      if (window.innerWidth < 1600) return;
-
-      const dx = e.clientX - window.innerWidth / 2;
-      const dy = e.clientY - window.innerHeight / 2;
-      const angle = Math.atan2(dy, dx);
-      const radius = 20;
-      const x = Math.cos(angle) * radius;
-      const y = Math.sin(angle) * radius;
-
-      if (isHoveringSide) {
-        pupilLeft.style.transform = `translate(${x}px, ${y}px) scaleX(3) scaleY(1)`;
-        pupilRight.style.transform = `translate(${x}px, ${y}px) scaleX(3) scaleY(1)`;
-      } else {
-        pupilLeft.style.transform = `translate(${x}px, ${y}px) scaleX(1) scaleY(1)`;
-        pupilRight.style.transform = `translate(${x}px, ${y}px) scaleX(1) scaleY(1)`;
+      function hideSpeechBubble() {
+        speechBubble.classList.remove("show");
       }
-    });
 
-    logo.addEventListener('click', () => {
-      isHoveringSide = false;
-      isCircleExpanded = false;
-      currentSide = null;
-      circle.classList.remove('show-left', 'show-right');
-      leftSide.classList.remove('active-black');
-      rightSide.classList.remove('active-black');
-      pupilLeft.style.transform = 'translate(0, 0) scaleX(1) scaleY(1)';
-      pupilRight.style.transform = 'translate(0, 0) scaleX(1) scaleY(1)';
-    });
-
-    let floatAmplitude = 15;
-    let floatSpeed = 0.0025;
-    let startTime = Date.now();
-
-    function floatingAnimation() {
-      if (window.innerWidth < 1600) return requestAnimationFrame(floatingAnimation);
-
-      const elapsed = Date.now() - startTime;
-      const floatY = Math.sin(elapsed * floatSpeed) * floatAmplitude;
-
-      logo.style.transform = `translate(-50%, calc(-50% + ${floatY}px))`;
-      requestAnimationFrame(floatingAnimation);
-    }
-    floatingAnimation();
-
-    const messages = [
-      "냐옹! 나는 루나다냥 ↀωↀ",
-      "여기서 기다리고 있다냥~!  오늘도 행복하게 하루를　시작하라냥~",
-      "마우스를 움직여보라냥!",
-      "브랜드/로그인 확인하라냥.",
-      "날 클릭하라냥."
-    ];
-    let msgIndex = 0;
-
-    function showSpeechBubble() {
-      if (window.innerWidth < 1600) return;
-      speechBubble.textContent = messages[msgIndex];
-      speechBubble.classList.add('show');
-      msgIndex = (msgIndex + 1) % messages.length;
-    }
-
-    function hideSpeechBubble() {
-      speechBubble.classList.remove('show');
-    }
-
-    setInterval(() => {
-      showSpeechBubble();
-      setTimeout(() => {
-        hideSpeechBubble();
-      }, 2500);
-    }, 4000);
-  </script>
-</body>
+      setInterval(() => {
+        showSpeechBubble();
+        setTimeout(() => {
+          hideSpeechBubble();
+        }, 2500);
+      }, 4000);
+    </script>
+  </body>
 </html>
