@@ -229,6 +229,8 @@
 
     });
 
+
+    window.onload = function() {
     const container = document.getElementById('location-map');
     const mapOption = {
       center: new kakao.maps.LatLng(37.5665, 126.9780),
@@ -252,13 +254,7 @@
         console.error('주소 변환 실패:', status);
       }
     });
-
-    const chatBtn = document.getElementById('chat-button');
-const chatBox = document.getElementById('chat-box');
-
-chatBtn.addEventListener('click', () => {
-chatBox.style.display = chatBox.style.display === 'none' || chatBox.style.display === '' ? 'flex' : 'none';
-});
+  }
   </script>
 
 </body>
